@@ -1,79 +1,220 @@
 #!/usr/bin/env python3
-"""Generate the project's own circuit-gate icon without third-party artwork."""
+"""Render the editor-inspired AND gate for Android and Apple launchers."""
 from __future__ import annotations
 
 import argparse
+from itertools import product
 import json
+from math import ceil, floor, sqrt
 from pathlib import Path
 import struct
 import sys
 import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
-NAVY = (20, 49, 74)
-TEAL = (65, 207, 176)
-WHITE = (245, 250, 252)
+ART_SIZE = 200
+GRID_STEP = 10
+GRID_RADIUS = 0.75
+CENTER_Y = ART_SIZE / 2
+GATE_ARC_X = 102
+# Left edge, then the horizontal and vertical radii of the right half-ellipse.
+GATE_OUTER = (65, 43, 46)
+GATE_INNER = (72, 36, 39)
+TERMINALS = ((28, 78), (28, 122), (172, 100))
+TERMINAL_RADIUS = 8.75
+WIRE_WIDTH = 6.25
+# Wire ends overlap the outline without entering the transparent themed icon.
+WIRES = ((28, 68, 78), (28, 68, 122), (142, 172, 100))
+
+ROLES = ("canvas", "grid", "ink", "signal")
+CANVAS, GRID, INK, SIGNAL = range(len(ROLES))
+LIGHT = ("#FEFEFE", "#C7C7C7", "#202020", "#038303")
+DARK = ("#282828", "#595959", "#F6F6F6", "#40D446")
 
 
-def color_at(x: float, y: float) -> tuple[int, int, int]:
-    gate = 40 <= x <= 53 and 34 <= y <= 74
-    gate = gate or (x >= 53 and ((x - 53) / 20) ** 2 + ((y - 54) / 20) ** 2 <= 1)
-    wire = (22 <= x <= 40 and (abs(y - 42) <= 2 or abs(y - 66) <= 2))
-    wire = wire or (73 <= x <= 86 and abs(y - 54) <= 2)
-    terminal = any((x - cx) ** 2 + (y - cy) ** 2 <= 16 for cx, cy in ((22, 42), (22, 66), (86, 54)))
-    return WHITE if gate else TEAL if wire or terminal else NAVY
+def gate_path(shape: tuple[int, int, int]) -> str:
+    left, radius_x, radius_y = shape
+    top, bottom = CENTER_Y - radius_y, CENTER_Y + radius_y
+    return f"M{left},{top:g} H{GATE_ARC_X} A{radius_x},{radius_y} 0 0,1 {GATE_ARC_X},{bottom:g} H{left} Z"
 
 
-def png(size: int) -> bytes:
+def wire_path() -> str:
+    return " ".join(f"M{left},{y} H{right}" for left, right, y in WIRES)
+
+
+def circle_path(x: float, y: float, radius: float) -> str:
+    return (
+        f"M{x - radius:g},{y:g} a{radius:g},{radius:g} 0 1,0 {2 * radius:g},0 "
+        f"a{radius:g},{radius:g} 0 1,0 {-2 * radius:g},0 Z"
+    )
+
+
+def svg(palette: tuple[str, ...]) -> str:
+    canvas, grid, ink, signal = palette
+    terminals = "\n".join(
+        f'  <circle cx="{x}" cy="{y}" r="{TERMINAL_RADIUS:g}" fill="{signal}"/>' for x, y in TERMINALS
+    )
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {ART_SIZE} {ART_SIZE}" width="1024" height="1024">
+  <defs>
+    <pattern id="grid" width="{GRID_STEP}" height="{GRID_STEP}" patternUnits="userSpaceOnUse">
+      <circle cx="{GRID_STEP / 2:g}" cy="{GRID_STEP / 2:g}" r="{GRID_RADIUS:g}" fill="{grid}"/>
+    </pattern>
+  </defs>
+  <rect width="{ART_SIZE}" height="{ART_SIZE}" fill="{canvas}"/>
+  <rect width="{ART_SIZE}" height="{ART_SIZE}" fill="url(#grid)"/>
+  <path d="{wire_path()}" fill="none" stroke="{signal}" stroke-width="{WIRE_WIDTH:g}"/>
+{terminals}
+  <path d="{gate_path(GATE_OUTER)}" fill="{ink}"/>
+  <path d="{gate_path(GATE_INNER)}" fill="{canvas}"/>
+</svg>
+'''
+
+
+def sample_row(size: int, y: float) -> bytearray:
+    """Rasterize one row of subpixel samples in drawing order."""
+    row = bytearray(size)
+    scale = size / ART_SIZE
+
+    def paint(left: float, right: float, role: int) -> None:
+        start = max(0, ceil(left * scale - 0.5))
+        stop = min(size, floor(right * scale - 0.5) + 1)
+        row[start:stop] = bytes([role]) * max(0, stop - start)
+
+    grid_y = y % GRID_STEP - GRID_STEP / 2
+    if abs(grid_y) < GRID_RADIUS:
+        reach = sqrt(GRID_RADIUS ** 2 - grid_y ** 2)
+        for x in range(GRID_STEP // 2, ART_SIZE, GRID_STEP):
+            paint(x - reach, x + reach, GRID)
+    for left, right, wire_y in WIRES:
+        if abs(y - wire_y) < WIRE_WIDTH / 2:
+            paint(left, right, SIGNAL)
+    for x, terminal_y in TERMINALS:
+        delta_y = y - terminal_y
+        if abs(delta_y) < TERMINAL_RADIUS:
+            reach = sqrt(TERMINAL_RADIUS ** 2 - delta_y ** 2)
+            paint(x - reach, x + reach, SIGNAL)
+    for (left, radius_x, radius_y), role in ((GATE_OUTER, INK), (GATE_INNER, CANVAS)):
+        relative_y = (y - CENTER_Y) / radius_y
+        if abs(relative_y) < 1:
+            extent = radius_x * sqrt(1 - relative_y ** 2)
+            paint(left, GATE_ARC_X + extent, role)
+    return row
+
+
+def png_chunk(kind: bytes, data: bytes) -> bytes:
+    return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data))
+
+
+def png(size: int, palette: tuple[str, ...]) -> bytes:
+    colors = [bytes.fromhex(value[1:]) for value in palette]
+    # Cache every four-sample blend for a 2× supersampled, opaque RGB PNG.
+    blends = {
+        samples: bytes(sum(colors[index][channel] for index in samples) // 4 for channel in range(3))
+        for samples in product(range(len(ROLES)), repeat=4)
+    }
     rows = bytearray()
-    samples = ((0.25, 0.25), (0.75, 0.25), (0.25, 0.75), (0.75, 0.75))
+    step = ART_SIZE / (size * 2)
     for y in range(size):
+        top = sample_row(size * 2, (2 * y + 0.5) * step)
+        bottom = sample_row(size * 2, (2 * y + 1.5) * step)
         rows.append(0)
-        for x in range(size):
-            colors = [color_at((x + dx) * 108 / size, (y + dy) * 108 / size) for dx, dy in samples]
-            rows.extend(sum(color[channel] for color in colors) // len(colors) for channel in range(3))
-    def chunk(kind: bytes, data: bytes) -> bytes:
-        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data))
-    return b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", size, size, 8, 2, 0, 0, 0)) + chunk(b"IDAT", zlib.compress(rows, 9)) + chunk(b"IEND", b"")
+        for x in range(0, size * 2, 2):
+            rows.extend(blends[top[x], top[x + 1], bottom[x], bottom[x + 1]])
+    return (
+        b"\x89PNG\r\n\x1a\n"
+        + png_chunk(b"IHDR", struct.pack(">IIBBBBB", size, size, 8, 2, 0, 0, 0))
+        + png_chunk(b"IDAT", zlib.compress(rows, 9))
+        + png_chunk(b"IEND", b"")
+    )
+
+
+def vector(paths: str, *, viewport: int = 108) -> str:
+    return f'''<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="{viewport}" android:viewportHeight="{viewport}">
+{paths}</vector>
+'''
+
+
+def adaptive_background() -> str:
+    # The central 200 units are the visible 72 dp. Continue the grid into the
+    # extra 18 dp on all sides so the background also covers launcher motion.
+    bleed_size = ART_SIZE * 3 // 2
+    centers = range(GRID_STEP // 2, bleed_size, GRID_STEP)
+    # AAPT stores each path in a single string, so emit the dots one row at a time.
+    dot_rows = "\n".join(
+        f'    <path android:pathData="{" ".join(circle_path(x, y, GRID_RADIUS) for x in centers)}"'
+        ' android:fillColor="@color/app_icon_grid"/>'
+        for y in centers
+    )
+    return vector(f'''    <path android:pathData="M0,0 H{bleed_size} V{bleed_size} H0 Z" android:fillColor="@color/app_icon_canvas"/>
+{dot_rows}
+''', viewport=bleed_size)
+
+
+def adaptive_foreground(monochrome: bool) -> str:
+    signal = "#FFFFFF" if monochrome else "@color/app_icon_signal"
+    outer, inner = gate_path(GATE_OUTER), gate_path(GATE_INNER)
+    terminals = " ".join(circle_path(x, y, TERMINAL_RADIUS) for x, y in TERMINALS)
+    if monochrome:
+        gate = f'<path android:pathData="{outer} {inner}" android:fillType="evenOdd" android:fillColor="#FFFFFF"/>'
+    else:
+        gate = f'''<path android:pathData="{outer}" android:fillColor="@color/app_icon_ink"/>
+        <path android:pathData="{inner}" android:fillColor="@color/app_icon_canvas"/>'''
+    return vector(f'''    <group android:translateX="18" android:translateY="18" android:scaleX="0.36" android:scaleY="0.36">
+        <path android:pathData="{wire_path()}" android:strokeWidth="{WIRE_WIDTH:g}" android:strokeColor="{signal}"/>
+        <path android:pathData="{terminals}" android:fillColor="{signal}"/>
+        {gate}
+    </group>
+''')
+
+
+def colors_xml(palette: tuple[str, ...]) -> str:
+    colors = "\n".join(f'    <color name="app_icon_{role}">{color}</color>' for role, color in zip(ROLES, palette))
+    return f'<?xml version="1.0" encoding="utf-8"?>\n<resources>\n{colors}\n</resources>\n'
+
+
+def adaptive_icon(monochrome: bool) -> str:
+    tint_layer = '    <monochrome android:drawable="@drawable/app_icon_monochrome"/>\n' if monochrome else ""
+    return f'''<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/app_icon_background"/>
+    <foreground android:drawable="@drawable/app_icon_foreground"/>
+{tint_layer}</adaptive-icon>
+'''
 
 
 def generated_files() -> dict[str, bytes]:
-    svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="1024" height="1024">
-  <rect width="108" height="108" fill="#14314a"/>
-  <path d="M22 42H40M22 66H40M73 54H86" fill="none" stroke="#41cfb0" stroke-width="4"/>
-  <circle cx="22" cy="42" r="4" fill="#41cfb0"/>
-  <circle cx="22" cy="66" r="4" fill="#41cfb0"/>
-  <circle cx="86" cy="54" r="4" fill="#41cfb0"/>
-  <path d="M40 34H53A20 20 0 0 1 53 74H40Z" fill="#f5fafc"/>
-</svg>
-'''
-    foreground = '''<?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
-    <path android:pathData="M22,42 H40 M22,66 H40 M73,54 H86" android:strokeColor="#41CFB0" android:strokeWidth="4" android:fillColor="@android:color/transparent"/>
-    <path android:pathData="M18,42 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0 M18,66 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0 M82,54 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0" android:fillColor="#41CFB0"/>
-    <path android:pathData="M40,34 H53 A20,20 0,0 1,53 74 H40 Z" android:fillColor="#F5FAFC"/>
-</vector>
-'''
-    monochrome = foreground.replace("#41CFB0", "#FFFFFF").replace("#F5FAFC", "#FFFFFF")
-    adaptive = '''<?xml version="1.0" encoding="utf-8"?>
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/app_icon_background"/>
-    <foreground android:drawable="@drawable/app_icon_foreground"/>
-%s</adaptive-icon>
-'''
+    android = "androidApp/src/main/res"
+    ios = "iosApp/Assets.xcassets"
+    catalog_info = {"author": "xcode", "version": 1}
+    ios_icon = {"idiom": "universal", "platform": "ios", "size": "1024x1024"}
+    ios_icons = [
+        {"filename": "AppIcon.png", **ios_icon},
+        {
+            "appearances": [{"appearance": "luminosity", "value": "dark"}],
+            "filename": "AppIconDark.png",
+            **ios_icon,
+        },
+    ]
     files = {
-        "artwork/app-icon.svg": svg.encode(),
-        "androidApp/src/main/res/drawable/app_icon_foreground.xml": foreground.encode(),
-        "androidApp/src/main/res/drawable/app_icon_monochrome.xml": monochrome.encode(),
-        "androidApp/src/main/res/values/app_icon_colors.xml": b'<?xml version="1.0" encoding="utf-8"?>\n<resources><color name="app_icon_background">#14314A</color></resources>\n',
-        "androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": (adaptive % "").encode(),
-        "androidApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml": (adaptive % '    <monochrome android:drawable="@drawable/app_icon_monochrome"/>\n').encode(),
-        "iosApp/Assets.xcassets/Contents.json": b'{"info":{"author":"xcode","version":1}}\n',
-        "iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json": (json.dumps({"images": [{"filename": "AppIcon.png", "idiom": "universal", "platform": "ios", "size": "1024x1024"}], "info": {"author": "xcode", "version": 1}}, indent=2) + "\n").encode(),
-        "iosApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png": png(1024),
+        "artwork/app-icon.svg": svg(LIGHT).encode(),
+        "artwork/app-icon-dark.svg": svg(DARK).encode(),
+        f"{android}/drawable/app_icon_background.xml": adaptive_background().encode(),
+        f"{android}/drawable/app_icon_foreground.xml": adaptive_foreground(False).encode(),
+        f"{android}/drawable/app_icon_monochrome.xml": adaptive_foreground(True).encode(),
+        f"{android}/values/app_icon_colors.xml": colors_xml(LIGHT).encode(),
+        f"{android}/values-night/app_icon_colors.xml": colors_xml(DARK).encode(),
+        f"{android}/mipmap-anydpi-v26/ic_launcher.xml": adaptive_icon(False).encode(),
+        f"{android}/mipmap-anydpi-v33/ic_launcher.xml": adaptive_icon(True).encode(),
+        f"{ios}/Contents.json": b'{"info":{"author":"xcode","version":1}}\n',
+        f"{ios}/AppIcon.appiconset/Contents.json": (json.dumps({"images": ios_icons, "info": catalog_info}, indent=2) + "\n").encode(),
+        f"{ios}/AppIcon.appiconset/AppIcon.png": png(1024, LIGHT),
+        f"{ios}/AppIcon.appiconset/AppIconDark.png": png(1024, DARK),
     }
-    for bucket, size in (("mdpi",48),("hdpi",72),("xhdpi",96),("xxhdpi",144),("xxxhdpi",192)):
-        files[f"androidApp/src/main/res/mipmap-{bucket}/ic_launcher.png"] = png(size)
+    for bucket, size in (("mdpi", 48), ("hdpi", 72), ("xhdpi", 96), ("xxhdpi", 144), ("xxxhdpi", 192)):
+        files[f"{android}/mipmap-{bucket}/ic_launcher.png"] = png(size, LIGHT)
     return files
 
 

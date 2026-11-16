@@ -13,7 +13,7 @@ internal object LegalNoticeContent {
             "tions 15 and 16.\n\nIf the disclaimer of warranty and limitation of liability provided above cannot\nbe given local legal effect according to their terms, reviewing courts shall\napply local law that most closely approximates an absolute waiver of all civil\nliability in connection with the Program, unless a warranty or assumption of\nliability accompanies a copy of the Program in return for a fee.\n\n## END OF TERMS AND CONDITIONS\n",
         ).joinToString("")),
         LegalNotice("App icon", listOf(
-            "Original geometric artwork created for Logisim Evolution Mobile by this project. The vector master is artwork/app-icon.svg; tools/generate_app_icons.py creates the Android and Apple icon variants. No upstream Logisim artwork, external image, or font was used. The artwork and generator are covered by the project GPL-3.0-only license.\n\nSource: https://github.com/ThalesMMS/Logisim-Mobile",
+            "Original geometric artwork created for Logisim Evolution Mobile. The light and dark SVGs are artwork/app-icon.svg and artwork/app-icon-dark.svg. The generator at tools/generate_app_icons.py recreates the approved AI-assisted concepts for Android and Apple. The artwork and generator are covered by the project GPL-3.0-only license.\n\nSource: https://github.com/ThalesMMS/Logisim-Mobile",
         ).joinToString("")),
         LegalNotice("Logisim Evolution", listOf(
             "Copyright by the Logisim-evolution developers. The independent mobile port adapts component behavior, geometry, logical values and the .circ file format under GNU GPL version 3.\n\nSource: https://github.com/logisim-evolution/logisim-evolution/tree/fbb1eca6ff72cb634b8dd1d72dc232b9838c9e01",

@@ -14,64 +14,80 @@
       "title": "App icon",
       "license": "GPL-3.0-only",
       "source": "https://github.com/ThalesMMS/Logisim-Mobile",
-      "notice": "Original geometric artwork created for Logisim Evolution Mobile by this project. The vector master is artwork/app-icon.svg; tools/generate_app_icons.py creates the Android and Apple icon variants. No upstream Logisim artwork, external image, or font was used. The artwork and generator are covered by the project GPL-3.0-only license.",
+      "notice": "Original geometric artwork created for Logisim Evolution Mobile. The light and dark SVGs are artwork/app-icon.svg and artwork/app-icon-dark.svg. The generator at tools/generate_app_icons.py recreates the approved AI-assisted concepts for Android and Apple. The artwork and generator are covered by the project GPL-3.0-only license.",
       "licenseFiles": [],
       "files": [
         {
+          "path": "androidApp/src/main/res/drawable/app_icon_background.xml",
+          "sha256": "3b23ac9a8b2d6076f139107dbdc51dd0ccb40640f1a898d728c6e9dfdd677445"
+        },
+        {
           "path": "androidApp/src/main/res/drawable/app_icon_foreground.xml",
-          "sha256": "d539b0163fdac5d579c07b5da1e1de1321e7950c2924b1507dea56dc0e45c63f"
+          "sha256": "06d93865348fce25bbba42be2d09b2143b3bdb63a93cfaa1baa6e60323fde205"
         },
         {
           "path": "androidApp/src/main/res/drawable/app_icon_monochrome.xml",
-          "sha256": "61d1b72018617711fa84031572691e0c9e8fd4ff5fc0c3a36ab911ea07a8a951"
+          "sha256": "45a4717b32bb3e3741dfffe366e084be8c7f78e26db52c196d21cd5530b798c6"
         },
         {
           "path": "androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
-          "sha256": "f46bba1af7aedaa53d9047a9875542b7da4aec1bc07c7fd50dc8cfc8ef2a3e6e"
+          "sha256": "f29a450b9fc869409ab8f13ce05cb9f79fdff64a7723d726dc716fbb594cd989"
         },
         {
           "path": "androidApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml",
-          "sha256": "7e2a62c9755ff38d2e1e09ce84bd2b91156d60c512bdeaaabd491b6ee95631bb"
+          "sha256": "5a562eb3c0198d530922b6f9e396323930dd101dde987e100171e3ccf50efb38"
         },
         {
           "path": "androidApp/src/main/res/mipmap-hdpi/ic_launcher.png",
-          "sha256": "7e658e286c0df1eef5b2856775f1bf6a0c5d0ac2e2c41bf70b273353cdede48f"
+          "sha256": "07d73d9fbe1a03b4eb4dd7a3d7062b9a5984b765c303630289dd4fb14183b008"
         },
         {
           "path": "androidApp/src/main/res/mipmap-mdpi/ic_launcher.png",
-          "sha256": "620680dbb227bbecfb8174521279b3e1094f6428cd331f6d4146729819aa4f99"
+          "sha256": "4d81993685ee06caf109f2bf4b0645ce38ba0840042073def1be35a588800e9e"
         },
         {
           "path": "androidApp/src/main/res/mipmap-xhdpi/ic_launcher.png",
-          "sha256": "68b296057e23471236689da44c1b2a50f703321f805eb7f4bc9cdcb624bf845a"
+          "sha256": "c5705077d4ac98eb207cfd73256d5b25587dbd9f179726b4260c45795fb6d507"
         },
         {
           "path": "androidApp/src/main/res/mipmap-xxhdpi/ic_launcher.png",
-          "sha256": "818abe979d1a00fa982de4537ec1606b227b2ad792095b4acf7b6f886beaebfd"
+          "sha256": "db5ad1287169664f3823f19ecf8d4a0b1975ef416a50dbfec39a7be02d2a8db9"
         },
         {
           "path": "androidApp/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
-          "sha256": "05960ce36779d67f238746ee6cb753f3fb9cd3d7c9395aa854864efb19afa99b"
+          "sha256": "1ba20ffa766159f27c4c5c474cb6ddaa67cf0d5fc2481d1e8ed94e05f07a35f6"
+        },
+        {
+          "path": "androidApp/src/main/res/values-night/app_icon_colors.xml",
+          "sha256": "e11c7ed3129f0be109caeff0b91fc2aa87795cd15501f1d3b761abc402ff8719"
         },
         {
           "path": "androidApp/src/main/res/values/app_icon_colors.xml",
-          "sha256": "c117a109ca35e31a97b44c82fae22d55eaf97c7e8df55f833d75113af0dfd724"
+          "sha256": "1efb906a849eec922c8190256975dcbf50d2bde0cc23ceb112a3d9723ad891c0"
+        },
+        {
+          "path": "artwork/app-icon-dark.svg",
+          "sha256": "af907ee40979626dc304d2c2a66f1944de7ae1acac233e4793ca5c69bbe8cd0e"
         },
         {
           "path": "artwork/app-icon.svg",
-          "sha256": "b9c7358090271a3c96a71eb65e1d88922dbd4c4f4bf9dc19ec543b46d4e12b00"
+          "sha256": "9e4c1fe6a3e59b6477f840172c7158ad451c1fa56939bf4531deb0d60efa0b24"
         },
         {
           "path": "iosApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-          "sha256": "1ab70029ef1a47dbe0f3b404ff04f3f38d0e28d38086aee5f1a9048f09986e13"
+          "sha256": "44b27d9cf8377dfb85ce6aa6daa221ce99f0d12d5be960269644e377e8224214"
+        },
+        {
+          "path": "iosApp/Assets.xcassets/AppIcon.appiconset/AppIconDark.png",
+          "sha256": "ddcf79d86609736cf991906a94a1fc99136322b81bebdbb6a56ed9608c099bf0"
         },
         {
           "path": "iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
-          "sha256": "852920cb36e95beb53771138a4b8195a16fcce1cc31250632f246081cc638f9a"
+          "sha256": "a399cea1cba1de1fea65b943fbdf0fa9a2e070af9bb39bdf6369f06097c8edb7"
         },
         {
           "path": "tools/generate_app_icons.py",
-          "sha256": "f3918f1f6dfd37eb0d497ac31a2a6b981c35cd60feb71978485b4be0b6483bdd"
+          "sha256": "43942c7d0f4933b8bcd0718fe9a4706e548561826d9653ee459552f9e075e00b"
         }
       ]
     },

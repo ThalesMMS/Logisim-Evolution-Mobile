@@ -27,9 +27,11 @@ python3 tools/generate_app_icons.py
 python3 tools/generate_app_icons.py --check
 ```
 
-`artwork/app-icon.svg` depicts an AND gate on a blue background with three green terminals. `tools/generate_app_icons.py` produces the SVG, the Android adaptive vectors, a monochrome layer, bitmaps for older launchers, and the opaque 1024-pixel RGB PNG for the Apple asset catalog. The geometry is original to this project and uses the GPLv3 license in `LICENSE.md`. The artwork uses no upstream images or marks.
+`tools/generate_app_icons.py` renders the same outlined AND gate, green terminals, and dotted canvas in two palettes. The generated artwork is in `artwork/app-icon.svg` and `artwork/app-icon-dark.svg`. The geometry is original to this project and uses the GPLv3 license in `LICENSE.md`. The artwork uses no upstream images or marks.
 
-Android applies its mask to the adaptive icon. The Apple catalog supplies an opaque square image, and the system applies the outline. See the [Android adaptive icon guide](https://source.android.com/docs/core/display/adaptive-icons) and [Apple app icon asset catalog documentation](https://developer.apple.com/documentation/xcode/configuring-your-app-icon).
+On Android, the adaptive layers use the launcher’s light or night resource configuration. The launcher can retain its cached icon after a theme change until it reloads the icon. The generator also supplies a monochrome layer for themed icons and bitmaps for older launchers. See the [Android adaptive icon guide](https://source.android.com/docs/core/display/adaptive-icons).
+
+On iOS, the asset catalog contains opaque 1024×1024 RGB PNGs for Any and Dark. The system masks the artwork and selects Dark according to the Home Screen icon appearance. See the [Apple app icon asset catalog documentation](https://developer.apple.com/documentation/xcode/configuring-your-app-icon).
 
 ## Validation of this change
 

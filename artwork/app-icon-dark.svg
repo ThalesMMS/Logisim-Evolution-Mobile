@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="1024" height="1024">
+  <defs>
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="0.75" fill="#595959"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="#282828"/>
+  <rect width="200" height="200" fill="url(#grid)"/>
+  <path d="M28,78 H68 M28,122 H68 M142,100 H172" fill="none" stroke="#40D446" stroke-width="6.25"/>
+  <circle cx="28" cy="78" r="8.75" fill="#40D446"/>
+  <circle cx="28" cy="122" r="8.75" fill="#40D446"/>
+  <circle cx="172" cy="100" r="8.75" fill="#40D446"/>
+  <path d="M65,54 H102 A43,46 0 0,1 102,146 H65 Z" fill="#F6F6F6"/>
+  <path d="M72,61 H102 A36,39 0 0,1 102,139 H72 Z" fill="#282828"/>
+</svg>

@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><color name="app_icon_background">#14314A</color></resources>
+<resources>
+    <color name="app_icon_canvas">#FEFEFE</color>
+    <color name="app_icon_grid">#C7C7C7</color>
+    <color name="app_icon_ink">#202020</color>
+    <color name="app_icon_signal">#038303</color>
+</resources>

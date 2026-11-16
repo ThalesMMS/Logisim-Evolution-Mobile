@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
-    <path android:pathData="M22,42 H40 M22,66 H40 M73,54 H86" android:strokeColor="#41CFB0" android:strokeWidth="4" android:fillColor="@android:color/transparent"/>
-    <path android:pathData="M18,42 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0 M18,66 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0 M82,54 a4,4 0,1 0,8 0 a4,4 0,1 0,-8 0" android:fillColor="#41CFB0"/>
-    <path android:pathData="M40,34 H53 A20,20 0,0 1,53 74 H40 Z" android:fillColor="#F5FAFC"/>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:translateX="18" android:translateY="18" android:scaleX="0.36" android:scaleY="0.36">
+        <path android:pathData="M28,78 H68 M28,122 H68 M142,100 H172" android:strokeWidth="6.25" android:strokeColor="@color/app_icon_signal"/>
+        <path android:pathData="M19.25,78 a8.75,8.75 0 1,0 17.5,0 a8.75,8.75 0 1,0 -17.5,0 Z M19.25,122 a8.75,8.75 0 1,0 17.5,0 a8.75,8.75 0 1,0 -17.5,0 Z M163.25,100 a8.75,8.75 0 1,0 17.5,0 a8.75,8.75 0 1,0 -17.5,0 Z" android:fillColor="@color/app_icon_signal"/>
+        <path android:pathData="M65,54 H102 A43,46 0 0,1 102,146 H65 Z" android:fillColor="@color/app_icon_ink"/>
+        <path android:pathData="M72,61 H102 A36,39 0 0,1 102,139 H72 Z" android:fillColor="@color/app_icon_canvas"/>
+    </group>
 </vector>

@@ -4,6 +4,7 @@ import struct
 import tempfile
 import unittest
 from unittest.mock import patch
+import xml.etree.ElementTree as ET
 
 from tools.generate_app_identity import generate, read_identity
 
@@ -80,17 +81,32 @@ class AppIdentityTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     read_identity(file)
 
-    def test_apple_icon_is_1024_rgb_and_android_has_adaptive_monochrome(self):
-        icon = (ROOT / "iosApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png").read_bytes()
-        self.assertEqual(b"\x89PNG\r\n\x1a\n", icon[:8])
-        width, height, bit_depth, color_type = struct.unpack(">IIBB", icon[16:26])
-        self.assertEqual((1024, 1024, 8, 2), (width, height, bit_depth, color_type))
+    def test_apple_icon_catalog_has_opaque_light_and_dark_1024_pngs(self):
+        catalog = ROOT / "iosApp/Assets.xcassets/AppIcon.appiconset"
+        images = json.loads((catalog / "Contents.json").read_text())["images"]
+        appearances = {image["filename"]: image.get("appearances", []) for image in images}
+        self.assertEqual({
+            "AppIcon.png": [],
+            "AppIconDark.png": [{"appearance": "luminosity", "value": "dark"}],
+        }, appearances)
+        for filename in appearances:
+            with self.subTest(icon=filename):
+                icon = (catalog / filename).read_bytes()
+                self.assertEqual(b"\x89PNG\r\n\x1a\n", icon[:8])
+                self.assertEqual((1024, 1024, 8, 2), struct.unpack(">IIBB", icon[16:26]))
+
+    def test_android_has_adaptive_monochrome_and_night_colors(self):
         manifest = (ROOT / "androidApp/src/main/AndroidManifest.xml").read_text()
         self.assertIn('android:icon="@mipmap/ic_launcher"', manifest)
         self.assertIn('android:name="dev.logisim.mobile.MainActivity"', manifest)
-        self.assertIn("<monochrome", (ROOT / "androidApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml").read_text())
+        resources = ROOT / "androidApp/src/main/res"
+        self.assertIn("<monochrome", (resources / "mipmap-anydpi-v33/ic_launcher.xml").read_text())
+        light = ET.parse(resources / "values/app_icon_colors.xml").getroot()
+        dark = ET.parse(resources / "values-night/app_icon_colors.xml").getroot()
+        self.assertEqual({color.attrib["name"] for color in light}, {color.attrib["name"] for color in dark})
+        self.assertNotEqual(light.findtext("color[@name='app_icon_canvas']"), dark.findtext("color[@name='app_icon_canvas']"))
         for density in ("mdpi", "hdpi", "xhdpi", "xxhdpi", "xxxhdpi"):
-            self.assertTrue((ROOT / f"androidApp/src/main/res/mipmap-{density}/ic_launcher.png").is_file())
+            self.assertTrue((resources / f"mipmap-{density}/ic_launcher.png").is_file())
 
 
 if __name__ == "__main__":

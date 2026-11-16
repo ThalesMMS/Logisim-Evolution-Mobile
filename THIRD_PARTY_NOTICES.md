@@ -12,7 +12,7 @@ License: `GPL-3.0-only`. Source: https://github.com/ThalesMMS/Logisim-Mobile
 
 ### App icon
 
-Original geometric artwork created for Logisim Evolution Mobile by this project. The vector master is artwork/app-icon.svg; tools/generate_app_icons.py creates the Android and Apple icon variants. No upstream Logisim artwork, external image, or font was used. The artwork and generator are covered by the project GPL-3.0-only license.
+Original geometric artwork created for Logisim Evolution Mobile. The light and dark SVGs are artwork/app-icon.svg and artwork/app-icon-dark.svg. The generator at tools/generate_app_icons.py recreates the approved AI-assisted concepts for Android and Apple. The artwork and generator are covered by the project GPL-3.0-only license.
 
 License: `GPL-3.0-only`. Source: https://github.com/ThalesMMS/Logisim-Mobile
 

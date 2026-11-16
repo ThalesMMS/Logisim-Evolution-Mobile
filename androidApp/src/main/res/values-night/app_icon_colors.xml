@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_icon_canvas">#282828</color>
+    <color name="app_icon_grid">#595959</color>
+    <color name="app_icon_ink">#F6F6F6</color>
+    <color name="app_icon_signal">#40D446</color>
+</resources>
