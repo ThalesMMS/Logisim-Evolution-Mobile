@@ -4,8 +4,8 @@
   "identity": {
     "application": "Logisim Evolution Mobile",
     "packageName": "thalesmms.logisim.mobile",
-    "version": "0.2.0",
-    "build": 6
+    "version": "1.0.0",
+    "build": 7
   },
   "defaultLanguageCandidate": "en-US",
   "categoryCandidate": "EDUCATION",

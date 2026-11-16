@@ -1,12 +1,12 @@
 {
   "name": "Logisim Evolution Mobile",
-  "version": "0.2.0",
-  "build": 6,
+  "version": "1.0.0",
+  "build": 7,
   "androidApplicationId": "thalesmms.logisim.mobile",
   "appleBundleIdentifier": "thalesmms.logisim.mobile",
   "repository": "https://github.com/ThalesMMS/Logisim-Mobile",
   "upstream": "https://github.com/logisim-evolution/logisim-evolution",
-  "sourceReleaseUrl": "https://github.com/ThalesMMS/Logisim-Evolution-Mobile/tree/beta-0.2.0-6",
+  "sourceReleaseUrl": "https://github.com/ThalesMMS/Logisim-Evolution-Mobile/tree/ios-1.0-7",
   "relationship": "Independent Kotlin Multiplatform port derived from Logisim Evolution; not an official upstream release.",
-  "artifactStem": "LogisimMobile-0.2.0-6"
+  "artifactStem": "LogisimMobile-1.0.0-7"
 }

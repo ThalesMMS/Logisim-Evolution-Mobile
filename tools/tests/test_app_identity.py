@@ -37,7 +37,7 @@ class AppIdentityTest(unittest.TestCase):
             (root / "app.properties").write_bytes((ROOT / "app.properties").read_bytes())
             self.assertTrue(generate(root, False))
             target = root / "iosApp/Config/Identity.xcconfig"
-            target.write_text(target.read_text().replace("0.2.0", "99.0.0"))
+            target.write_text(target.read_text() + "\n// Stale configuration.\n")
             with patch("sys.stderr"):
                 self.assertFalse(generate(root, True))
             self.assertTrue(generate(root, False))
@@ -69,10 +69,12 @@ class AppIdentityTest(unittest.TestCase):
 
     def test_rejects_duplicate_properties_and_platform_invalid_versions(self):
         original = (ROOT / "app.properties").read_text()
-        build_property = f"app.build={read_identity(ROOT / 'app.properties').build}\n"
+        identity = read_identity(ROOT / "app.properties")
+        build_property = f"app.build={identity.build}\n"
+        version_property = f"app.version={identity.version}\n"
         invalid = [original + build_property, original.replace(build_property, "app.build=0\n"),
                    original.replace(build_property, "app.build=2147483647\n"),
-                   original.replace("app.version=0.2.0", "app.version=release-candidate"),
+                   original.replace(version_property, "app.version=release-candidate\n"),
                    original.replace("app.appleId=thalesmms.logisim.mobile", "app.appleId=no spaces")]
         with tempfile.TemporaryDirectory() as temporary:
             file = Path(temporary) / "app.properties"
