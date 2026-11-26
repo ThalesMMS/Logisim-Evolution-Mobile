@@ -1,0 +1,68 @@
+[
+  {
+    "step": "01-311-width-error-default",
+    "screenshotSha256": "355d38a60010b19fe23c6686ab096bab1ff01ad28b4ddfc7d51a86044334d501",
+    "message": "Incompatible widths (2)",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320)",
+      "canvas-component:probe-floating": "F"
+    }
+  },
+  {
+    "step": "02-311-wire-poke-stroke",
+    "screenshotSha256": "7d7edd887a9f7539ea2dbaee69ec0baf06f651843369e4ac33193637f4b95606",
+    "tap": [
+      341,
+      1522
+    ]
+  },
+  {
+    "step": "03-311-unknown-char-preference",
+    "screenshotSha256": "4c13c4d22079ab768d84cbfb0ab42c4a5414a795240c9f1e317ab5c8f69983b7",
+    "unknownChar": "?"
+  },
+  {
+    "step": "04-311-color-dialog-width-error",
+    "screenshotSha256": "d1e5b3bc99cbce70a3e6ad7bf67a71bfdf1d4523815dbdbc10c4bb5f38269515"
+  },
+  {
+    "step": "05-311-changed-before-restart",
+    "screenshotSha256": "3fee1188b4df747005b4bb39eb0567475c2a7f01c7022fd68d4b340d0cbb7c0c",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320)",
+      "canvas-component:probe-floating": "F"
+    },
+    "widthError": "#0000FF"
+  },
+  {
+    "step": "06-311-after-restart",
+    "screenshotSha256": "4ca11cc945699ff49edc8d1fb248079cc5b5f3ba3aa47ff31c5ddb102da5c20b",
+    "pidBefore": "10901",
+    "pidAfter": "12427",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320)",
+      "canvas-component:probe-floating": "F"
+    },
+    "preferences": {
+      "color.widthError": "#0000FF",
+      "valueChar.unknown": "?"
+    }
+  },
+  {
+    "step": "07-311-restored-defaults",
+    "screenshotSha256": "cf595c0443cfe0facfc61520bded738226ef85c4e56e604c888da04d8379bafd",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320)",
+      "canvas-component:probe-floating": "F"
+    }
+  },
+  {
+    "step": "08-311-kmap-groups",
+    "screenshotSha256": "8c47ad9101fea8a0f25660286f29ffaeb66053dcf64655d06c94a35cb1f16de8",
+    "groups": "Karnaugh map groups: 2"
+  },
+  {
+    "step": "09-311-table-cursor-selection",
+    "screenshotSha256": "514bd8279ef40c353653fdcac5d3527968992835ecd3667abd00dc19bcbd101d"
+  }
+]

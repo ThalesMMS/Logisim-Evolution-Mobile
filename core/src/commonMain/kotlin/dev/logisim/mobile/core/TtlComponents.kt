@@ -31,6 +31,9 @@ object TtlComponents {
 
     private data class State(val value: TtlState = TtlState()) : ComponentState
 
+    /** The register state behind a TTL component's simulation state, which the internal structure's value dots show. */
+    fun ttlState(state: ComponentState?): TtlState? = (state as? State)?.value
+
     private class Behavior(private val model: String) : ComponentBehavior {
         override fun initialState(component: CircuitComponent, attributes: AttributeValues): ComponentState = State()
         override fun evaluate(context: ComponentEvaluationContext): ComponentEvaluation {

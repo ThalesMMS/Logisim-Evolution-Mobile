@@ -1,0 +1,50 @@
+[
+ [
+  "Inversor menu",
+  {
+   "enabled": "true",
+   "texts": [
+    "Insert into Hierarchy"
+   ]
+  }
+ ],
+ [
+  "Insert into Hierarchy (menu)",
+  {
+   "sheetClosed": true,
+   "status": "Tap the grid to insert Inversor into Hierarchy.",
+   "header": "Hierarchy"
+  }
+ ],
+ [
+  "tap canvas",
+  {
+   "status": "Subcircuit inserted. Edit mode.",
+   "header": "Hierarchy",
+   "components": [
+    "canvas-component:c1",
+    "canvas-component:c2",
+    "canvas-component:import-1",
+    "canvas-component:import-2",
+    "canvas-component:import-3"
+   ]
+  }
+ ],
+ [
+  "Inversor open: Hierarchy Insert",
+  {
+   "header": null,
+   "enabled": "false"
+  }
+ ],
+ [
+  "Hierarchy menu while Inversor open",
+  {
+   "enabled": "false",
+   "texts": [
+    "Insert into Inversor",
+    "Hierarchy contains Inversor. Inserting it would create a recursive circuit."
+   ]
+  }
+ ]
+]

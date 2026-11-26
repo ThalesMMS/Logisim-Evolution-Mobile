@@ -1,0 +1,2 @@
+{7476=1022}
+TTL comparisons=95232 mismatches=1022

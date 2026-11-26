@@ -4,7 +4,8 @@ package dev.logisim.mobile.core
  * The execution units of Evolution's RV32imAssembler, encoding as their setAsmInstruction():
  * integer register-immediate (with nop, li, mv, not, seqz), register-register (with snez),
  * control transfer (with j, jr, ret, beqz, bnez), loads and stores, memory ordering (not
- * assembled by Evolution), environment calls, the M extension and Zicsr (with csrw...).
+ * assembled by Evolution), environment calls, the M extension, Zicsr (with csrw...) and the
+ * Nios V cache instructions that Evolution added after d58a61e0 (RV32imNiosVVendorSpecific, #373).
  */
 internal object Rv32AssemblerUnits : SocAssemblerUnits {
     override val architecture = SocArchitecture.RV32IM
@@ -22,7 +23,13 @@ internal object Rv32AssemblerUnits : SocAssemblerUnits {
     private val environmentOps = listOf("ecall", "ebreak", "mret")
     private val multiplyOps = listOf("mul", "mulh", "mulhsu", "mulhu", "div", "divu", "rem", "remu")
     private val csrOps = listOf("csrrw", "csrrs", "csrrc", "csrrwi", "csrrsi", "csrrci", "csrw", "csrs", "csrc", "csrwi", "csrsi", "csrci")
-    override val opcodes = (immediateOps + registerOps + controlOps + memoryOps + orderingOps + environmentOps + multiplyOps + csrOps).toSet()
+    // RV32imNiosVVendorSpecific (Evolution c3d5e3b2, 8f4df88b): MISC-MEM I-type words with rd = 0, funct3 = 2 and
+    // the cbo.* code as immediate, or funct3 = 1 and immediate 0 for fence.i.
+    internal val cacheOps = listOf("cbo.inval.ix", "cbo.clean.ix", "cbo.flush.ix", "cbo.clean", "cbo.flush", "cbo.inval",
+        "cbo.zero", "fence.i")
+    internal val cacheCodes = listOf(0x80, 0x81, 0x82, 0x1, 0x2, 0x0, 0x4, 0x0)
+    override val opcodes = (immediateOps + registerOps + controlOps + memoryOps + orderingOps + environmentOps + multiplyOps + csrOps +
+        cacheOps).toSet()
     override val acceptedParameterTypes = SocAssembler.baseParameterTypes
     override fun instructionSize(opcode: String) = 4
 
@@ -79,6 +86,12 @@ internal object Rv32AssemblerUnits : SocAssemblerUnits {
                 rType(0x33, instruction.register(0), multiplyOps.indexOf(opcode), instruction.register(1), instruction.register(2), 1)
             }
             in csrOps -> csr(instruction, csrOps.indexOf(opcode))
+            in cacheOps -> {
+                // Evolution: "Expected one argument", then "Expected a register" or "Unknown register".
+                if (instruction.count != 1) instruction.failOperands(1)
+                val operation = cacheOps.indexOf(opcode)
+                iType(0x0F, 0, if (opcode == "fence.i") 1 else 2, instruction.register(0), cacheCodes[operation])
+            }
             else -> instruction.fail(instruction.instruction, "soc_asm_instruction", "value" to opcode)
         })
     }

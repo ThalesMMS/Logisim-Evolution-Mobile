@@ -76,6 +76,7 @@
   "a11y_input_toggle_bit": "{name} için bir biti değiştir…",
   "a11y_input_toggle_low_bit": "{name} için bit 0'ı değiştir",
   "a11y_insert_below_selected": "Seçili bileşenin altı",
+  "a11y_insert_circuit": "{name} öğesini {target} içine ekle",
   "a11y_insert_component": "Ekle: {name}",
   "a11y_insert_custom": "Özel koordinatlar",
   "a11y_insert_next_free": "Sonraki boş yer",
@@ -1075,6 +1076,10 @@
   "byte_size_mib_fraction": "{whole},{fraction} MiB",
   "canvas_component_tip": "{component}: {port}",
   "canvas_width_error": "Uyumsuz genişlikler",
+  "circuit_insert": "Ekle",
+  "circuit_insert_into": "{target} içine ekle",
+  "circuit_insert_recursive": "{name}, {target} devresini içeriyor. Eklemek özyinelemeli bir devre oluşturur.",
+  "circuit_insert_self": "{name} görüntülenen devredir. Bir devre kendisini içeremez.",
   "circuit_properties_title": "Devre Özellikleri",
   "circuit_remove_error_title": "Devre Kaldırılamıyor",
   "circuit_remove_last_error": "Bir proje en az bir devre içermelidir.",
@@ -4039,6 +4044,7 @@
   "status_operation_cancelled": "İşlem iptal edildi.",
   "status_paste_subcircuit_mismatch": "Yapıştırılamadı. Hedef projede {name} alt devresinin aynı tanımı bulunmalı.",
   "status_place": "{name} eklemek için ızgaraya dokunun.",
+  "status_place_circuit": "{name} öğesini {target} içine eklemek için ızgaraya dokunun.",
   "status_project_imported": {
     "one": "Proje {count} devreyle içe aktarıldı.",
     "other": "Proje {count} devreyle içe aktarıldı."

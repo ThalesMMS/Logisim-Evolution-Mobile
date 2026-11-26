@@ -146,13 +146,13 @@ fpmultiplier__fpwidth_16__multiplyMode_fusedMultiplyAdd	SAME	SAME
 fpmultiplier__fpwidth_64__multiplyMode_fusedMultiplyAdd	SAME	SAME
 fpmultiplier__fpwidth_8__multiplyMode_fusedMultiplyAdd	SAME	SAME
 fpnegator	SAME	SAME
-fpround	SAME	SAME
+fpround	VALUE	VALUE
 fpround__fpwidth_16__mode_floor	SAME	SAME
-fpround__fpwidth_16__mode_truncate	SAME	SAME
+fpround__fpwidth_16__mode_truncate	VALUE	VALUE
 fpround__fpwidth_64__mode_floor	SAME	SAME
 fpround__fpwidth_64__mode_rint	SAME	SAME
 fpround__fpwidth_8__mode_floor	SAME	SAME
-fpround__fpwidth_8__mode_truncate	SAME	SAME
+fpround__fpwidth_8__mode_truncate	VALUE	VALUE
 fpsquareroot	SAME	SAME
 fpsubtractor	SAME	SAME
 fptofp	SAME	SAME
@@ -280,7 +280,7 @@ ram__enables_line__trigger_high	SAME	SAME
 ram__type_nonvolatile__clearpin_true	SAME	SAME
 random	SAME	SAME
 random__width_1__appearance_evolution	VALUE	VALUE
-random__width_1__appearance_logisim_evolution	SAME	SAME
+random__width_1__appearance_logisim_evolution	VALUE	VALUE
 random__width_31__appearance_evolution	VALUE	VALUE
 random__width_32__trigger_falling	SAME	SAME
 random__width_3__appearance_logisim_evolution	VALUE	VALUE

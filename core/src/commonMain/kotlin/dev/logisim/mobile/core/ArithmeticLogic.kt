@@ -122,10 +122,10 @@ object ArithmeticLogic {
         // Exponentiator.propagate converts its undefined/error results to known -1.
         if (!a.isFullyDefined || !b.isFullyDefined) return listOf(LogicVector.high(width), LogicVector.high(width))
         if (a.value == 1uL) return listOf(LogicVector.of(width, 1uL), LogicVector.low(width))
-        val signedSmall = width <= 32 && !unsigned
-        val signedExponent = if (signedSmall) signedValue(b) else b.value.toInt().toLong().coerceAtLeast(0)
-        if (signedSmall && signedExponent < 0) return listOf(LogicVector.low(width), LogicVector.low(width))
-        var exponent = signedExponent.toULong()
+        // Evolution a3f8856c: the full exponent is used, and a negative signed exponent gives 0 at any width.
+        // The loop works modulo 2^128, which keeps the low 2 * width output bits exact.
+        if (!unsigned && signedValue(b) < 0) return listOf(LogicVector.low(width), LogicVector.low(width))
+        var exponent = b.value
         var base = number(a, unsigned)
         var result = UInt128.ONE
         while (exponent != 0uL) {

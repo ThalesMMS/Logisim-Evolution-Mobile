@@ -22,12 +22,16 @@ def main():
     parser.add_argument("--iverilog", default="iverilog")
     parser.add_argument("--vvp", default="vvp")
     parser.add_argument("--nvc", default="nvc")
+    parser.add_argument("--ghdl", default="ghdl")
+    parser.add_argument("--vhdl-simulator", choices=("nvc", "ghdl"), default="nvc",
+                        help="VHDL-2008 backend; GHDL serves hosts without an NVC build, such as MSYS2")
     args = parser.parse_args()
     destination = args.artifacts.resolve()
     (destination / "result.json").unlink(missing_ok=True)
-    tools = {name: shutil.which(getattr(args, name)) for name in ("iverilog", "vvp", "nvc")}
+    vhdl = args.vhdl_simulator
+    tools = {name: shutil.which(getattr(args, name)) for name in ("iverilog", "vvp", vhdl)}
     if not all(tools.values()):
-        raise SystemExit("Install Icarus Verilog (iverilog/vvp) and NVC, or pass their executable paths.")
+        raise SystemExit(f"Install Icarus Verilog (iverilog/vvp) and {vhdl.upper()}, or pass their executable paths.")
     manifest = json.loads((destination / "fixtures.json").read_text())
     results = []
     for fixture in manifest["fixtures"]:
@@ -35,6 +39,10 @@ def main():
         if fixture["language"] == "VERILOG":
             output = run([tools["iverilog"], "-g2012", "-s", "tb", "-o", "simulation.vvp", *fixture["files"]], directory)
             output += run([tools["vvp"], "simulation.vvp"], directory)
+        elif vhdl == "ghdl":
+            output = run([tools["ghdl"], "-a", "--std=08", *fixture["files"]], directory)
+            output += run([tools["ghdl"], "-e", "--std=08", "tb"], directory)
+            output += run([tools["ghdl"], "-r", "--std=08", "tb"], directory)
         else:
             output = run([tools["nvc"], "--std=2008", "-a", *fixture["files"]], directory)
             output += run([tools["nvc"], "--std=2008", "-e", "tb"], directory)
@@ -49,7 +57,7 @@ def main():
                       for filename in [*fixture["files"], "source.circ"]})
     report = {"schema": 1, "toolPaths": tools,
               "toolVersions": {"iverilog": run([tools["iverilog"], "-V"], destination).splitlines()[0],
-                               "nvc": run([tools["nvc"], "--version"], destination).splitlines()[0]},
+                               vhdl: run([tools[vhdl], "--version"], destination).splitlines()[0]},
               "fixtures": results, "outputComparisons": sum(x["outputChecks"] for x in results),
               "sourceSha256": {str(p.relative_to(destination)): hashlib.sha256(p.read_bytes()).hexdigest()
                                for p in sources}}

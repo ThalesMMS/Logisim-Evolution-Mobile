@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fill missing catalog entries from a reviewed mapping to pinned Evolution resources."""
+"""Fill or refresh catalog entries from a reviewed mapping to Evolution resources."""
 
 import argparse
 from collections import Counter
@@ -60,11 +60,16 @@ def adapt_label(value, argument):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--desktop", type=Path, default=ROOT.parent / "logisim-evolution")
-    parser.add_argument("--apply", action="store_true", help="Fill gaps in localization/translations")
+    parser.add_argument("--language", action="append", help="Limit to this locale (repeatable)")
+    parser.add_argument("--refresh", action="store_true",
+                        help="Also replace translations whose Evolution text changed after the pin")
+    parser.add_argument("--apply", action="store_true", help="Write changes to localization/translations")
     args = parser.parse_args()
 
     manifest = json.loads((ROOT / "localization/evolution-shared.json").read_text())
     revision = manifest["revision"]
+    language_revisions = manifest.get("language_revisions", {})
+    mobile_preferred = manifest.get("mobile_preferred", {})
     messages = {}
     for path in sorted((ROOT / "localization/messages").glob("*.json")):
         messages.update(json.loads(path.read_text()))
@@ -73,6 +78,10 @@ def main():
     languages = sorted(set(languages) - {"en", "pt"})
     if not languages:
         parser.error("Evolution settings did not declare additional locales")
+    if args.language:
+        if unknown := set(args.language) - set(languages):
+            parser.error(f"Unknown locales: {', '.join(sorted(unknown))}")
+        languages = sorted(set(args.language))
 
     sources = {key: tuple(value.split(".")) for key, value in manifest["messages"].items()}
     bundles = sorted({bundle for bundle, _ in sources.values()})
@@ -93,28 +102,47 @@ def main():
     for language in languages:
         path = ROOT / f"localization/translations/{language}.json"
         translations = json.loads(path.read_text()) if path.exists() else {}
-        localized = {bundle: read_bundle(args.desktop, revision, bundle, language) for bundle in bundles}
+        target = language_revisions.get(language, revision)
+        localized = {bundle: read_bundle(args.desktop, target, bundle, language) for bundle in bundles}
+        if target != revision:
+            # A locale may follow a newer Evolution revision for keys whose English text is unchanged.
+            pinned = {bundle: read_bundle(args.desktop, revision, bundle, language) for bundle in bundles}
+            current = {bundle: read_bundle(args.desktop, target, bundle) for bundle in bundles}
+        else:
+            pinned, current = localized, english
+        preferred = set(mobile_preferred.get(language, ()))
         counts = Counter()
         for key, (bundle, property_key) in sources.items():
-            if key in translations:
-                counts["existing"] += 1
-                continue
             value = adapt_label(localized[bundle].get(property_key), arguments[key])
             source = messages[key]["en"]
             needs_review = key in review_required.get(language, ())
             script = LOCAL_SCRIPT.get(language)
             if (needs_review or value is None or value.casefold() == source.casefold()
+                    or current[bundle].get(property_key) != english[bundle].get(property_key)
                     or (script and not script.search(value))):
                 # An untranslated, escaped or absent property still needs a human decision.
-                counts["unresolved"] += 1
+                counts["existing" if key in translations else "unresolved"] += 1
+                continue
+            if key in translations:
+                changed = pinned[bundle].get(property_key) != localized[bundle].get(property_key)
+                if not args.refresh or not changed or translations[key] == value:
+                    counts["existing"] += 1
+                elif key in preferred:
+                    counts["kept"] += 1
+                else:
+                    translations[key] = value
+                    counts["updated"] += 1
                 continue
             translations[key] = value
             counts["added"] += 1
-        if args.apply and counts["added"]:
+        if args.apply and (counts["added"] or counts["updated"]):
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps(translations, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
-        print(f"{language}: {counts['added']} {'added' if args.apply else 'available'}, "
-              f"{counts['existing']} preserved, {counts['unresolved']} unresolved")
+            # Sort message keys only; plural categories keep their catalog order.
+            path.write_text(json.dumps(dict(sorted(translations.items())), ensure_ascii=False, indent=2) + "\n")
+        verb = "" if args.apply else " available"
+        print(f"{language} at Evolution {target[:8]}: {counts['added']} added{verb}, "
+              f"{counts['updated']} updated{verb}, {counts['existing']} preserved, "
+              f"{counts['kept']} kept as mobile wording, {counts['unresolved']} unresolved")
 
 
 if __name__ == "__main__":

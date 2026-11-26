@@ -1,0 +1,17 @@
+task	class	tests	failures	errors	skipped
+composeApp:jvmTest	EvolutionVectorExportHostTest[jvm]	5	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.CatalogWorkspaceBindingTest	39	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.CreationDefaultsEvolutionTest	2	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.EditorKeyboardShortcutsTest	8	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.EditorPreferencesEvolutionTest	2	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.EvolutionHotkeysTest	11	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.EvolutionVisualExportOracleTest	3	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.MenuActionsParityExportTest	3	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.PreferencesEvolutionDefaultsTest	8	0	0	0
+composeApp:testAndroidHostTest	dev.logisim.mobile.PropertyInspectorSessionTest	32	0	0	0
+core:jvmTest	EvolutionDefaultTemplateTest[jvm]	3	0	0	0
+core:jvmTest	HeadlessCircuitCliTest[jvm]	36	0	0	0
+core:jvmTest	Rv32DesktopOracleTest[jvm]	1	0	0	0
+core:jvmTest	SignalTraceTest[jvm]	8	0	0	0
+core:jvmTest	SocProgramDesktopParityTest[jvm]	4	0	0	0
+total		165	0

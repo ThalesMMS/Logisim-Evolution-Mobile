@@ -1,0 +1,2 @@
+PASS: generated 77 independent desktop I/O geometry cases
+exit=0

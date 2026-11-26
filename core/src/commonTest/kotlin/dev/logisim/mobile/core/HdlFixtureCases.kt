@@ -20,6 +20,7 @@ internal object HdlFixtureCases {
                 shiftRegister(parallel = false, classic = true),
                 random(42, 64, 0xd0764d4f4476689fuL, 0x519e4174576f3791uL, 0xfbe07cfb0c24ed8cuL),
                 random(0, 8, 0x3auL, 0x25uL, 0xacuL)) +
+            FloatingPointNumbers.widths.sorted().map(::floatingPointAbsolute) +
             MemoryReadBehavior.entries.flatMap { listOf(byteMaskedRam(it), byteMaskedRam(it, falling = true)) }
 
     private fun componentFixture(
@@ -120,6 +121,34 @@ internal object HdlFixtureCases {
         return componentFixture("finder_${mode}_$width",
             CircuitComponent("finder", ComponentKind("BIT_FINDER"), GridPoint(300, 200),
                 attributes = mapOf("width" to "$width", "type" to mode)), vectors)
+    }
+
+    /** FP Absolute clears the sign bit and flags NaN, as Evolution ee61bc5d (PR 3174) generates it. */
+    private fun floatingPointAbsolute(width: Int): HdlFixtureCase {
+        val fractionBits = mapOf(8 to 3, 16 to 10, 32 to 23, 64 to 52).getValue(width)
+        val sign = 1uL shl (width - 1)
+        val infinity = ((1uL shl (width - 1 - fractionBits)) - 1uL) shl fractionBits
+        val quietNaN = infinity or (1uL shl (fractionBits - 1)) or 1uL
+        fun encoded(number: Double) = FloatingPointNumbers.encode(width, number).value
+        val magnitudes = listOf(0uL, 1uL, encoded(1.5), encoded(2.0), infinity - 1uL, infinity, quietNaN)
+        // The circuit simulator stores binary32 and binary64 NaNs in canonical form, as Evolution's
+        // Value.createKnown does; the generated HDL only clears the sign bit and keeps the payload.
+        val simulatedNaN = when (width) {
+            32 -> 0x7fc00000uL
+            64 -> 0x7ff8000000000000uL
+            else -> quietNaN
+        }
+        val inputs = magnitudes.flatMap { listOf(it, it or sign) }
+        val fixture = componentFixture("fp_absolute_$width",
+            CircuitComponent("abs", ComponentKind("FPAbsolute"), GridPoint(300, 200), attributes = mapOf("fpwidth" to "$width")),
+            inputs.map { input ->
+                val magnitude = input and sign.inv()
+                listOf(input) to listOf(if (magnitude == quietNaN) simulatedNaN else magnitude, if (magnitude == quietNaN) 1uL else 0uL)
+            })
+        return fixture.copy(vectors = fixture.vectors.mapIndexed { index, vector ->
+            val magnitude = inputs[index] and sign.inv()
+            vector.copy(hdlOutputs = vector.outputs.mapValues { (id, value) -> if (id == "o0") magnitude else value })
+        })
     }
 
     private fun exponentiator(signed: Boolean): HdlFixtureCase {

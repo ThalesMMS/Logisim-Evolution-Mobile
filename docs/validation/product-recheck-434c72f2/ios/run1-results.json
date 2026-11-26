@@ -1,0 +1,48 @@
+{
+  "started": "2026-11-23T12:35:41.109800+00:00",
+  "finished": "2026-11-23T12:59:48.228985+00:00",
+  "declared_baseline_sha": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+  "status": "FAIL",
+  "qualification_gate": "FAIL",
+  "native_execution_gate": "NATIVE_FAIL",
+  "test_timeout_seconds": 900,
+  "selected_tests": [
+    "EditorEndToEndTests/DisplayPreferencesEndToEndTests/testRemainingColorsAndValueCharacters",
+    "EditorEndToEndTests/VisualExportEndToEndTests/testEditorExportsPixelsAndCancelsNativeDelivery",
+    "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+    "EditorEndToEndTests/EditorEndToEndTests/testSap1AutomaticRunPause",
+    "EditorEndToEndTests/EditorEndToEndTests/testSap1SequentialExecution",
+    "EditorEndToEndTests/InspectorEndToEndTests/testLabelLocationIsChosenFromAMenu",
+    "EditorEndToEndTests/InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction"
+  ],
+  "execution": {
+    "status": "FAIL",
+    "exit_code": 65,
+    "xcresult": "/private/tmp/claude-501/-Users-user--claude-spares-spare-0Zp7ci/0a5d0f08-39e9-4ad2-b121-f0f1b79b2ead/scratchpad/runs/ios-e2e/editor.xcresult",
+    "selection": [
+      "EditorEndToEndTests/DisplayPreferencesEndToEndTests/testRemainingColorsAndValueCharacters",
+      "EditorEndToEndTests/VisualExportEndToEndTests/testEditorExportsPixelsAndCancelsNativeDelivery",
+      "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+      "EditorEndToEndTests/EditorEndToEndTests/testSap1AutomaticRunPause",
+      "EditorEndToEndTests/EditorEndToEndTests/testSap1SequentialExecution",
+      "EditorEndToEndTests/InspectorEndToEndTests/testLabelLocationIsChosenFromAMenu",
+      "EditorEndToEndTests/InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction"
+    ]
+  },
+  "build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "artifact": {
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+    "bundle_tree_sha256": "516099a305642684f54c1b02ba06c05bc548f5913502e85b8ed8e535692492eb",
+    "version": "1.0.0",
+    "build": "7"
+  },
+  "device": {
+    "name": "iPhone 17 Pro",
+    "udid": "E403BD9B-650C-4DE3-9B81-E63A80C72C87",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-2"
+  }
+}

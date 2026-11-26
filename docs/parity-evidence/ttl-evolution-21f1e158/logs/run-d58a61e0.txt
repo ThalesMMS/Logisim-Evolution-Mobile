@@ -1,0 +1,5 @@
+74266 row=4 pins=000100000000 pin=6 expected=0/1 actual=x/1
+74266 row=5 pins=100100000000 pin=6 expected=0/1 actual=x/1
+74266 row=6 pins=010100000000 pin=6 expected=0/1 actual=x/1
+run.sh d58a61e0 exit 1
+sequential compare against d58a61e0 run separately (run.sh stops after the combinational mismatch); exit 0

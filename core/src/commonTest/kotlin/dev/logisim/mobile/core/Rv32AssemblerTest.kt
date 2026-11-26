@@ -102,6 +102,38 @@ class Rv32AssemblerTest {
         }
     }
 
+    /** #373: Evolution c3d5e3b2/8f4df88b (after d58a61e0) assembles the Nios V cache instructions with one register. */
+    @Test
+    fun niosVCacheInstructionsAssembleWithOneRegister() {
+        val cases = listOf("cbo.inval.ix" to "0802a00f", "cbo.clean.ix" to "0812a00f", "cbo.flush.ix" to "0822a00f",
+            "cbo.clean" to "0012a00f", "cbo.flush" to "0022a00f", "cbo.inval" to "0002a00f", "cbo.zero" to "0042a00f",
+            "fence.i" to "0002900f")
+        for ((opcode, word) in cases) {
+            assertEquals(listOf("00000000:00000013", "00000004:$word"),
+                words(Rv32Assembler.assemble("start:\n  addi x0, x0, 0\n  $opcode t0\n", 0u)), opcode)
+            assertEquals(listOf("00000000:$word"), words(Rv32Assembler.assemble("$opcode x5", 0u)), opcode)
+        }
+        assertEquals(listOf("00000000:000fa00f"), words(Rv32Assembler.assemble("cbo.inval t6", 0u)))
+        fun rejects(source: String, text: String) {
+            val error = assertIs<SocAssemblyResult.Rejected>(Rv32Assembler.assemble("start:\n$source", 0u), source)
+            assertEquals(2, error.line, source)
+            val notice = error.notice.resolve(AppLanguage.ENGLISH)
+            assertTrue(notice.contains(text), "$source: $notice")
+        }
+        // Expected one argument.
+        rejects("cbo.flush", "expects 1 operands")
+        rejects("fence.i x5, x6", "expects 1 operands")
+        // Expected a register.
+        rejects("cbo.zero 5", "Invalid register: 5")
+        rejects("cbo.clean 4(x5)", "Invalid register")
+        // x32 is no register token, so it reads as an undefined label.
+        rejects("fence.i x32", "x32")
+        // Unknown register: a register name that is not x0..x31.
+        rejects("cbo.inval mstatus", "Invalid register: mstatus")
+        // pc is replaced by its value before encoding, as in Evolution.
+        rejects("cbo.flush pc", "Invalid register")
+    }
+
     @Test
     fun nios2AssemblerEncodesLikeEvolution() {
         // Words captured from Evolution d58a61e0's Nios2Assembler (scripts/oracle/soc-debugger), after "start: nop".

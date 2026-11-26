@@ -1,0 +1,2 @@
+{}
+TTL comparisons=95232 mismatches=0

@@ -1,0 +1,27 @@
+[
+ [
+  "Close (Keep changes), force-stop, relaunch, Projects -> hierarchy",
+  {
+   "header": "Hierarchy",
+   "status": "Opened with 4 compatibility adjustments.",
+   "components": [
+    [
+     "canvas-component:import-1",
+     "A"
+    ],
+    [
+     "canvas-component:import-2",
+     "Subcircuit (300, 140)"
+    ],
+    [
+     "canvas-component:import-3",
+     "Y"
+    ],
+    [
+     "canvas-component:c1",
+     "Subcircuit (250, 240)"
+    ]
+   ]
+  }
+ ]
+]

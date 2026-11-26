@@ -1,0 +1,7 @@
+{
+  "gitHead": "e291da496f20b7496af80833e04f8d408d4f809e",
+  "appSha256": "a6dc2b57885c13d060174d43f050d0ebad9aaf51eba68d3f7cd054a69860db8c",
+  "command": "./gradlew :androidApp:assembleE2e",
+  "scope": "LF checkout at e291da49 (main) on Windows 11 x64, JDK 21.0.12.1, built for the #382 Android recheck.",
+  "device": "AVD logisim35 (Pixel 7, API 35, google_apis/x86_64), fingerprint google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys"
+}

@@ -569,6 +569,8 @@ public final class SocDebuggerOracle {
         "mul x10, x11, x12", "mulh x10, x11, x12", "mulhsu x10, x11, x12", "mulhu x10, x11, x12",
         "div x10, x11, x12", "divu x10, x11, x12", "rem x10, x11, x12", "remu x10, x11, x12",
         "fence", "fence.tso", "ecall", "ebreak", "mret",
+        // Nios V cache instructions (#373), added by Evolution c3d5e3b2/8f4df88b after d58a61e0.
+        "cbo.inval.ix x5", "cbo.clean.ix x5", "cbo.flush.ix x5", "cbo.clean x5", "cbo.flush x5", "cbo.inval x5", "cbo.zero x5", "fence.i x5",
         "csrrw x5, 0x305, x6", "csrrs x5, 0x300, x0", "csrrc x5, 0x304, x6", "csrrwi x5, 0x305, 3", "csrrsi x5, 0x300, 8", "csrrci x5, 0x304, 1",
         "addi sp, zero, 16", "add a0, a1, a2", "sw ra, 4(sp)", "addi t0, s0, 1", "addi s1, gp, 2", "addi fp, tp, 2", "addi t6, s11, 0",
         "addi x1, x0, -0x10", "addi x1, x0, 0b101", "ADDI X1, X0, 1",

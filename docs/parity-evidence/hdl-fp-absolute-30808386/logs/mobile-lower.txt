@@ -1,0 +1,2 @@
+Generated 142 HDL fixture artifacts in C:\Users\user\Documents\GitHub\logisim-mobile-dev\outputs\hdl-export-validation-30808386\lower
+PASS: 142 independently compiled and simulated designs; 5024 literal output comparisons

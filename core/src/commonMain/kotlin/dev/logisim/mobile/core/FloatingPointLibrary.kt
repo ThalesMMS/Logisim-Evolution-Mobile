@@ -23,6 +23,7 @@ import kotlin.math.sinh
 import kotlin.math.sqrt
 import kotlin.math.tan
 import kotlin.math.tanh
+import kotlin.math.withSign
 
 /** The eighteen registered desktop FPArithmetic components and their serialized identities. */
 object FloatingPointLibrary {
@@ -218,7 +219,7 @@ object FloatingPointLibrary {
                 "error" to bit(a.isNaN() || b.isNaN()))
             "FPMinMax" -> mapOf("min" to encoded(min(a, b)), "max" to encoded(max(a, b)),
                 "error" to bit(a.isNaN() || b.isNaN()))
-            "FPRound" -> result(rounded(a, values[roundingMode]), a.isNaN())
+            "FPRound" -> result(roundedFloat(a, values[roundingMode]), a.isNaN())
             "FPTrigonometry" -> {
                 val outputs = when (values[trigonometryMode]) {
                     "arc" -> listOf(asin(a), atan(a), acos(a))
@@ -247,15 +248,25 @@ object FloatingPointLibrary {
             "IntToFP" -> {
                 val input = vector("in", values[intWidth])
                 val raw = input.toULongOrNull()
+                val unsigned = values[integerMode] == "unsigned"
+                val negative = raw != null && !unsigned && raw and (1uL shl (input.width - 1)) != 0uL
+                // A shift by 64 is a shift by 0 in Kotlin, so a 64-bit input is already sign-extended.
+                val signed = when {
+                    !negative -> 0L
+                    input.width == 64 -> raw!!.toLong()
+                    else -> (raw!! or (ULong.MAX_VALUE shl input.width)).toLong()
+                }
                 val converted = when {
                     raw == null -> Double.NaN
-                    values[integerMode] == "unsigned" -> raw.toDouble()
-                    input.width == 64 -> raw.toLong().toDouble()
-                    raw and (1uL shl (input.width - 1)) != 0uL ->
-                        (raw or (ULong.MAX_VALUE shl input.width)).toLong().toDouble()
+                    negative -> signed.toDouble()
                     else -> raw.toDouble()
                 }
-                result(converted)
+                // Evolution 21f1e158 (#3230) rounds a 32-bit result once, from the integer itself.
+                if (raw != null && width == 32) {
+                    val magnitude = if (negative) signed.toULong().inv() + 1uL else raw
+                    val float = FloatingPointNumbers.roundToFloat(magnitude, negative)
+                    mapOf("out" to LogicVector.of(32, float.toBits().toUInt().toULong()), "error" to bit(false))
+                } else result(converted)
             }
             else -> error("Unknown floating point component: $name.")
         }
@@ -268,5 +279,16 @@ object FloatingPointLibrary {
         "round" -> FloatingPointNumbers.roundToLong(number).toDouble()
         "rint" -> round(number)
         else -> number.toLong().toDouble()
+    }
+
+    /**
+     * FPRound since Evolution 76b178dd: round and truncate no longer pass through a long, so large
+     * values, infinities, NaN and the sign of zero results are kept. FPToInt still uses [rounded].
+     */
+    private fun roundedFloat(number: Double, mode: String): Double = when (mode) {
+        "round" -> if (abs(number) < 4503599627370496.0)
+            FloatingPointNumbers.roundToLong(number).toDouble().withSign(number) else number
+        "truncate" -> if (number < 0) ceil(number) else floor(number)
+        else -> rounded(number, mode)
     }
 }

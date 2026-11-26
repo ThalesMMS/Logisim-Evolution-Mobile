@@ -1,0 +1,35 @@
+[
+ [
+  "Undo (Undo, Add Subcircuit)",
+  {
+   "status": "Subcircuit inserted. Edit mode.",
+   "components": [
+    "canvas-component:import-1",
+    "canvas-component:import-2",
+    "canvas-component:import-3"
+   ]
+  }
+ ],
+ [
+  "Redo",
+  {
+   "status": "Subcircuit inserted. Edit mode.",
+   "components": [
+    "canvas-component:c1",
+    "canvas-component:import-1",
+    "canvas-component:import-2",
+    "canvas-component:import-3"
+   ]
+  }
+ ],
+ [
+  "Close tab hierarchy",
+  [
+   "Close hierarchy?",
+   "Your edits are already saved in the app. Keep them, or revert the project to the version you opened.",
+   "Keep changes",
+   "Revert to version opened 2 minutes ago",
+   "Cancel"
+  ]
+ ]
+]

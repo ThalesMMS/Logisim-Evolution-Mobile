@@ -201,10 +201,11 @@ object Nios2Cpu {
                     0x31 -> { mnemonic = "add"; result = a + b }
                     0x39 -> { mnemonic = "sub"; result = a - b }
                     0x27 -> { mnemonic = "mul"; result = (a.toInt().toLong() * b.toInt()).toUInt() }
-                    0x18, 0x24 -> {
-                        mnemonic = if (opx == 0x18) "div" else "divu"
+                    // div is opx 0x25 as in the Nios II reference and Evolution 3f7f6766 (#372); d58a61e0 used 0x18.
+                    0x25, 0x24 -> {
+                        mnemonic = if (opx == 0x25) "div" else "divu"
                         if (b == 0u) { error = "Division by zero."; notice = message("soc_division_zero") }
-                        else result = if (opx == 0x18) (a.toInt() / b.toInt()).toUInt() else a / b
+                        else result = if (opx == 0x25) (a.toInt() / b.toInt()).toUInt() else a / b
                     }
                     0x1F -> { mnemonic = "mulxss"; result = ((a.toInt().toLong() * b.toInt()) shr 32).toUInt() }
                     0x07 -> { mnemonic = "mulxuu"; result = ((a.toULong() * b.toULong()) shr 32).toUInt() }

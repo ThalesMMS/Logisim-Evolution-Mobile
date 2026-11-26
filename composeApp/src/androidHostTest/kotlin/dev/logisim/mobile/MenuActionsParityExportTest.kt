@@ -105,12 +105,17 @@ class MenuActionsParityExportTest {
         }.let { write("edit-cut", it.exportXml()) }
         open().apply {
             selectCircuit("main")
-            select(component(400, 300, ComponentKind.NOT).id)
+            val original = component(400, 300, ComponentKind.NOT)
+            select(original.id)
             duplicateSelected()
-            // The destination tap: Evolution's offset with the pointer off the canvas is (10,10).
-            movePastePreview(GridPoint(410, 310))
+            // The preview follows the pointer at the centre of the selection bounds, as Evolution's Duplicate does
+            // with the pointer on the canvas (SelectionBase.pasteHelper). The tap goes where Evolution puts that
+            // centre with the pointer off the canvas: the first free offset from copyComponents(comps, false).
+            val anchor = assertNotNull(pendingPaste).anchor
+            movePastePreview(GridPoint(anchor.x + 10, anchor.y + 10))
             confirmPaste()
-            state["edit-dup.offset"] = "10,10"
+            val copy = document.components.single { it.id in selectedIds }
+            state["edit-dup.offset"] = "${copy.position.x - original.position.x},${copy.position.y - original.position.y}"
         }.let { write("edit-dup", it.exportXml()) }
 
         open().apply {

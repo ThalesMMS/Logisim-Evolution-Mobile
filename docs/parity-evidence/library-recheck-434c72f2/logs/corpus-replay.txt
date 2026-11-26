@@ -1,0 +1,2 @@
+Oracle replay passed: WORK/replay/receipt.json
+exit=0

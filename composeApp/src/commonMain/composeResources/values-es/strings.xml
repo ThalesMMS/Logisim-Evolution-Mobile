@@ -79,6 +79,7 @@
     <string name="a11y_input_toggle_bit">Cambiar un bit de {name}…</string>
     <string name="a11y_input_toggle_low_bit">Cambiar el bit 0 de {name}</string>
     <string name="a11y_insert_below_selected">Debajo del componente seleccionado</string>
+    <string name="a11y_insert_circuit">Insertar {name} en {target}</string>
     <string name="a11y_insert_component">Insertar {name}</string>
     <string name="a11y_insert_custom">Coordenadas personalizadas</string>
     <string name="a11y_insert_next_free">Siguiente posición libre</string>
@@ -733,7 +734,7 @@
     <string name="attribute_label_bus">Bus</string>
     <string name="attribute_label_busside">Ubicación del bus</string>
     <string name="attribute_label_byteenables">Habilitación por byte</string>
-    <string name="attribute_label_c1">Condensador C1 (de 10 µF a 1000 µF)</string>
+    <string name="attribute_label_c1">Condensador C1 (10 µF a 1000 µF)</string>
     <string name="attribute_label_capturetype">Tipo de captura</string>
     <string name="attribute_label_channel">Canal</string>
     <string name="attribute_label_clear">Entrada de borrado</string>
@@ -752,7 +753,7 @@
     <string name="attribute_label_decimalpoint">Punto decimal</string>
     <string name="attribute_label_direction">Dirección</string>
     <string name="attribute_label_disabled">Salida desactivada</string>
-    <string name="attribute_label_display_size">Tamaño en pantalla</string>
+    <string name="attribute_label_display_size">Tamaño de visualización</string>
     <string name="attribute_label_displaymode">Modo inicial</string>
     <string name="attribute_label_dmadstbus">Bus de destino</string>
     <string name="attribute_label_dmasrcbus">Bus de origen</string>
@@ -830,7 +831,7 @@
     <string name="attribute_label_pixel_width">Ancho</string>
     <string name="attribute_label_plicbaseaddress">Dirección base del PLIC</string>
     <string name="attribute_label_porhighduration">Duración del reinicio (s)</string>
-    <string name="attribute_label_porsize">Tamaño del dibujo</string>
+    <string name="attribute_label_porsize">Tamaño de dibujo</string>
     <string name="attribute_label_port">Puerto</string>
     <string name="attribute_label_port_type">Tipo de puerto</string>
     <string name="attribute_label_portio">Puerto de entrada/salida</string>
@@ -838,7 +839,7 @@
     <string name="attribute_label_positions">Posiciones</string>
     <string name="attribute_label_press">Valor al pulsar</string>
     <string name="attribute_label_pull">Dirección de «pull»</string>
-    <string name="attribute_label_r1">Resistencia R1 (de 1 kΩ a 10 MΩ)</string>
+    <string name="attribute_label_r1">Resistencia R1 (1 kΩ a 10 MΩ)</string>
     <string name="attribute_label_radix">Base</string>
     <string name="attribute_label_readbehav">Leer el comportamiento</string>
     <string name="attribute_label_readfifosize">Tamaño del FIFO de lectura</string>
@@ -847,7 +848,7 @@
     <string name="attribute_label_reset">Restablecer Comportamiento</string>
     <string name="attribute_label_resetbehavior">Comportamiento al reiniciar</string>
     <string name="attribute_label_resetvector">Restablecer vector</string>
-    <string name="attribute_label_reversecolor">Color invertido</string>
+    <string name="attribute_label_reversecolor">Color con polarización inversa</string>
     <string name="attribute_label_rows">Filas</string>
     <string name="attribute_label_scale">Escala</string>
     <string name="attribute_label_seed">Semilla</string>
@@ -862,7 +863,7 @@
     <string name="attribute_label_smooth_level">Nivel de suavizado</string>
     <string name="attribute_label_smooth_width">Ancho de la ventana de suavizado</string>
     <string name="attribute_label_socbusidentifier">Identificador del bus</string>
-    <string name="attribute_label_socbusselection">Autobús conectado</string>
+    <string name="attribute_label_socbusselection">Bus conectado</string>
     <string name="attribute_label_soft1024x768">Modo 1024x768 por software</string>
     <string name="attribute_label_soft160x120">Modo 160x120 por software</string>
     <string name="attribute_label_soft320x240">Modo 320x240 por software</string>
@@ -987,7 +988,7 @@
     <string name="attribute_option_mode_logxy">Base arbitraria</string>
     <string name="attribute_option_mode_monostable">Monoestable</string>
     <string name="attribute_option_mode_pmod_kypd">Pmod KYPD (pull-up interno)</string>
-    <string name="attribute_option_mode_raw">Matriz sin procesar</string>
+    <string name="attribute_option_mode_raw">Matriz directa</string>
     <string name="attribute_option_mode_rint">Redondear al más cercano, empates al par</string>
     <string name="attribute_option_mode_round">Redondear al más cercano</string>
     <string name="attribute_option_mode_signedunsigned">Con signo/sin signo</string>
@@ -1046,8 +1047,8 @@
     <string name="attribute_option_size_70">Ancho</string>
     <string name="attribute_option_size_large">Grande (2x)</string>
     <string name="attribute_option_size_normal">Normal</string>
-    <string name="attribute_option_timetype_1">Milisegundos de tiempo Unix</string>
-    <string name="attribute_option_timetype_2">Segundos de tiempo Unix</string>
+    <string name="attribute_option_timetype_1">Milisegundos (tiempo Unix)</string>
+    <string name="attribute_option_timetype_2">Segundos (tiempo Unix)</string>
     <string name="attribute_option_trigger_falling">Flanco de bajada</string>
     <string name="attribute_option_trigger_high">Nivel alto</string>
     <string name="attribute_option_trigger_low">Nivel bajo</string>
@@ -1094,6 +1095,10 @@
     <string name="byte_size_mib_fraction">{whole},{fraction} MiB</string>
     <string name="canvas_component_tip">{component}: {port}</string>
     <string name="canvas_width_error">Anchos incompatibles</string>
+    <string name="circuit_insert">Insertar</string>
+    <string name="circuit_insert_into">Insertar en {target}</string>
+    <string name="circuit_insert_recursive">{name} contiene {target}. Insertarlo crearía un circuito recursivo.</string>
+    <string name="circuit_insert_self">{name} es el circuito en pantalla. Un circuito no puede contenerse a sí mismo.</string>
     <string name="circuit_properties_title">Propiedades del circuito</string>
     <string name="circuit_remove_error_title">No se puede eliminar el circuito</string>
     <string name="circuit_remove_last_error">Un proyecto debe contener al menos un circuito.</string>
@@ -1409,9 +1414,9 @@
     <string name="component_menu_distribute_descending">Distribuir de forma descendente</string>
     <string name="component_menu_image_already_optimized">La imagen ya está optimizada para el tamaño actual del marco ({width}x{height}).</string>
     <string name="component_menu_image_make_transparent">Hacer transparente el fondo exterior</string>
-    <string name="component_menu_image_optimize">Optimizar el tamaño de la imagen</string>
+    <string name="component_menu_image_optimize">Optimizar tamaño de la imagen</string>
     <string name="component_menu_image_optimize_confirm">La resolución de la imagen se reducirá de {width}x{height} a {targetWidth}x{targetHeight} píxeles. Esto reducirá notablemente el tamaño del archivo del circuito y el uso de memoria. ¿Desea continuar?</string>
-    <string name="component_menu_image_reset_size">Restablecer al tamaño original</string>
+    <string name="component_menu_image_reset_size">Restablecer tamaño original</string>
     <string name="component_menu_image_unavailable">No se pudo procesar la imagen.</string>
     <string name="component_menu_memory_clear">Borrar contenidos</string>
     <string name="component_menu_memory_edit">Editar contenidos…</string>
@@ -2665,7 +2670,7 @@ SHA-256: {sha256}</string>
     <string name="hdl_reason_vhdl_inout">La exportación de HDL-IP de VHDL admite puertos de entrada y de salida. Los puertos bidireccionales no son compatibles.</string>
     <string name="hdl_save_dependencies">Guarda todos los archivos en la misma carpeta y en el orden mostrado.</string>
     <string name="hdl_save_file">Guardar archivo</string>
-    <string name="hdl_select_language">Seleccione VHDL o Verilog en Ajustes antes de ejecutar.</string>
+    <string name="hdl_select_language">Selecciona VHDL o Verilog en Ajustes antes de ejecutar.</string>
     <string name="hdl_share_file">Compartir archivo</string>
     <string name="hdl_source_copied">Se copió el código fuente HDL.</string>
     <string name="hdl_tools_import_add_file">Añadir o actualizar archivo</string>
@@ -4124,6 +4129,7 @@ SHA-256: {sha256}</string>
     <string name="status_operation_cancelled">Se canceló la operación.</string>
     <string name="status_paste_subcircuit_mismatch">No se pudo pegar. El proyecto de destino necesita la misma definición del subcircuito {name}.</string>
     <string name="status_place">Toca la cuadrícula para insertar {name}.</string>
+    <string name="status_place_circuit">Toque la cuadrícula para insertar {name} en {target}.</string>
     <plurals name="status_project_imported">
         <item quantity="one">Se importó el proyecto con {count} circuito.</item>
         <item quantity="many">Se importó el proyecto con {count} circuitos.</item>

@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "description": "Temporal sweep suites rerun on the IntToFP, 74266 and 7476 fixtures (FIXTURES) after #380 and #381 followed Evolution changes made after the pin. Compared against a d58a61e0 JAR built on Windows; the receipt of temporal-kinds names the macOS JAR, which was not available.",
+ "fixtures": "(inttofp|ttl_74266|ttl_7476)(__.*)?",
+ "evolution": {
+  "revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "jar": "logisim-evolution-5.1.0dev-all.jar",
+  "jar_sha256": "5c0c89b426578ffa6988244d477eace70bbaeaf09687890e893f6c258194695a"
+ },
+ "environment": "Windows 11, Git Bash, Temurin JDK 21.0.12.1",
+ "suites": [
+  {
+   "id": "default",
+   "artifact": "docs/parity-evidence/evolution-followups-d58a61e0/default.tsv",
+   "artifact_sha256": "9dbcdeca48a075ed6540103c49a1d1097a0a77dfab335f3aa59b013392742859",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='(inttofp|ttl_74266|ttl_7476)(__.*)?' scripts/oracle/temporal-kinds/run.sh EVOLUTION_JAR WORK/default CORE_JAR (python3 scripts/parity_matrix.py reverify evolution-followups-d58a61e0 --suites default)",
+   "mobile_revision": "267a6123b027ad6b14849198466d15bb84fe5518",
+   "core_jar_sha256": "4ccefd7a044038168a3cd0145a1a4b1ef81c49ce47073727b148f7b1cbee45de",
+   "recorded": "2026-11-25"
+  },
+  {
+   "id": "variants",
+   "artifact": "docs/parity-evidence/evolution-followups-d58a61e0/variants.tsv",
+   "artifact_sha256": "62808b4212cd1e24600b81f0cb8b72a4eb54ad8b6251639a83ad9cae27704ef5",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='(inttofp|ttl_74266|ttl_7476)(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants EVOLUTION_JAR WORK/variants CORE_JAR (python3 scripts/parity_matrix.py reverify evolution-followups-d58a61e0 --suites variants)",
+   "mobile_revision": "267a6123b027ad6b14849198466d15bb84fe5518",
+   "core_jar_sha256": "4ccefd7a044038168a3cd0145a1a4b1ef81c49ce47073727b148f7b1cbee45de",
+   "recorded": "2026-11-25"
+  },
+  {
+   "id": "negative",
+   "artifact": "docs/parity-evidence/evolution-followups-d58a61e0/negative.tsv",
+   "artifact_sha256": "62fc74b4c5201316732dce9c5ade04f205143b1b1746906e6ef2096ba3daf954",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='(inttofp|ttl_74266|ttl_7476)(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants --negative EVOLUTION_JAR WORK/negative CORE_JAR (python3 scripts/parity_matrix.py reverify evolution-followups-d58a61e0 --suites negative)",
+   "mobile_revision": "267a6123b027ad6b14849198466d15bb84fe5518",
+   "core_jar_sha256": "4ccefd7a044038168a3cd0145a1a4b1ef81c49ce47073727b148f7b1cbee45de",
+   "recorded": "2026-11-25"
+  },
+  {
+   "id": "pairs",
+   "artifact": "docs/parity-evidence/evolution-followups-d58a61e0/pairs.tsv",
+   "artifact_sha256": "b2232dfdfe1e5e3e5269da5b33efc1288d91083aa41a231437e19f91d7930411",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='(inttofp|ttl_74266|ttl_7476)(__.*)?' scripts/oracle/temporal-kinds/run.sh --pairs 6 EVOLUTION_JAR WORK/pairs CORE_JAR (python3 scripts/parity_matrix.py reverify evolution-followups-d58a61e0 --suites pairs)",
+   "mobile_revision": "267a6123b027ad6b14849198466d15bb84fe5518",
+   "core_jar_sha256": "4ccefd7a044038168a3cd0145a1a4b1ef81c49ce47073727b148f7b1cbee45de",
+   "recorded": "2026-11-25"
+  }
+ ]
+}

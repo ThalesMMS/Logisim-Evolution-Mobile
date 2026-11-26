@@ -1,5 +1,6 @@
 package dev.logisim.mobile
 
+import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.core.localization.localizedLabel
 import dev.logisim.mobile.localization.rememberLocalizer
@@ -31,6 +32,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -53,6 +55,12 @@ fun ProjectNavigationPanel(
     onSetMain: (String) -> Unit,
     modifier: Modifier = Modifier,
     onExport: ((String) -> Unit)? = null,
+    /**
+     * Picks the add tool for a definition in the circuit in view (#368), next to the tap that opens it; null hides
+     * the action. [insertProblem] says why a definition cannot go there now, or null when it can.
+     */
+    onInsert: ((String) -> Unit)? = null,
+    insertProblem: (String) -> LocalizedText? = { null },
 ) {
     val strings = rememberLocalizer()
     val rows = remember(project) { ProjectNavigation.rows(project) }
@@ -98,6 +106,24 @@ fun ProjectNavigationPanel(
                         if (recursive) Text(strings(Messages.RecursiveReference), fontSize = 11.sp, color = MaterialTheme.colorScheme.error)
                     }
                     if (row.isMain) Text("★", fontSize = 12.sp, color = ChromeColors.Accent, modifier = Modifier.padding(horizontal = 4.dp))
+                    // The circuit in view stays the target, an instance's definition included: inserting never navigates.
+                    val target = activeTarget.circuitName
+                    val insertable = onInsert != null && row.kind == ProjectNavigationKind.CIRCUIT
+                    val problem = if (insertable) insertProblem(row.target.circuitId) else null
+                    if (onInsert != null && insertable) {
+                        val description = strings("a11y_insert_circuit", "name" to row.label, "target" to target)
+                        val reason = problem?.let { strings(it) }
+                        TextButton(onClick = { onInsert(row.target.circuitId) }, enabled = problem == null,
+                            contentPadding = PaddingValues(horizontal = 8.dp),
+                            modifier = Modifier.heightIn(min = 48.dp).widthIn(min = 48.dp)
+                                .testTag("circuit-insert-${row.target.circuitId}")
+                                .semantics {
+                                    contentDescription = description
+                                    if (reason != null) stateDescription = reason
+                                }) {
+                            Text(strings("circuit_insert"), fontSize = 13.sp)
+                        }
+                    }
                     if (row.kind == ProjectNavigationKind.CIRCUIT) {
                         Column {
                             TextButton(onClick = { openMenu = row.target.circuitId }, contentPadding = PaddingValues(horizontal = 8.dp),
@@ -107,6 +133,16 @@ fun ProjectNavigationPanel(
                             }
                             DropdownMenu(expanded = openMenu == row.target.circuitId, onDismissRequest = { openMenu = null }) {
                                 val circuitIndex = project.circuits.indexOfFirst { it.id == row.target.circuitId }
+                                if (onInsert != null) {
+                                    // Disabled with its reason below, so the menu explains why it cannot go into the circuit in view.
+                                    DropdownMenuItem(text = {
+                                        Column {
+                                            Text(strings("circuit_insert_into", "target" to target))
+                                            if (problem != null) Text(strings(problem), fontSize = 11.sp, color = ChromeColors.Muted)
+                                        }
+                                    }, enabled = problem == null, modifier = Modifier.testTag("circuit-insert-menu-${row.target.circuitId}"),
+                                        onClick = { openMenu = null; onInsert(row.target.circuitId) })
+                                }
                                 DropdownMenuItem(text = { Text(strings(Messages.ActionRename)) }, onClick = { openMenu = null; nameDialog = row.target.circuitId })
                                 DropdownMenuItem(text = { Text(strings(Messages.ActionMoveUp)) }, enabled = circuitIndex > 0,
                                     onClick = { openMenu = null; onMove(row.target.circuitId, -1) })

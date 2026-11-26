@@ -76,6 +76,7 @@
   "a11y_input_toggle_bit": "Ein Bit von {name} umschalten…",
   "a11y_input_toggle_low_bit": "Bit 0 von {name} umschalten",
   "a11y_insert_below_selected": "Unter der ausgewählten Komponente",
+  "a11y_insert_circuit": "{name} in {target} einfügen",
   "a11y_insert_component": "{name} einfügen",
   "a11y_insert_custom": "Eigene Koordinaten",
   "a11y_insert_next_free": "Nächste freie Stelle",
@@ -1075,6 +1076,10 @@
   "byte_size_mib_fraction": "{whole},{fraction} MiB",
   "canvas_component_tip": "{component}: {port}",
   "canvas_width_error": "Breiten nicht kompatibel",
+  "circuit_insert": "Einfügen",
+  "circuit_insert_into": "In {target} einfügen",
+  "circuit_insert_recursive": "{name} enthält {target}. Das Einfügen würde eine rekursive Schaltung erzeugen.",
+  "circuit_insert_self": "{name} ist die angezeigte Schaltung. Eine Schaltung kann sich nicht selbst enthalten.",
   "circuit_properties_title": "Schaltungseigenschaften",
   "circuit_remove_error_title": "Schaltung kann nicht entfernt werden",
   "circuit_remove_last_error": "Ein Projekt muss mindestens eine Schaltung enthalten.",
@@ -4039,6 +4044,7 @@
   "status_operation_cancelled": "Vorgang abgebrochen.",
   "status_paste_subcircuit_mismatch": "Einfügen nicht möglich. Das Zielprojekt benötigt dieselbe Definition der Unterschaltung {name}.",
   "status_place": "Auf das Raster tippen, um {name} einzufügen.",
+  "status_place_circuit": "Tippen Sie auf das Raster, um {name} in {target} einzufügen.",
   "status_project_imported": {
     "one": "Projekt mit {count} Schaltung importiert.",
     "other": "Projekt mit {count} Schaltungen importiert."

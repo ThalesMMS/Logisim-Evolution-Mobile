@@ -1,0 +1,40 @@
+{
+ "talkbackService": "com.google.android.marvin.talkback/com.google.android.marvin.talkback.TalkBackService",
+ "density": 420,
+ "snapshotSource": "androidSnapshot UiSnapshotInstrumentation with FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES (TalkBack kept running)",
+ "buttons": [
+  {
+   "resource-id": "circuit-insert-Hierarchy",
+   "enabled": "false",
+   "state-desc": "Hierarchy is the circuit in view. A circuit cannot contain itself.",
+   "descendantDescriptions": [
+    "Insert Hierarchy into Hierarchy"
+   ],
+   "bounds": "[820,834][954,960]",
+   "widthDp": 51.0,
+   "heightDp": 48.0
+  },
+  {
+   "resource-id": "circuit-insert-Inversor",
+   "enabled": "true",
+   "state-desc": "",
+   "descendantDescriptions": [
+    "Insert Inversor into Hierarchy"
+   ],
+   "bounds": "[820,1464][954,1590]",
+   "widthDp": 51.0,
+   "heightDp": 48.0
+  },
+  {
+   "resource-id": "circuit-insert-circuit-1",
+   "enabled": "true",
+   "state-desc": "",
+   "descendantDescriptions": [
+    "Insert Chip into Hierarchy"
+   ],
+   "bounds": "[820,1590][954,1716]",
+   "widthDp": 51.0,
+   "heightDp": 48.0
+  }
+ ]
+}

@@ -77,6 +77,21 @@ class FloatingPointLibraryTest {
     }
 
     @Test
+    fun eightBitEncodingKeepsLowPayloadNanAndTheRoundingCarry() {
+        // Evolution fe2c9336: 0x7f800001 used to become 0x78, which is infinity.
+        assertEquals(0x79, FloatingPointNumbers.encodeFloat8(Float.fromBits(0x7f800001)))
+        assertEquals(0xf9, FloatingPointNumbers.encodeFloat8(Float.fromBits(0xff800001.toInt())))
+        assertEquals(0x7c, FloatingPointNumbers.encodeFloat8(Float.fromBits(0x7fc00000)))
+        assertEquals(0x40, FloatingPointNumbers.encodeFloat8(1.9375f))
+        assertEquals(0x58, FloatingPointNumbers.encodeFloat8(15.5f))
+        assertEquals(0xd8, FloatingPointNumbers.encodeFloat8(-15.5f))
+        assertEquals(0x78, FloatingPointNumbers.encodeFloat8(248f))
+        val converted = FloatingPointLibrary.evaluate("FPToFP", mapOf("fpwidthin" to "32", "fpwidthout" to "8"),
+            listOf(LogicVector.of(32, 0x7f800001uL)))
+        assertTrue(FloatingPointNumbers.decode(converted[0]).isNaN())
+    }
+
+    @Test
     fun everySmallFormatEncodingRoundTripsOrRemainsNan() {
         for (width in listOf(8, 16)) for (bits in 0 until (1 shl width)) {
             val original = LogicVector.of(width, bits.toULong())
@@ -138,10 +153,52 @@ class FloatingPointLibraryTest {
         assertEquals(value(64, 2.0), evaluate("FPRound", 64, listOf(2.5), mapOf("mode" to "rint"))[0])
         assertEquals(value(64, -0.0), evaluate("FPRound", 64, listOf(-0.1), mapOf("mode" to "rint"))[0])
         assertEquals(0L, FloatingPointNumbers.roundToLong(Double.fromBits(0x3fdfffffffffffffL)))
-        assertEquals(listOf(value(64, 0.0), LogicVector.high(1)), evaluate("FPRound", 64, listOf(Double.NaN)))
-        assertEquals(value(64, Long.MAX_VALUE.toDouble()), evaluate("FPRound", 64, listOf(Double.POSITIVE_INFINITY))[0])
+        assertEquals(listOf(value(64, Double.NaN), LogicVector.high(1)), evaluate("FPRound", 64, listOf(Double.NaN)))
+        assertEquals(value(64, Double.POSITIVE_INFINITY), evaluate("FPRound", 64, listOf(Double.POSITIVE_INFINITY))[0])
         assertEquals(value(64, Double.POSITIVE_INFINITY),
             evaluate("FPRound", 64, listOf(Double.POSITIVE_INFINITY), mapOf("mode" to "ceil"))[0])
+    }
+
+    private fun round(width: Int, mode: String, number: Double) =
+        evaluate("FPRound", width, listOf(number), mapOf("mode" to mode))[0]
+
+    @Test
+    fun roundAndTruncateKeepLargeValuesInfinitiesNanAndZeroSign() {
+        // Evolution 76b178dd: these modes no longer pass through a long.
+        for (width in listOf(32, 64)) {
+            for (mode in listOf("truncate", "round")) {
+                assertEquals(value(width, 1e30), round(width, mode, 1e30), "FP$width $mode 1e30")
+                assertEquals(value(width, -1e30), round(width, mode, -1e30), "FP$width $mode -1e30")
+            }
+            for (mode in listOf("ceil", "floor", "round", "rint", "truncate")) {
+                for (special in listOf(Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NaN)) {
+                    assertEquals(value(width, special), round(width, mode, special), "FP$width $mode $special")
+                }
+            }
+            assertEquals(value(width, -0.0), round(width, "truncate", -0.75), "FP$width")
+            assertEquals(value(width, -0.0), round(width, "round", -0.25), "FP$width")
+            assertEquals(value(width, -0.0), round(width, "round", -0.5), "FP$width")
+            assertEquals(value(width, 2.0), round(width, "truncate", 2.75), "FP$width")
+            assertEquals(value(width, -2.0), round(width, "truncate", -2.75), "FP$width")
+            assertEquals(value(width, 3.0), round(width, "round", 2.5), "FP$width")
+            assertEquals(value(width, -2.0), round(width, "round", -2.5), "FP$width")
+            assertEquals(value(width, -3.0), round(width, "round", -2.75), "FP$width")
+        }
+    }
+
+    @Test
+    fun integerConversionKeepsTheLongPathForRoundAndTruncate() {
+        // FPToInt was not changed by Evolution 76b178dd.
+        val attributes = mapOf("fpwidth" to "64", "width" to "64")
+        fun toInt(mode: String, number: Double) = FloatingPointLibrary.evaluate("FPToInt",
+            attributes + ("mode" to mode), listOf(value(64, number)))[0]
+        for (mode in listOf("round", "truncate")) {
+            assertEquals(LogicVector.of(64, Long.MAX_VALUE.toULong()), toInt(mode, 1e30))
+            assertEquals(LogicVector.of(64, Long.MIN_VALUE.toULong()), toInt(mode, -1e30))
+            assertEquals(LogicVector.low(64), toInt(mode, Double.NaN))
+        }
+        assertEquals(LogicVector.of(64, (-2L).toULong()), toInt("truncate", -2.75))
+        assertEquals(LogicVector.of(64, (-2L).toULong()), toInt("round", -2.5))
     }
 
     @Test
@@ -162,6 +219,34 @@ class FloatingPointLibraryTest {
                 listOf(value(from, -1.5)))
             assertEquals(listOf(value(to, -1.5), LogicVector.low(1)), converted)
         }
+    }
+
+    /** Evolution 21f1e158 (#3230): a 32-bit result is rounded once, not through a double. */
+    @Test
+    fun integerToFloat32RoundsOnce() {
+        fun convert(fpWidth: Int, unsigned: Boolean, input: Long): ULong =
+            FloatingPointLibrary.evaluate("IntToFP",
+                mapOf("width" to "64", "fpwidth" to "$fpWidth") + if (unsigned) mapOf("mode" to "unsigned") else emptyMap(),
+                listOf(LogicVector.of(64, input.toULong())))[0].value
+        val wide = (1L shl 62) + (1L shl 38) + 1
+        assertEquals(0x5e800001uL, convert(32, false, wide))
+        assertEquals(0xde800001uL, convert(32, false, -wide))
+        assertEquals(0x5f7fffffuL, convert(32, true, -(3L shl 39) + 1))
+        assertEquals(0x5d800001uL, convert(32, false, (1L shl 60) + (1L shl 36) + 1))
+        assertEquals(0x4b800000uL, convert(32, false, 1L shl 24))
+        assertEquals(0xc0400000uL, convert(32, false, -3))
+        assertEquals(0xdf000000uL, convert(32, false, Long.MIN_VALUE))
+        assertEquals(0x5f800000uL, convert(32, true, -1))
+        assertEquals(0x4b7fffffuL, convert(32, false, (1L shl 24) - 1))
+        assertEquals(0x4b800000uL, convert(32, false, (1L shl 24) + 1))
+        assertEquals(0x4b800002uL, convert(32, false, (1L shl 24) + 3))
+        assertEquals(0x43d0000000000000uL, convert(64, false, 1L shl 62))
+        val narrow = FloatingPointLibrary.evaluate("IntToFP", mapOf("width" to "8", "fpwidth" to "32"),
+            listOf(LogicVector.of(8, 0x80uL)))
+        assertEquals(listOf(value(32, -128.0), LogicVector.low(1)), narrow)
+        val unknown = FloatingPointLibrary.evaluate("IntToFP", mapOf("width" to "8", "fpwidth" to "32"),
+            listOf(LogicVector.unknown(8)))
+        assertEquals(value(32, Double.NaN), unknown[0])
     }
 
     @Test

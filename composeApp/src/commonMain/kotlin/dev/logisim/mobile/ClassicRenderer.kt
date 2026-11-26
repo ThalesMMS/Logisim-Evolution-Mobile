@@ -36,6 +36,7 @@ import dev.logisim.mobile.core.LogicValue
 import dev.logisim.mobile.core.MemoryComponentState
 import dev.logisim.mobile.core.MemoryComponents
 import dev.logisim.mobile.core.SimulationState
+import dev.logisim.mobile.core.TtlComponents
 import dev.logisim.mobile.core.bounds
 import dev.logisim.mobile.core.layout
 import dev.logisim.mobile.core.inputPorts
@@ -108,7 +109,9 @@ internal fun DrawScope.drawClassicComponent(
         layout.inputs.firstOrNull()?.position?.let { it in style.floatingPoints } == true)
     val componentState = simulation.componentStates[component.id].takeUnless { printerView }
     if (kind.startsWith("TTL_")) {
-        drawTtlPackage(component, measurer, style.color(EditorColor.COMPONENT, Color.Black))
+        drawTtlPackage(component, measurer, style.color(EditorColor.COMPONENT, Color.Black), style.gateShape,
+            // AbstractTtlGate paints the register dots whatever the view, so the printer view keeps them.
+            TtlComponents.ttlState(simulation.componentStates[component.id]), { style.colors.signalColor(null, it, false, style.palette) }, style.valueCharacters)
         drawComponentLabel(component, bounds, measurer, style)
         return
     }

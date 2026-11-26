@@ -95,6 +95,7 @@ internal class HdlEmitter(
                 "ADDER", "SUBTRACTOR", "NEGATOR", "COMPARATOR", "MIN_MAX", "MULTIPLIER", "SHIFTER", "ABSOLUTE" -> arithmetic(cell)
                 "D_FLIP_FLOP", "T_FLIP_FLOP", "JK_FLIP_FLOP", "SR_FLIP_FLOP", "REGISTER", "COUNTER" -> storage(cell)
                 "BIT_FINDER" -> bitFinder(cell)
+                "FPAbsolute" -> floatingPointAbsolute(cell)
                 "EXPONENTIATOR" -> exponentiator(cell)
                 "SQUARE_ROOT" -> squareRoot(cell)
                 "SHIFT_REGISTER" -> shiftRegister(cell)
@@ -185,6 +186,33 @@ internal class HdlEmitter(
         val enable = control(cell, 1, false, "enable")
         val driven = if (cell.component.kind == ComponentKind.CONTROLLED_INVERTER) inverted(data) else data
         assign(output(cell, 0), conditional(isHigh(enable), driven, released(cell.outputs[0].width)))
+    }
+
+    /**
+     * FP Absolute as Evolution generates it since ee61bc5d (PR 3174): the result is the input with
+     * the sign bit cleared, so a NaN keeps its payload, and error is high for a NaN input.
+     */
+    private fun floatingPointAbsolute(cell: HdlCell) {
+        val input = endpoint(cell, 0, "in")
+        val width = input.width
+        val fractionBits = when (width) {
+            8 -> 3
+            16 -> 10
+            32 -> 23
+            64 -> 52
+            else -> throw IllegalArgumentException("Unsupported floating point width $width.")
+        }
+        val bits = input.bits.mapIndexed { bit, signal -> if (input.driven[bit]) signal else missing(cell, input.terminal.name) }
+        val result = cell.outputs.indexOfFirst { it.terminal.name == "out" }
+        if (result >= 0) assign(output(cell, result), vector(bits.take(width - 1) + bit(false)))
+        val error = cell.outputs.indexOfFirst { it.terminal.name == "error" }
+        if (error >= 0) {
+            val and = if (verilog) " & " else " and "
+            val or = if (verilog) " | " else " or "
+            val exponentOnes = bits.subList(fractionBits, width - 1).joinToString(and)
+            val fractionSet = bits.subList(0, fractionBits).joinToString(or)
+            assign(output(cell, error), vector(listOf("($exponentOnes)$and($fractionSet)")))
+        }
     }
 
     private fun reptarLocalBus(cell: HdlCell) {

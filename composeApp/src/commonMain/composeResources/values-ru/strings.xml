@@ -80,6 +80,7 @@
     <string name="a11y_input_toggle_bit">Переключить бит {name}…</string>
     <string name="a11y_input_toggle_low_bit">Переключить бит 0 {name}</string>
     <string name="a11y_insert_below_selected">Под выделенным компонентом</string>
+    <string name="a11y_insert_circuit">Вставить {name} в {target}</string>
     <string name="a11y_insert_component">Вставить {name}</string>
     <string name="a11y_insert_custom">Заданные координаты</string>
     <string name="a11y_insert_next_free">Следующее свободное место</string>
@@ -1111,6 +1112,10 @@
     <string name="byte_size_mib_fraction">{whole},{fraction} МиБ</string>
     <string name="canvas_component_tip">{component}: {port}</string>
     <string name="canvas_width_error">Несовпадение разрядности</string>
+    <string name="circuit_insert">Вставить</string>
+    <string name="circuit_insert_into">Вставить в {target}</string>
+    <string name="circuit_insert_recursive">{name} содержит {target}. Вставка создала бы рекурсивную схему.</string>
+    <string name="circuit_insert_self">{name} — открытая схема. Схема не может содержать саму себя.</string>
     <string name="circuit_properties_title">Свойства схемы</string>
     <string name="circuit_remove_error_title">Невозможно удалить схему</string>
     <string name="circuit_remove_last_error">В проекте должна быть хотя бы одна схема.</string>
@@ -4204,6 +4209,7 @@ SHA-256: {sha256}</string>
     <string name="status_operation_cancelled">Действие отменено.</string>
     <string name="status_paste_subcircuit_mismatch">Не удалось вставить. В проекте назначения должно быть такое же определение подсхемы {name}.</string>
     <string name="status_place">Коснитесь точки на сетке, чтобы вставить {name}.</string>
+    <string name="status_place_circuit">Коснитесь сетки, чтобы вставить {name} в {target}.</string>
     <plurals name="status_project_imported">
         <item quantity="one">Проект импортирован. В проекте {count} схема.</item>
         <item quantity="few">Проект импортирован. В проекте {count} схемы.</item>

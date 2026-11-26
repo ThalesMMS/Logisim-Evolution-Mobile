@@ -1,0 +1,363 @@
+[
+ [
+  "environment",
+  {
+   "serial": "emulator-5562",
+   "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+   "keyboard": [
+    "1: AT Translated Set 2 keyboard"
+   ],
+   "show_ime_with_hard_keyboard": "0",
+   "apkSha256": "8105016fa6eb7ec1a96e3d7d5425922a2ba13d402b33eeb9790a079a42e14617"
+  }
+ ],
+ [
+  "Ctrl+N",
+  "Circuit main."
+ ],
+ [
+  "Ctrl+1",
+  "Tap an input to toggle between 0 and 1."
+ ],
+ [
+  "Ctrl+2",
+  "Two fingers pan and zoom. Tap to select; drag from a terminal to draw a wire."
+ ],
+ [
+  "Ctrl+3",
+  "Two fingers pan and zoom. Tap a terminal, wire, or grid point, then the destination."
+ ],
+ [
+  "Ctrl+4",
+  "Text tool"
+ ],
+ [
+  "Ctrl+5",
+  "Tap the grid to insert Image."
+ ],
+ [
+  "Ctrl+6",
+  "Tap the grid to insert Input."
+ ],
+ [
+  "Ctrl+7",
+  "Tap the grid to insert Output."
+ ],
+ [
+  "Ctrl+8",
+  "Tap the grid to insert NOT."
+ ],
+ [
+  "Ctrl+9",
+  "Tap the grid to insert AND."
+ ],
+ [
+  "Ctrl+0",
+  "Tap the grid to insert OR."
+ ],
+ [
+  "Ctrl+9, W, =, R, tap",
+  {
+   "status": "AND inserted. Edit mode.",
+   "props": {
+    "Facing": "South",
+    "Gate size": "Wide",
+    "Number of inputs": "3"
+   }
+  }
+ ],
+ [
+  "M, - with the AND selected",
+  {
+   "props": {
+    "Facing": "South",
+    "Gate size": "Medium",
+    "Number of inputs": "2"
+   },
+   "zoom": [
+    "177%"
+   ]
+  }
+ ],
+ [
+  "Insert",
+  "Now tap the destination."
+ ],
+ [
+  "tap destination",
+  {
+   "status": "1 component pasted.",
+   "counts": [
+    "2 components · 0 wires"
+   ]
+  }
+ ],
+ [
+  "- with nothing selected",
+  {
+   "before": [
+    "177%"
+   ],
+   "after": [
+    "142%"
+   ]
+  }
+ ],
+ [
+  "Shift, Shift",
+  {
+   "findActionOpen": true
+  }
+ ],
+ [
+  "Ctrl+Shift+E",
+  [
+   "Export circuit drawing",
+   "PNG",
+   "PDF",
+   "Printer view",
+   "Export drawing"
+  ]
+ ],
+ [
+  "Ctrl+P",
+  [
+   "Export circuit drawing",
+   "PNG",
+   "PDF",
+   "Printer view",
+   "Export drawing"
+  ]
+ ],
+ [
+  "Project > Add circuit hk",
+  "Circuit hk created."
+ ],
+ [
+  "Ctrl+Shift+U (hk)",
+  {
+   "status": "Circuit order updated.",
+   "order": [
+    "Open definition hk",
+    "Open definition main, main circuit"
+   ]
+  }
+ ],
+ [
+  "Ctrl+Shift+D (hk)",
+  {
+   "status": "Circuit order updated.",
+   "order": [
+    "Open definition main, main circuit",
+    "Open definition hk"
+   ]
+  }
+ ],
+ [
+  "#379 Search tab > Preferences… opened",
+  true
+ ],
+ [
+  "#379 Back, then Ctrl+6 without touching the canvas",
+  {
+   "before": "Two fingers pan and zoom. Tap to select; drag from a terminal to draw a wire.",
+   "focused": [
+    [
+     "editor-search-query",
+     ""
+    ]
+   ],
+   "status": "Tap the grid to insert Input."
+  }
+ ],
+ [
+  "Preferences: tool 11-14 rows",
+  {
+   "11": "—",
+   "12": "—",
+   "13": "—",
+   "14": "—"
+  }
+ ],
+ [
+  "Tool 11",
+  [
+   [
+    [
+     "Ctrl+S",
+     "Already assigned to Save."
+    ],
+    [
+     "Ctrl+J",
+     "no conflict"
+    ]
+   ],
+   "Ctrl+J"
+  ]
+ ],
+ [
+  "Tool 12",
+  [
+   [
+    [
+     "Ctrl+K",
+     "Already assigned to Automatic ticks."
+    ],
+    [
+     "Ctrl+G",
+     "no conflict"
+    ]
+   ],
+   "Ctrl+G"
+  ]
+ ],
+ [
+  "Tool 13",
+  [
+   [
+    [
+     "Ctrl+K",
+     "Already assigned to Automatic ticks."
+    ],
+    [
+     "Ctrl+G",
+     "Already assigned to Select toolbar tool 12."
+    ],
+    [
+     "Ctrl+B",
+     "no conflict"
+    ]
+   ],
+   "Ctrl+B"
+  ]
+ ],
+ [
+  "Tool 14",
+  [
+   [
+    [
+     "Ctrl+K",
+     "Already assigned to Automatic ticks."
+    ],
+    [
+     "Ctrl+G",
+     "Already assigned to Select toolbar tool 12."
+    ],
+    [
+     "Ctrl+B",
+     "Already assigned to Select toolbar tool 13."
+    ],
+    [
+     "Ctrl+H",
+     "no conflict"
+    ]
+   ],
+   "Ctrl+H"
+  ]
+ ],
+ [
+  "Preferences: double Shift",
+  "false"
+ ],
+ [
+  "Editor after remap (no canvas tap)",
+  {
+   "Ctrl+J": "Tap the grid to insert XOR.",
+   "Ctrl+G": "Tap the grid to insert NAND.",
+   "Ctrl+B": "Tap the grid to insert NOR.",
+   "Ctrl+H": "Tap the grid to insert D flip-flop.",
+   "Shift, Shift opens Find Action": false
+  }
+ ],
+ [
+  "After force-stop and relaunch",
+  {
+   "Ctrl+J": "Tap the grid to insert XOR.",
+   "Ctrl+G": "Tap the grid to insert NAND.",
+   "Ctrl+B": "Tap the grid to insert NOR.",
+   "Ctrl+H": "Tap the grid to insert D flip-flop.",
+   "Shift, Shift opens Find Action": false
+  }
+ ],
+ [
+  "Restore shortcut defaults",
+  {
+   "restoreEnabled": "false",
+   "tool11": "—",
+   "tool12": "—",
+   "tool13": "—",
+   "tool14": "—",
+   "doubleShiftAfterRestore": "false",
+   "doubleShiftSwitchedOn": "true"
+  }
+ ],
+ [
+  "Editor after restore (no canvas tap)",
+  {
+   "Ctrl+6": "Tap the grid to insert Input.",
+   "Ctrl+J": "Tap the grid to insert Input.",
+   "Shift, Shift opens Find Action": false
+  }
+ ],
+ [
+  "LED tool: H,L, place",
+  {
+   "status": "LED inserted. Edit mode.",
+   "showLabel": "No"
+  }
+ ],
+ [
+  "LED tool: V, place",
+  {
+   "status": "LED inserted. Edit mode.",
+   "showLabel": "Yes"
+  }
+ ],
+ [
+  "LED tool: T, place",
+  {
+   "status": "LED inserted. Edit mode.",
+   "showLabel": "No"
+  }
+ ],
+ [
+  "Canvas labels",
+  [
+   [
+    "canvas-component:c2",
+    "l1"
+   ],
+   [
+    "canvas-component:c3",
+    "l2"
+   ],
+   [
+    "canvas-component:c4",
+    "l3"
+   ],
+   [
+    "canvas-component:c1",
+    "Input (670, 660)"
+   ]
+  ]
+ ],
+ [
+  "Ctrl+Shift+W",
+  [
+   "Close session",
+   "Projects",
+   "New project",
+   "Show trash",
+   "Untitled",
+   "Edited just now"
+  ]
+ ],
+ [
+  "Restored double Shift with the canvas focused",
+  {
+   "Ctrl+2": "Two fingers pan and zoom. Tap to select; drag from a terminal to draw a wire.",
+   "imeShown": false,
+   "Shift, Shift opens Find Action": true
+  }
+ ]
+]

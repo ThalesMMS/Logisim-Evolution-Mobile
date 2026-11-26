@@ -79,6 +79,7 @@ Usage
     python3 scripts/parity_matrix.py --check    # Fail if generated outputs are stale
     python3 scripts/parity_matrix.py reverify temporal-kinds --evolution-jar JAR [--suites default,...]
     python3 scripts/parity_matrix.py reverify blif-circuit --evolution-jar JAR
+    python3 scripts/parity_matrix.py reverify EVIDENCE --evolution-jar JAR   # any sweep evidence with a receipt
 
 A receipt with a ``fixtures`` regular expression reruns the sweep suites only for matching
 fixtures. The ``corpus`` and ``corpus-roundtrip`` suites run ``scripts/oracle/blif-circuit/run.sh``.
@@ -667,7 +668,7 @@ def reverify_temporal(root: Path, receipt_path: str, evolution_jar: Path, core_j
             continue
         output = work / ident
         shutil.rmtree(output, ignore_errors=True)
-        subprocess.run([str(run), *SWEEP_SUITES[ident], str(evolution_jar), str(output), str(core_jar)],
+        subprocess.run(["bash", str(run), *SWEEP_SUITES[ident], str(evolution_jar), str(output), str(core_jar)],
                        cwd=root, check=True, timeout=7200, env=environment)
         artifact = root / by_id[ident]["artifact"]
         shutil.copyfile(output / "summary.tsv", artifact)
@@ -732,7 +733,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", action="store_true", help="fail if docs/parity.md or docs/parity.json is stale")
     sub = parser.add_subparsers(dest="command")
     again = sub.add_parser("reverify", help="re-run a sweep campaign and refresh its receipt")
-    again.add_argument("evidence", choices=["temporal-kinds", "blif-circuit"])
+    again.add_argument("evidence", help="a sweep evidence with a receipt, such as temporal-kinds or blif-circuit")
     again.add_argument("--evolution-jar", type=Path, required=True)
     again.add_argument("--core-jar", type=Path, default=ROOT / "core/build/libs/core-jvm.jar")
     again.add_argument("--suites", help="comma-separated suites (default: every suite of the receipt)")
@@ -741,6 +742,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "reverify":
             matrix = load_json(ROOT, MATRIX)
+            if "receipt" not in matrix["evidence"].get(args.evidence, {}):
+                raise MatrixError(f"{args.evidence} is not a sweep evidence with a receipt")
             receipt_path = matrix["evidence"][args.evidence]["receipt"]
             suites = ([s for s in args.suites.split(",") if s] if args.suites else
                       [suite["id"] for suite in load_json(ROOT, receipt_path)["suites"]])

@@ -1,0 +1,11 @@
+inttofp	SAME	SAME
+inttofp__fpwidth_64__mode_unsigned	SAME	SAME
+inttofp__fpwidth_8__mode_unsigned	SAME	SAME
+inttofp__width_16__fpwidth_8	SAME	SAME
+inttofp__width_16__mode_unsigned	SAME	SAME
+inttofp__width_1__fpwidth_64	SAME	SAME
+inttofp__width_31__fpwidth_8	SAME	SAME
+ttl_74266	SAME	SAME
+ttl_74266__VccGndPorts_true__ShowInternalStructure_true	SAME	SAME
+ttl_7476	SAME	SAME
+ttl_7476__VccGndPorts_true__ShowInternalStructure_true	SAME	SAME

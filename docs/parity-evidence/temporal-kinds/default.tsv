@@ -30,7 +30,7 @@ fplogarithm	SAME	SAME
 fpminmax	SAME	SAME
 fpmultiplier	SAME	SAME
 fpnegator	SAME	SAME
-fpround	SAME	SAME
+fpround	VALUE	VALUE
 fpsquareroot	SAME	SAME
 fpsubtractor	SAME	SAME
 fptofp	SAME	SAME

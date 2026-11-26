@@ -22,12 +22,30 @@ object FloatingPointNumbers {
     fun encode(width: Int, number: Double): LogicVector {
         require(width in widths) { "Unsupported floating point width: $width." }
         val bits = when (width) {
-            8 -> encodeSmall(number.toFloat(), 4, 3).toULong()
+            8 -> encodeFloat8(number.toFloat()).toULong()
             16 -> encodeSmall(number.toFloat(), 5, 10).toULong()
             32 -> number.toFloat().toBits().toUInt().toULong()
             else -> number.toBits().toULong()
         }
         return LogicVector.of(width, bits)
+    }
+
+    /**
+     * Rounds an integer of up to 64 bits to the nearest binary32, ties to even, in one step. Going
+     * through a Double first rounds twice and can land one step low (Evolution #3230).
+     */
+    fun roundToFloat(magnitude: ULong, negative: Boolean): Float {
+        val bits = 64 - magnitude.countLeadingZeroBits()
+        val float = if (bits <= 24) magnitude.toLong().toFloat() else {
+            val shift = bits - 24
+            var significand = magnitude shr shift
+            val rest = magnitude and ((1uL shl shift) - 1uL)
+            val half = 1uL shl (shift - 1)
+            if (rest > half || (rest == half && significand and 1uL == 1uL)) significand++
+            // significand <= 2^24 and 2^shift <= 2^40 are both exact in a Float.
+            significand.toLong().toFloat() * 2f.pow(shift)
+        }
+        return if (negative) -float else float
     }
 
     fun parse(text: String): Double? {
@@ -70,6 +88,9 @@ object FloatingPointNumbers {
         return Float.fromBits(floatSign or (floatExponent shl 23) or (fraction shl (23 - fractionBits)))
     }
 
+    /** The desktop MiniFloat.floatToMiniFloat143 conversion straight from a float, keeping its NaN payload. */
+    internal fun encodeFloat8(number: Float): Int = encodeSmall(number, 4, 3)
+
     private fun encodeSmall(number: Float, exponentBits: Int, fractionBits: Int): Int {
         val bits = number.toRawBits()
         val sign = (bits ushr 31) shl (exponentBits + fractionBits)
@@ -78,7 +99,9 @@ object FloatingPointNumbers {
         val shift = 23 - fractionBits
         val floatFraction = bits and 0x7fffff
         if (number.isNaN()) {
-            val payload = if (fractionBits == 3) (floatFraction and 0x700000) ushr 20
+            // Evolution fe2c9336: keep a NaN whose payload is only in the lower 20 bits.
+            val payload = if (fractionBits == 3) ((floatFraction and 0x700000) ushr 20) or
+                    (if (floatFraction and 0x0fffff != 0) 1 else 0)
                 else (floatFraction ushr 13) or ((floatFraction and 0x1ff0) ushr 4) or (floatFraction and 0xf)
             return sign or encodedInfinity or payload
         }

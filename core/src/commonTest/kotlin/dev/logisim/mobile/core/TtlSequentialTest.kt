@@ -34,13 +34,14 @@ class TtlSequentialTest {
     }
 
     @Test fun dual7476UsesFallingEdgesAndIndependentHalves() {
-        val pins = mapOf(2 to h, 3 to h, 4 to h, 15 to h, 5 to l, 6 to h, 7 to h, 9 to l, 12 to l)
+        // Datasheet pinout since Evolution 7886323d: CLK2 on 6, nPRE2 on 7, nCLR2 on 8, K1 on 16, Q1 on 15.
+        val pins = mapOf(2 to h, 3 to h, 4 to h, 16 to h, 6 to l, 7 to h, 8 to h, 9 to l, 12 to l)
         val first = fall("7476", pins, 1)
-        assertEquals(h, first.outputs[14]); assertEquals(l, first.outputs[11])
+        assertEquals(h, first.outputs[15]); assertEquals(l, first.outputs[14]); assertEquals(l, first.outputs[11])
         val next = fall("7476", pins, 1, first.state)
-        assertEquals(l, next.outputs[14])
-        val set = run("7476", pins + (6 to l), next.state)
-        assertEquals(h, set.outputs[11])
+        assertEquals(l, next.outputs[15])
+        val set = run("7476", pins + (7 to l), next.state)
+        assertEquals(h, set.outputs[11]); assertEquals(l, set.outputs[10])
     }
 
     @Test fun jk74107ResolvesUnknownControlsByAgreement() {

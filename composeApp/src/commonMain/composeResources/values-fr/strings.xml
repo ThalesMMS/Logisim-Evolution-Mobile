@@ -79,6 +79,7 @@
     <string name="a11y_input_toggle_bit">Basculer un bit de {name}…</string>
     <string name="a11y_input_toggle_low_bit">Basculer le bit 0 de {name}</string>
     <string name="a11y_insert_below_selected">Sous le composant sélectionné</string>
+    <string name="a11y_insert_circuit">Insérer {name} dans {target}</string>
     <string name="a11y_insert_component">Insérer {name}</string>
     <string name="a11y_insert_custom">Coordonnées personnalisées</string>
     <string name="a11y_insert_next_free">Prochain emplacement libre</string>
@@ -1094,6 +1095,10 @@
     <string name="byte_size_mib_fraction">{whole},{fraction} Mio</string>
     <string name="canvas_component_tip">{component} : {port}</string>
     <string name="canvas_width_error">Largeurs incompatibles</string>
+    <string name="circuit_insert">Insérer</string>
+    <string name="circuit_insert_into">Insérer dans {target}</string>
+    <string name="circuit_insert_recursive">{name} contient {target}. L’insérer créerait un circuit récursif.</string>
+    <string name="circuit_insert_self">{name} est le circuit affiché. Un circuit ne peut pas se contenir lui-même.</string>
     <string name="circuit_properties_title">Propriétés du circuit</string>
     <string name="circuit_remove_error_title">Impossible de supprimer le circuit</string>
     <string name="circuit_remove_last_error">Un projet doit contenir au moins un circuit.</string>
@@ -4124,6 +4129,7 @@ SHA-256 : {sha256}</string>
     <string name="status_operation_cancelled">Opération annulée.</string>
     <string name="status_paste_subcircuit_mismatch">Collage impossible. Le projet de destination doit contenir la même définition du sous-circuit {name}.</string>
     <string name="status_place">Touchez la grille pour insérer {name}.</string>
+    <string name="status_place_circuit">Touchez la grille pour insérer {name} dans {target}.</string>
     <plurals name="status_project_imported">
         <item quantity="one">Projet importé avec {count} circuit.</item>
         <item quantity="many">Projet importé avec {count} circuits.</item>

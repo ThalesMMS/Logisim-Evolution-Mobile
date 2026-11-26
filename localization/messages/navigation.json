@@ -256,5 +256,35 @@
       "one": "{count} componente selecionado.",
       "other": "{count} componentes selecionados."
     }
+  },
+  "circuit_insert": {
+    "en": "Insert",
+    "pt": "Inserir",
+    "description": "Circuits row button that picks the add tool for the definition, as a click on a circuit in Evolution's project tree (#368)."
+  },
+  "circuit_insert_into": {
+    "en": "Insert into {target}",
+    "pt": "Inserir em {target}",
+    "description": "Circuits row menu item that picks the add tool for the definition; target is the circuit in view."
+  },
+  "a11y_insert_circuit": {
+    "en": "Insert {name} into {target}",
+    "pt": "Inserir {name} em {target}",
+    "description": "Assistive name of the Circuits row Insert button."
+  },
+  "circuit_insert_self": {
+    "en": "{name} is the circuit in view. A circuit cannot contain itself.",
+    "pt": "{name} é o circuito em exibição. Um circuito não pode conter a si mesmo.",
+    "description": "Why the Circuits row Insert action is disabled for the circuit in view."
+  },
+  "circuit_insert_recursive": {
+    "en": "{name} contains {target}. Inserting it would create a recursive circuit.",
+    "pt": "{name} contém {target}. Inseri-lo criaria um circuito recursivo.",
+    "description": "Why the Circuits row Insert action is disabled when the definition contains the circuit in view, directly or through other subcircuits."
+  },
+  "status_place_circuit": {
+    "en": "Tap the grid to insert {name} into {target}.",
+    "pt": "Toque na grade para inserir {name} em {target}.",
+    "description": "Status after choosing Insert on a Circuits row."
   }
 }

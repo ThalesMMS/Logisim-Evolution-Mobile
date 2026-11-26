@@ -4,6 +4,8 @@ import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.ime
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -306,12 +308,20 @@ internal fun Modifier.editorKeyboardShortcuts(
     // A soft keyboard consumes typed characters and passes only Shift on to the window, so a
     // capitalised word typed from a hardware or emulator keyboard reads as bare Shift taps.
     val imeVisible by rememberUpdatedState(WindowInsets.ime.getBottom(LocalDensity.current) > 0)
-    LaunchedEffect(focus) { focus.requestFocus() }
+    var holdsFocus by remember { mutableStateOf(false) }
+    // A text field that lets go of focus, or a dialog or sheet that closes, can leave nothing focused in the
+    // window; key events then reach no node. Take focus back whenever the window has it and nothing here does.
+    LaunchedEffect(window.isWindowFocused, holdsFocus) {
+        if (window.isWindowFocused && !holdsFocus) focus.requestFocus()
+    }
     LaunchedEffect(window.isWindowFocused) {
         if (!window.isWindowFocused) presses.clear()
     }
     return focusRequester(focus)
-        .onFocusChanged { if (!it.hasFocus) presses.clear() }
+        .onFocusChanged {
+            holdsFocus = it.hasFocus
+            if (!it.hasFocus) presses.clear()
+        }
         .pointerInput(Unit) {
             awaitPointerEventScope {
                 while (true) {

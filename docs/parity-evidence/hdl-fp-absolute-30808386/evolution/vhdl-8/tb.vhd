@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity tb is end entity;
+architecture sim of tb is
+  signal dataIn, result : std_logic_vector(7 downto 0);
+  signal fpError : std_logic;
+begin
+  dut : entity work.FPABSOLUTE_8 port map (dataIn => dataIn, result => result, fpError => fpError);
+  process begin
+    dataIn <= "00000000"; wait for 1 ns;
+    assert result = "00000000" and fpError = '0' report "FAIL vector 0" severity failure;
+    dataIn <= "10000000"; wait for 1 ns;
+    assert result = "00000000" and fpError = '0' report "FAIL vector 1" severity failure;
+    dataIn <= "00000001"; wait for 1 ns;
+    assert result = "00000001" and fpError = '0' report "FAIL vector 2" severity failure;
+    dataIn <= "10000001"; wait for 1 ns;
+    assert result = "00000001" and fpError = '0' report "FAIL vector 3" severity failure;
+    dataIn <= "00111100"; wait for 1 ns;
+    assert result = "00111100" and fpError = '0' report "FAIL vector 4" severity failure;
+    dataIn <= "10111100"; wait for 1 ns;
+    assert result = "00111100" and fpError = '0' report "FAIL vector 5" severity failure;
+    dataIn <= "01000000"; wait for 1 ns;
+    assert result = "01000000" and fpError = '0' report "FAIL vector 6" severity failure;
+    dataIn <= "11000000"; wait for 1 ns;
+    assert result = "01000000" and fpError = '0' report "FAIL vector 7" severity failure;
+    dataIn <= "01110111"; wait for 1 ns;
+    assert result = "01110111" and fpError = '0' report "FAIL vector 8" severity failure;
+    dataIn <= "11110111"; wait for 1 ns;
+    assert result = "01110111" and fpError = '0' report "FAIL vector 9" severity failure;
+    dataIn <= "01111000"; wait for 1 ns;
+    assert result = "01111000" and fpError = '0' report "FAIL vector 10" severity failure;
+    dataIn <= "11111000"; wait for 1 ns;
+    assert result = "01111000" and fpError = '0' report "FAIL vector 11" severity failure;
+    dataIn <= "01111101"; wait for 1 ns;
+    assert result = "01111101" and fpError = '1' report "FAIL vector 12" severity failure;
+    dataIn <= "11111101"; wait for 1 ns;
+    assert result = "01111101" and fpError = '1' report "FAIL vector 13" severity failure;
+    dataIn <= "01111001"; wait for 1 ns;
+    assert result = "01111001" and fpError = '1' report "FAIL vector 14" severity failure;
+    dataIn <= "11111001"; wait for 1 ns;
+    assert result = "01111001" and fpError = '1' report "FAIL vector 15" severity failure;
+    report "FP_ABSOLUTE_PASS FPABSOLUTE_8";
+    wait;
+  end process;
+end architecture;

@@ -18,9 +18,9 @@
     "step"
    ],
    "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh EVOLUTION_JAR WORK/default CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites default)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "variants",
@@ -31,9 +31,9 @@
     "step"
    ],
    "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants EVOLUTION_JAR WORK/variants CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites variants)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "negative",
@@ -44,9 +44,9 @@
     "step"
    ],
    "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants --negative EVOLUTION_JAR WORK/negative CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites negative)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "pairs",
@@ -57,9 +57,9 @@
     "step"
    ],
    "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --pairs 6 EVOLUTION_JAR WORK/pairs CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites pairs)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "roundtrip",
@@ -69,9 +69,9 @@
     "roundtrip"
    ],
    "command": "ResaveDesktop WORK/variants/fixtures, then TemporalCorpusCli settle on each <id>.desktop.circ against the Evolution trace for the original (python3 scripts/parity_matrix.py reverify blif-circuit --suites roundtrip)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "corpus",
@@ -82,9 +82,9 @@
     "step"
    ],
    "command": "scripts/oracle/blif-circuit/run.sh EVOLUTION_JAR WORK/corpus CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites corpus)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   },
   {
    "id": "corpus-roundtrip",
@@ -94,9 +94,9 @@
     "roundtrip"
    ],
    "command": "scripts/oracle/blif-circuit/run.sh EVOLUTION_JAR WORK/corpus CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites corpus-roundtrip)",
-   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
-   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
-   "recorded": "2026-11-08"
+   "mobile_revision": "434c72f2f27d3708635f9e6db9ac21f13e74981b",
+   "core_jar_sha256": "6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9",
+   "recorded": "2026-11-23"
   }
  ]
 }

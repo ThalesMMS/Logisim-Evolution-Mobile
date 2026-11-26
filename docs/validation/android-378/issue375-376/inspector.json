@@ -1,0 +1,59 @@
+[
+ [
+  "TWO_PIN_LED inspector",
+  "Bipolar: No; Color con polarización inversa: #00f000 (screenshot 02-led-inspector)"
+ ],
+ [
+  "POR",
+  {
+   "status": "Se insertó Reinicio al encender. Modo de edición.",
+   "inspector": [
+    "Reinicio al encender",
+    "Orientación",
+    "Este",
+    "Tamaño de dibujo",
+    "Ancho",
+    "Transición del POR",
+    "De alto a bajo",
+    "Duración del reinicio (s)",
+    "2"
+   ]
+  }
+ ],
+ [
+  "SOC_DMA",
+  {
+   "status": "Se insertó DMA SoC. Modo de edición.",
+   "inspector": [
+    "DMA SoC",
+    "Etiqueta",
+    "Aplicar",
+    "Dirección base",
+    "0x0",
+    "Tamaño de ráfaga",
+    "16",
+    "Bus conectado",
+    "No conectado a un bus",
+    "Bus de origen",
+    "No conectado a un bus",
+    "Bus de destino",
+    "No conectado a un bus"
+   ]
+  }
+ ],
+ [
+  "SOC_BUS",
+  {
+   "status": "Se insertó Bus SoC. Modo de edición.",
+   "inspector": [
+    "Bus SoC",
+    "Etiqueta",
+    "Aplicar",
+    "Tamaño de la traza",
+    "5",
+    "Mostrar trazas",
+    "Sí"
+   ]
+  }
+ ]
+]

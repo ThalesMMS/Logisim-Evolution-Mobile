@@ -1,0 +1,28 @@
+[
+ [
+  "Overflow menus",
+  [
+   "Archivo",
+   "Editar",
+   "Ver",
+   "Proyecto",
+   "Simular",
+   "FPGA",
+   "Ayuda"
+  ]
+ ],
+ [
+  "Ver menu",
+  [
+   "Ver",
+   "Librería",
+   "Señales",
+   "Ajustar",
+   "Ajustar a la selección",
+   "Ajustar el zoom…",
+   "Acercar",
+   "Alejar",
+   "Vista de impresión"
+  ]
+ ]
+]

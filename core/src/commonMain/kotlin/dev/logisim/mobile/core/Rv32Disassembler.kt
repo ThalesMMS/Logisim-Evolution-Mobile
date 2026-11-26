@@ -96,12 +96,25 @@ object Rv32Disassembler {
                 val offset = ((bits shr 25) shl 5) or (bits ushr 7 and 31)
                 op(arrayOf("sb", "sh", "sw")[funct3]) + "${r(rs2)},$offset(${r(rs1)})"
             }
-            // Rv32imMemoryOrderingInstructions
-            0x0F -> if (funct3 != 0) null else {
-                val successor = bits ushr 20 and 15
-                val predecessor = bits ushr 24 and 15
-                if (bits ushr 28 and 15 == 8 && successor == 3 && predecessor == 3) "fence.tso"
-                else op("fence") + masks(successor) + "," + masks(predecessor)
+            // Rv32imMemoryOrderingInstructions, then RV32imNiosVVendorSpecific (#373)
+            0x0F -> when (funct3) {
+                0 -> {
+                    val successor = bits ushr 20 and 15
+                    val predecessor = bits ushr 24 and 15
+                    if (bits ushr 28 and 15 == 8 && successor == 3 && predecessor == 3) "fence.tso"
+                    else op("fence") + masks(successor) + "," + masks(predecessor)
+                }
+                1, 2 -> {
+                    val code = bits ushr 20
+                    val name = when {
+                        rd != 0 -> null
+                        funct3 == 1 -> if (code == 0) "fence.i" else null
+                        else -> Rv32AssemblerUnits.cacheCodes.indexOf(code).takeIf { it >= 0 }?.let { Rv32AssemblerUnits.cacheOps[it] }
+                    }
+                    // Evolution writes at least one space after the mnemonic, as cbo.inval.ix is longer than the field.
+                    name?.let { "$it ".padEnd(FIELD) + r(rs1) }
+                }
+                else -> null
             }
             // RV32imEnvironmentCallAndBreakpoints, then RV32im_Zicsr_ExtensionInstructions
             0x73 -> when (val funct12 = bits ushr 20 and 0xFFF) {

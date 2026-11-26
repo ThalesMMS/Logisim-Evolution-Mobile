@@ -1,0 +1,13 @@
+format/image-gif	android-whole-gif	PASS
+format/image-gif	ios-whole-gif	PASS
+format/image-svg	qualification	PASS
+format/image-tikz	qualification	PASS
+format/image-svg	svg-gates-ansi	PASS
+format/image-tikz	svg-gates-ansi	PASS
+format/image-tikz	svg-gates-iec	PASS
+format/image-svg	svg-labels-ansi	PASS
+format/image-tikz	svg-labels-ansi	PASS
+format/image-svg	svg-labels-iec	PASS
+format/image-tikz	svg-labels-iec	PASS
+format/image-svg	svg-printer	PASS
+format/image-tikz	svg-printer	PASS

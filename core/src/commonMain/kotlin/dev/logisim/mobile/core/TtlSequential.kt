@@ -103,7 +103,8 @@ object TtlSequential {
         }
         fun dualJk() {
             delay = 8
-            for ((half, m) in listOf(listOf(1, 2, 3, 4, 15, 14, 13), listOf(5, 6, 7, 9, 12, 11, 10)).withIndex()) {
+            // Datasheet pinout (VCC 5, GND 13), which Evolution follows since 7886323d (PR 3201).
+            for ((half, m) in listOf(listOf(1, 2, 3, 4, 16, 15, 14), listOf(6, 7, 8, 9, 12, 11, 10)).withIndex()) {
                 val triggered = edge(m[0], falling = true)
                 val old = bit("q$half")
                 val next = when {

@@ -218,7 +218,10 @@ internal fun LibraryPanel(
                 onCreate = { state.createCircuit(it) }, onRename = { id, name -> state.renameCircuit(id, name) },
                 onMove = { id, direction -> state.moveCircuit(id, direction) }, onDelete = { state.removeCircuit(it) },
                 onSetMain = { state.setMainCircuit(it) }, modifier = Modifier.weight(1f).fillMaxWidth(),
-                onExport = onExportCircuit)
+                onExport = onExportCircuit,
+                // Like a Library row: the add tool is picked and the sheet closes so a canvas tap places it (#368).
+                onInsert = { id -> if (state.placeProjectCircuit(id)) onChoose() },
+                insertProblem = state::projectCircuitInsertProblem)
             ExplorerSection.SEARCH -> {
                 val commands = searchActions.map { it.command }
                 val project = state.project

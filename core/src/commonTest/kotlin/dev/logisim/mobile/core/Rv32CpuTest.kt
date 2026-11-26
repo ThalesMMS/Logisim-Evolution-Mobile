@@ -107,6 +107,41 @@ class Rv32CpuTest {
     }
 
 
+    /** #373: Evolution's RV32imNiosVVendorSpecific (c3d5e3b2, 8f4df88b) decodes the Nios V cache instructions as no-ops. */
+    @Test fun niosVCacheInstructionsAreNoOpsAndFenceIsUnchanged() {
+        val cases = listOf(0x0802a00fu to "cbo.inval.ix t0", 0x0812a00fu to "cbo.clean.ix t0", 0x0822a00fu to "cbo.flush.ix t0",
+            0x0012a00fu to "cbo.clean t0", 0x0022a00fu to "cbo.flush t0", 0x0002a00fu to "cbo.inval t0",
+            0x0042a00fu to "cbo.zero  t0", 0x0002900fu to "fence.i   t0", 0x000fa00fu to "cbo.inval t6")
+        for ((word, text) in cases) {
+            assertEquals(text, Rv32Disassembler.format(word), word.toString(16))
+            val initial = Rv32CpuState().withRegister(5, 0x100u).withRegister(31, 0x200u)
+            val result = Rv32Cpu.step(initial, memory(word))
+            assertNull(result.error, text)
+            assertFalse(result.state.stopped, text)
+            assertEquals(4u, result.state.pc, text)
+            assertEquals(initial.registers, result.state.registers, text)
+            assertEquals(initial.csrs, result.state.csrs, text)
+            assertEquals(text, result.trace?.assembly)
+            assertEquals(emptyMap(), result.trace?.registerWrites)
+        }
+        // funct3 = 1 is fence.i only with immediate 0; funct3 = 2 needs a cbo.* code; both need rd = 0.
+        for (word in listOf(0x0012900fu, 0xFFF2900fu, 0x0032a00fu, 0x0832a00fu, 0x0052a00fu, 0x0002a08fu, 0x0002908fu, 0x0000300fu)) {
+            assertNull(Rv32Disassembler.format(word), word.toString(16))
+            val result = Rv32Cpu.step(Rv32CpuState(), memory(word))
+            assertTrue(result.state.stopped, word.toString(16))
+            assertEquals(4u, result.state.pc, word.toString(16))
+            assertNotNull(result.error, word.toString(16))
+        }
+        // fence and fence.tso keep the memory-ordering decode and its notice.
+        for ((word, text) in listOf(0x0FF0000Fu to "fence     iorw,iorw", 0x8330000Fu to "fence.tso", 0x0000000Fu to "fence     ,")) {
+            val result = Rv32Cpu.step(Rv32CpuState(), memory(word))
+            assertNull(result.error, text)
+            assertEquals(4u, result.state.pc)
+            assertEquals(text, result.trace?.assembly)
+            assertEquals("Memory ordering is a no-op in the desktop's single-threaded model.", result.trace?.diagnostic)
+        }
+    }
+
     @Test fun traceTextMatchesEvolutionGetAsmInstruction() {
         // Rows of Evolution d58a61e0's trace window (scripts/oracle/soc-debugger sweeps 48k words).
         for ((word, text) in listOf(0x00000093u to "li        ra,0", 0x002080B3u to "add       ra,ra,sp",

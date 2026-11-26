@@ -52,6 +52,16 @@ class ArithmeticLogicTest {
             evaluate(ArithmeticOperation.EXPONENTIATOR, 8, 2uL, 0xffuL, mode = "twosComplement"))
     }
 
+    @Test fun powersUseTheFullUnsignedExponentAndZeroForNegativeSignedOnes() {
+        // Evolution a3f8856c; the JVM test ArithmeticLogicPowerTest compares more cases with BigInteger.modPow.
+        assertEquals(listOf(value(64, 0x9149747a00000001uL), value(64, 0x9b955ffc40ad2283uL)),
+            evaluate(ArithmeticOperation.EXPONENTIATOR, 64, 3uL, 1uL shl 31))
+        assertEquals(listOf(value(32, 1uL), value(32, 0x9149747auL)),
+            evaluate(ArithmeticOperation.EXPONENTIATOR, 32, 3uL, 1uL shl 31))
+        for (width in listOf(40, 64)) assertEquals(listOf(value(width, 0uL), value(width, 0uL)),
+            evaluate(ArithmeticOperation.EXPONENTIATOR, width, 3uL, ULong.MAX_VALUE, mode = "twosComplement"))
+    }
+
     @Test fun squareRootHandlesMaximumUnsignedDoubleWord() {
         assertEquals(listOf(value(64, ULong.MAX_VALUE), value(64, ULong.MAX_VALUE - 1uL)),
             evaluate(ArithmeticOperation.SQUARE_ROOT, 64, ULong.MAX_VALUE, ULong.MAX_VALUE))

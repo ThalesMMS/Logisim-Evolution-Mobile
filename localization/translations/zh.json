@@ -75,6 +75,7 @@
   "a11y_input_toggle_bit": "切换 {name} 的某一位…",
   "a11y_input_toggle_low_bit": "切换 {name} 的第 0 位",
   "a11y_insert_below_selected": "选定组件的下方",
+  "a11y_insert_circuit": "将 {name} 插入到 {target}",
   "a11y_insert_component": "插入 {name}",
   "a11y_insert_custom": "自定义坐标",
   "a11y_insert_next_free": "下一个空闲位置",
@@ -1058,6 +1059,10 @@
   "byte_size_mib_fraction": "{whole}.{fraction} MiB",
   "canvas_component_tip": "{component}：{port}",
   "canvas_width_error": "位宽不兼容",
+  "circuit_insert": "插入",
+  "circuit_insert_into": "插入到 {target}",
+  "circuit_insert_recursive": "{name} 包含 {target}。插入它会形成递归电路。",
+  "circuit_insert_self": "{name} 是当前显示的电路。电路不能包含自身。",
   "circuit_properties_title": "电路属性",
   "circuit_remove_error_title": "无法删除电路",
   "circuit_remove_last_error": "项目中至少需要包含一个电路。",
@@ -3959,6 +3964,7 @@
   "status_operation_cancelled": "已取消操作。",
   "status_paste_subcircuit_mismatch": "无法粘贴。目标项目必须包含相同的子电路定义 {name}。",
   "status_place": "轻触网格可插入 {name}。",
+  "status_place_circuit": "轻触网格，将 {name} 插入到 {target}。",
   "status_project_imported": {
     "other": "已导入项目，其中包含 {count} 个电路。"
   },

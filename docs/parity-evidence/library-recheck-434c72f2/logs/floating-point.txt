@@ -1,0 +1,6 @@
+java.lang.AssertionError: FPRound {fpwidth=8} input=[10000000] output=0 desktop=00 mobile=10000000
+	at FloatingPointOracle.check(FloatingPointOracle.java:150)
+	at FloatingPointOracle.samples(FloatingPointOracle.java:168)
+	at FloatingPointOracle.run(FloatingPointOracle.java:232)
+	at FloatingPointOracle.main(FloatingPointOracle.java:268)
+exit=1

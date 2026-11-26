@@ -1,0 +1,22 @@
+[
+  {
+    "scenario": "editing-create-properties",
+    "status": "passed",
+    "seconds": 367.13
+  },
+  {
+    "scenario": "editing-wires-truth-table",
+    "status": "passed",
+    "seconds": 247.48
+  },
+  {
+    "scenario": "editing-selection-history",
+    "status": "passed",
+    "seconds": 417.05
+  },
+  {
+    "scenario": "editing-viewport-touch-parity",
+    "status": "passed",
+    "seconds": 301.32
+  }
+]

@@ -166,6 +166,10 @@ object Rv32Cpu {
                 mnemonic = if ((bits ushr 20 and 0xFFF) == 0x833) "fence.tso" else "fence"
                 diagnostic = "Memory ordering is a no-op in the desktop's single-threaded model."
                 notice = message("soc_ordering_noop")
+            } else if (rd == 0 && (function == 1 && (bits ushr 20) == 0 ||
+                    function == 2 && (bits ushr 20) in Rv32AssemblerUnits.cacheCodes)) {
+                // Nios V cache instructions (cbo.*, fence.i, #373): no-ops, as Evolution models an ideal cache.
+                mnemonic = "cache"
             }
             0x73 -> if ((bits ushr 20) in listOf(0, 1, 0x302)) {
                 when (bits ushr 20) {

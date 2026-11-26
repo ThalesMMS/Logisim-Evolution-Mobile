@@ -1,5 +1,8 @@
 {
   "revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "language_revisions": {
+    "es": "c5d1483506f0bb1a2f810a35f9c1ac36299f1f84"
+  },
   "messages": {
     "a11y_copy_selection": "gui.copySelectionAction",
     "a11y_cut_selection": "gui.cutSelectionAction",
@@ -442,8 +445,19 @@
     "project_toolbar_remove": "tools.removeComponentAction",
     "soc_bus_not_connected": "soc.SocBusNotConnected",
     "splitter_bit_none": "circuit.splitterBitNone",
-    "splitter_bit_output": "circuit.splitterBitEndOption",
-    "workspace_discard_pending": "file.discardOption"
+    "splitter_bit_output": "circuit.splitterBitEndOption"
+  },
+  "mobile_preferred": {
+    "es": [
+      "annotation_height",
+      "appearance_property_height",
+      "attribute_label_attribution",
+      "attribute_label_height",
+      "attribute_label_socbusselection",
+      "attribute_option_behavior_tristate",
+      "attribute_option_press_active",
+      "attribute_option_press_passive"
+    ]
   },
   "review_required": {
     "it": [

@@ -1,6 +1,7 @@
 import com.cburch.logisim.Main;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
+import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.circuit.CircuitState;
@@ -32,6 +33,9 @@ public class FloatingPointOracle {
     private static final Random RANDOM = new Random(33042026L);
     private static int comparisons;
     private static int layoutComparisons;
+    /** Value mismatches covered by an accepted difference in parity/matrix.json, by difference id. */
+    private static final Map<String, List<String>> ACCEPTED = new LinkedHashMap<>();
+    private static final List<String> UNEXPLAINED = new ArrayList<>();
     private static final ComponentRegistry REGISTRY = new ComponentRegistry(FloatingPointLibrary.INSTANCE.definitions());
 
     private static String factoryName(String id) {
@@ -146,12 +150,44 @@ public class FloatingPointOracle {
                     case UNKNOWN -> b == Value.UNKNOWN;
                     case ERROR -> b == Value.ERROR;
                 };
-                if (!equal) throw new AssertionError(name + " " + raw + " input=" + input
-                    + " output=" + i + " desktop=" + expected.toHexString() + " mobile=" + result.getDisplay());
+                if (!equal) {
+                    String mismatch = name + " " + raw + " input=" + input + " output=" + i
+                        + " desktop=" + expected.toHexString() + " mobile=" + result.getDisplay();
+                    String difference = inputIndices.length == 0 ? null
+                        : acceptedDifference(name, raw, inputs.get(inputIndices[0]), i, result);
+                    if (difference == null) UNEXPLAINED.add(mismatch);
+                    else ACCEPTED.computeIfAbsent(difference, key -> new ArrayList<>()).add(mismatch);
+                    break;
+                }
             }
             if (delays.get(outputIndices[i]) != delay) throw new AssertionError(name + " propagation delay");
             comparisons++;
         }
+    }
+
+    /**
+     * The accepted difference in parity/matrix.json that explains a value mismatch, or null.
+     *
+     * <p>{@code evolution-fpround-without-long} (#369): Evolution 76b178dd, later than the pinned d58a61e0, stopped
+     * passing FPRound round and truncate through a long, and Mobile follows it. The mismatch is accepted only when the
+     * Mobile output equals that later formula applied to the same input, so any other FPRound error still fails.
+     */
+    private static String acceptedDifference(String name, Map<String, String> raw, Value input, int output,
+                                             LogicVector mobile) {
+        if (!name.equals("FPRound") || output != 0) return null;
+        String mode = raw.getOrDefault("mode", "round");
+        double a = input.toDoubleValueFromAnyFloat();
+        double rounded;
+        if (mode.equals("round")) rounded = Math.abs(a) < 0x1p52 ? Math.copySign(Math.round(a), a) : a;
+        else if (mode.equals("truncate")) rounded = a < 0 ? Math.ceil(a) : Math.floor(a);
+        else return null;
+        Value later = Value.createKnown(BitWidth.create(input.getWidth()), rounded);
+        if (later.getWidth() != mobile.getWidth()) return null;
+        for (int bit = 0; bit < later.getWidth(); bit++) {
+            boolean high = later.get(bit) == Value.TRUE;
+            if ((mobile.bit(bit) == LogicValue.HIGH) != high || !mobile.isFullyDefined()) return null;
+        }
+        return "evolution-fpround-without-long";
     }
 
     private static void samples(String name, Map<String, String> attrs) throws Exception {
@@ -259,8 +295,18 @@ public class FloatingPointOracle {
             }
         }
         checkExample();
+        for (var entry : ACCEPTED.entrySet()) {
+            System.out.println("ACCEPTED " + entry.getKey() + ": " + entry.getValue().size() + " value mismatches");
+            for (String mismatch : entry.getValue()) System.out.println("  " + mismatch);
+        }
+        if (!UNEXPLAINED.isEmpty()) {
+            for (String mismatch : UNEXPLAINED) System.out.println("UNEXPLAINED " + mismatch);
+            throw new AssertionError(UNEXPLAINED.size() + " value mismatches not covered by an accepted difference");
+        }
+        int accepted = ACCEPTED.values().stream().mapToInt(List::size).sum();
         System.out.println("PASS " + comparisons + " floating point outputs/delays and " + layoutComparisons
-            + " layout comparisons against 18 desktop factories; seed=33042026");
+            + " layout comparisons against 18 desktop factories; " + accepted
+            + " value mismatches covered by accepted differences, 0 unexplained; seed=33042026");
     }
 
     public static void main(String[] args) {

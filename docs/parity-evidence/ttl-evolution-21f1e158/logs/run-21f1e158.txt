@@ -1,0 +1,27 @@
+
+> Configure project :composeApp
+w: Native task 'iosSimulatorArm64Test' is disabled
+Task 'iosSimulatorArm64Test' for target 'ios_simulator_arm64' cannot run on the current host (windows-x86_64).
+Reason: simulator tests require macOS
+Solution: To suppress this warning, add 'kotlin.native.ignoreDisabledTargets=true' to gradle.properties.
+
+
+> Task :core:kmpPartiallyResolvedDependenciesChecker
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:compileKotlinJvm UP-TO-DATE
+> Task :core:compileJvmMainJava NO-SOURCE
+> Task :core:jvmProcessResources NO-SOURCE
+> Task :core:processJvmMainResources SKIPPED
+> Task :core:jvmMainClasses UP-TO-DATE
+> Task :core:jvmJar UP-TO-DATE
+
+[Incubating] Problems report is available at: file:///C:/Users/user/Documents/GitHub/logisim-mobile-dev/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1s
+3 actionable tasks: 1 executed, 2 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html
+{}
+TTL comparisons=444000 mismatches=0
+{}
+TTL comparisons=95232 mismatches=0
+run.sh 21f1e158 exit 0

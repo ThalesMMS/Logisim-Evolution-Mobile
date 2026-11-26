@@ -76,6 +76,7 @@
   "a11y_input_toggle_bit": "Een bit van {name} wisselen…",
   "a11y_input_toggle_low_bit": "Bit 0 van {name} wisselen",
   "a11y_insert_below_selected": "Onder de geselecteerde component",
+  "a11y_insert_circuit": "{name} invoegen in {target}",
   "a11y_insert_component": "Voeg {name} in",
   "a11y_insert_custom": "Aangepaste coördinaten",
   "a11y_insert_next_free": "Volgende vrije plek",
@@ -1075,6 +1076,10 @@
   "byte_size_mib_fraction": "{whole},{fraction} MiB",
   "canvas_component_tip": "{component}: {port}",
   "canvas_width_error": "Incompatibele woordbreedtes",
+  "circuit_insert": "Invoegen",
+  "circuit_insert_into": "Invoegen in {target}",
+  "circuit_insert_recursive": "{name} bevat {target}. Invoegen zou een recursief circuit maken.",
+  "circuit_insert_self": "{name} is het getoonde circuit. Een circuit kan zichzelf niet bevatten.",
   "circuit_properties_title": "Circuiteigenschappen",
   "circuit_remove_error_title": "Circuit kan niet worden verwijderd",
   "circuit_remove_last_error": "Een project moet minstens één circuit bevatten.",
@@ -4039,6 +4044,7 @@
   "status_operation_cancelled": "Bewerking geannuleerd.",
   "status_paste_subcircuit_mismatch": "Plakken mislukt. Het doelproject moet dezelfde definitie van subcircuit {name} bevatten.",
   "status_place": "Tik op het raster om {name} in te voegen.",
+  "status_place_circuit": "Tik op het raster om {name} in {target} in te voegen.",
   "status_project_imported": {
     "one": "Project met {count} circuit geïmporteerd.",
     "other": "Project met {count} circuits geïmporteerd."

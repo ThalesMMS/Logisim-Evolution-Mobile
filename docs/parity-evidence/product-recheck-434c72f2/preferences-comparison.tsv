@@ -1,0 +1,174 @@
+row	result	facts	differences
+preference/AUTOSAVE_ENABLED	DIFF	1	pref/AUTOSAVE_ENABLED/default: Evolution 'true', Mobile None
+preference/AUTOSAVE_INTERVAL	DIFF	1	pref/AUTOSAVE_INTERVAL/default: Evolution '30', Mobile None
+preference/GATE_SHAPE	DIFF	4	pref/GATE_SHAPE/options: Evolution 'shaped,rectangular', Mobile 'shaped,rectangular,din40700'
+preference/LOCALE	SAME	2	
+preference/FPGA_Workspace	DIFF	1	pref/FPGA_Workspace/default: Evolution '~/logisim_evolution_workspace', Mobile None
+preference/HdlType	SAME	2	
+preference/SelectedBoard	SAME	3	
+preference/SuppressGatedClockWarnings	SAME	9	
+preference/SuppressOpenPinWarnings	SAME	9	
+preference/VhdlKeywordsUpperCase	SAME	103	
+preference/REMOVE_UNUSED_LIBRARIES	SAME	1	
+preference/SHOW_TICK_RATE	SAME	1	
+preference/RECENTER_ON_DOUBLE_MIDDLE_MOUSE	DIFF	1	pref/RECENTER_ON_DOUBLE_MIDDLE_MOUSE/default: Evolution 'true', Mobile None
+preference/TOOLBAR_PLACEMENT	DIFF	2	pref/TOOLBAR_PLACEMENT/options: Evolution 'east,hidden,north,south,west', Mobile 'downMiddle,east,hidden,north,south,west'
+preference/CANVAS_PLACEMENT	DIFF	2	pref/CANVAS_PLACEMENT/default: Evolution 'east', Mobile None ; pref/CANVAS_PLACEMENT/options: Evolution 'east,west', Mobile None
+preference/USE_HEADER_BAR	SAME	1	
+preference/LookAndFeel	DIFF	1	pref/LookAndFeel/default: Evolution 'com.formdev.flatlaf.FlatIntelliJLaf', Mobile None
+preference/FollowSystemTheme	DIFF	1	pref/FollowSystemTheme/default: Evolution 'false', Mobile 'true'
+preference/LIGHT_EDITOR_THEME	SAME	2	
+preference/DARK_EDITOR_THEME	SAME	2	
+preference/APP_FONT	DIFF	1	pref/APP_FONT/default: Evolution '', Mobile None
+preference/CANVAS_BG_COLOR	SAME	2	
+preference/GRID_BG_COLOR	SAME	2	
+preference/GRID_DOT_COLOR	SAME	2	
+preference/GRID_ZOOMED_DOT_COLOR	SAME	2	
+preference/COMPONENT_COLOR	SAME	2	
+preference/COMPONENT_SECONDARY_COLOR	SAME	2	
+preference/COMPONENT_GHOST_COLOR	SAME	2	
+preference/COMPONENT_ICON_COLOR	SAME	2	
+preference/TEXT_TOOL_COLOR	SAME	1	
+preference/ATTRIBUTE_HALO	SAME	1	
+preference/COMPONENT_TIPS	SAME	1	
+preference/MOVE_KEEP_CONNECT	SAME	1	
+preference/ADD_SHOW_GHOSTS	SAME	1	
+preference/NAMED_CIRCUIT_BOXES_FIXED_SIZE	SAME	1	
+preference/KMAP_LINED_STYLE	SAME	1	
+preference/DefaultAppearance	SAME	2	
+preference/NEW_INPUT_OUTPUT_SHAPES	SAME	1	
+preference/SCALE_FACTOR	DIFF	1	pref/SCALE_FACTOR/default: Evolution '1.0', Mobile None
+preference/ADD_AFTER	SAME	2	
+preference/PinAppearance	SAME	6	
+preference/POKE_WIRE_RADIX1	SAME	50	
+preference/POKE_WIRE_RADIX2	DIFF	50	pref/POKE_WIRE_RADIX2/options: Evolution '2,8,10signed,10unsigned,16,float', Mobile '2,8,10signed,10unsigned,16,float,none'
+preference/Memory_Startup_Unknown	SAME	1	
+preference/TRUE_COLOR	SAME	2	
+preference/TRUE_CHAR	SAME	4	
+preference/FALSE_COLOR	SAME	2	
+preference/FALSE_CHAR	SAME	4	
+preference/UNKNOWN_COLOR	SAME	2	
+preference/UNKNOWN_CHAR	SAME	5	
+preference/ERROR_COLOR	SAME	2	
+preference/ERROR_CHAR	SAME	5	
+preference/NIL_COLOR	SAME	2	
+preference/DONTCARE_CHAR	SAME	4	
+preference/BUS_COLOR	SAME	2	
+preference/STROKE_COLOR	SAME	2	
+preference/WIDTH_ERROR_COLOR	SAME	2	
+preference/WIDTH_ERROR_CAPTION_COLOR	SAME	2	
+preference/WIDTH_ERROR_HIGHLIGHT_COLOR	SAME	2	
+preference/WIDTH_ERROR_BACKGROUND_COLOR	SAME	2	
+preference/CLOCK_FREQUENCY_COLOR	SAME	2	
+preference/KMAP_CELL_TEXT_COLOR	SAME	2	
+preference/TABLE_CURSOR_COLOR	SAME	2	
+preference/TABLE_HIGHLIGHT_COLOR	SAME	2	
+preference/TABLE_SELECTION_COLOR	SAME	2	
+preference/KMAP1_COLOR	SAME	1	
+preference/KMAP2_COLOR	SAME	1	
+preference/KMAP3_COLOR	SAME	1	
+preference/KMAP4_COLOR	SAME	1	
+preference/KMAP5_COLOR	SAME	1	
+preference/KMAP6_COLOR	SAME	1	
+preference/KMAP7_COLOR	SAME	1	
+preference/KMAP8_COLOR	SAME	1	
+preference/KMAP9_COLOR	SAME	1	
+preference/KMAP10_COLOR	SAME	1	
+preference/KMAP11_COLOR	SAME	1	
+preference/KMAP12_COLOR	SAME	1	
+preference/KMAP13_COLOR	SAME	1	
+preference/KMAP14_COLOR	SAME	1	
+preference/KMAP15_COLOR	SAME	1	
+preference/KMAP16_COLOR	SAME	1	
+preference/FPGA_DEFINE_COLOR	SAME	1	
+preference/FPGA_DEFINE_HIGHLIGHT_COLOR	SAME	1	
+preference/FPGA_DEFINE_RESIZE_COLOR	SAME	1	
+preference/FPGA_DEFINE_MOVE_COLOR	SAME	1	
+preference/FPGA_MAPPED_COLOR	SAME	1	
+preference/FPGA_SELECTED_MAPPED_COLOR	SAME	1	
+preference/FPGA_SELECTABLE_MAPPED_COLOR	SAME	1	
+preference/FPGA_SELECT_COLOR	SAME	1	
+preference/GRAPHICS_ACCELERATION	DIFF	2	pref/GRAPHICS_ACCELERATION/default: Evolution 'default', Mobile None ; pref/GRAPHICS_ACCELERATION/options: Evolution 'default,none,opengl,d3d,metal', Mobile None
+preference/SIMULATION_QUEUE	DIFF	2	pref/SIMULATION_QUEUE/default: Evolution 'default', Mobile None ; pref/SIMULATION_QUEUE/options: Evolution 'default,priority,splay,linked,listOfQueues,treeOfQueues', Mobile None
+preference/AntiAliassing	DIFF	1	pref/AntiAliassing/default: Evolution 'true', Mobile None
+preference/UI_ANTIALIASING	DIFF	1	pref/UI_ANTIALIASING/default: Evolution 'true', Mobile None
+preference/QUESTA_PATH	DIFF	1	pref/QUESTA_PATH/default: Evolution '', Mobile None
+preference/QUESTA_VALIDATION	DIFF	1	pref/QUESTA_VALIDATION/default: Evolution 'false', Mobile None
+preference/VHDL_STANDARD	DIFF	2	pref/VHDL_STANDARD/default: Evolution '2002', Mobile None ; pref/VHDL_STANDARD/options: Evolution '1993,2002,2008', Mobile None
+preference/QuartusToolPath	DIFF	1	pref/QuartusToolPath/default: Evolution '', Mobile None
+preference/ISEToolPath	DIFF	1	pref/ISEToolPath/default: Evolution '', Mobile None
+preference/VivadoToolPath	DIFF	1	pref/VivadoToolPath/default: Evolution '', Mobile None
+preference/OpenFpgaToolPath	DIFF	1	pref/OpenFpgaToolPath/default: Evolution '', Mobile None
+preference/TICK_FREQUENCY	SAME	1	
+preference/LAYOUT_SHOW_GRID	SAME	1	
+preference/LAYOUT_ZOOM	DIFF	1	pref/LAYOUT_ZOOM/default: Evolution '1.0', Mobile None
+preference/APPEARANCE_SHOW_GRID	SAME	1	
+preference/APPEARANCE_ZOOM	DIFF	1	pref/APPEARANCE_ZOOM/default: Evolution '1.0', Mobile None
+preference/WINDOW_STATE	DIFF	1	pref/WINDOW_STATE/default: Evolution '0', Mobile None
+preference/WINDOW_WIDTH	DIFF	1	pref/WINDOW_WIDTH/default: Evolution '0', Mobile None
+preference/WINDOW_HEIGHT	DIFF	1	pref/WINDOW_HEIGHT/default: Evolution '0', Mobile None
+preference/WINDOW_LOCATION	DIFF	1	pref/WINDOW_LOCATION/default: Evolution '0,0', Mobile None
+preference/WINDOW_MAIN_SPLIT	DIFF	1	pref/WINDOW_MAIN_SPLIT/default: Evolution '0.25', Mobile None
+preference/WINDOW_EXPLORER_VISIBLE	DIFF	1	pref/WINDOW_EXPLORER_VISIBLE/default: Evolution 'true', Mobile None
+preference/WINDOW_LEFT_SPLIT	DIFF	1	pref/WINDOW_LEFT_SPLIT/default: Evolution '0.5', Mobile None
+preference/WINDOW_RIGHT_SPLIT	DIFF	1	pref/WINDOW_RIGHT_SPLIT/default: Evolution '0.75', Mobile None
+preference/DIALOG_DIRECTORY	DIFF	1	pref/DIALOG_DIRECTORY/default: Evolution '', Mobile None
+preference/IMAGE_EXPORT_DIRECTORY	DIFF	1	pref/IMAGE_EXPORT_DIRECTORY/default: Evolution '', Mobile None
+preference/SOC_DIRECTORY	DIFF	1	pref/SOC_DIRECTORY/default: Evolution '', Mobile None
+preference/SEARCH_DOUBLE_SHIFT	SAME	1	
+preference/HOTKEY_SIM_AUTO_PROPAGATE	SAME	1	
+preference/HOTKEY_SIM_RESET	SAME	1	
+preference/HOTKEY_SIM_STEP	SAME	1	
+preference/HOTKEY_SIM_TICK_HALF	SAME	1	
+preference/HOTKEY_SIM_TICK_FULL	SAME	1	
+preference/HOTKEY_SIM_TICK_ENABLED	SAME	1	
+preference/HOTKEY_EDIT_UNDO	SAME	1	
+preference/HOTKEY_EDIT_REDO	DIFF	1	pref/HOTKEY_EDIT_REDO/default: Evolution 'menu+shift+Z', Mobile 'menu+shift+Z | menu+Y | menu+shift+Y'
+preference/HOTKEY_WINDOW_CLOSE	SAME	1	
+preference/HOTKEY_WINDOW_MINIMIZE	DIFF	1	pref/HOTKEY_WINDOW_MINIMIZE/default: Evolution 'menu+shift+M', Mobile None
+preference/HOTKEY_FILE_EXPORT	SAME	1	
+preference/HOTKEY_FILE_PRINT	SAME	1	
+preference/HOTKEY_SEARCH	SAME	1	
+preference/HOTKEY_TOOL_SELECT_1	SAME	1	
+preference/HOTKEY_TOOL_SELECT_2	SAME	1	
+preference/HOTKEY_TOOL_SELECT_3	SAME	1	
+preference/HOTKEY_TOOL_SELECT_4	SAME	1	
+preference/HOTKEY_TOOL_SELECT_5	SAME	1	
+preference/HOTKEY_TOOL_SELECT_6	SAME	1	
+preference/HOTKEY_TOOL_SELECT_7	SAME	1	
+preference/HOTKEY_TOOL_SELECT_8	SAME	1	
+preference/HOTKEY_TOOL_SELECT_9	SAME	1	
+preference/HOTKEY_TOOL_SELECT_10	SAME	1	
+preference/HOTKEY_TOOL_SELECT_11	SAME	1	
+preference/HOTKEY_TOOL_SELECT_12	SAME	1	
+preference/HOTKEY_TOOL_SELECT_13	SAME	1	
+preference/HOTKEY_TOOL_SELECT_14	SAME	1	
+preference/HOTKEY_DIR_NORTH	SAME	1	
+preference/HOTKEY_DIR_SOUTH	SAME	1	
+preference/HOTKEY_DIR_EAST	SAME	1	
+preference/HOTKEY_DIR_WEST	SAME	1	
+preference/HOTKEY_EDIT_MENU_DUPLICATE	SAME	1	
+preference/HOTKEY_EDIT_TOOL_DUPLICATE	SAME	1	
+preference/HOTKEY_PROJ_MOVE_UP	SAME	1	
+preference/HOTKEY_PROJ_MOVE_DOWN	SAME	1	
+preference/HOTKEY_AUTO_LABEL_OPEN	SAME	1	
+preference/HOTKEY_AUTO_LABEL_TOGGLE	SAME	1	
+preference/HOTKEY_AUTO_LABEL_VIEW	SAME	1	
+preference/HOTKEY_AUTO_LABEL_HIDE	SAME	1	
+preference/HOTKEY_AUTO_LABEL_SELF_NUMBERED_STOP	SAME	1	
+preference/HOTKEY_ADD_TOOL_ROTATE	SAME	1	
+preference/HOTKEY_GATE_MODIFIER_SIZE_SMALL	SAME	1	
+preference/HOTKEY_GATE_MODIFIER_SIZE_MEDIUM	SAME	1	
+preference/HOTKEY_GATE_MODIFIER_SIZE_WIDE	SAME	1	
+preference/HOTKEY_GATE_MODIFIER_INPUT_ADD	SAME	1	
+preference/HOTKEY_GATE_MODIFIER_INPUT_SUB	SAME	1	
+preference-panel/TemplateOptions	SAME	2	REMOVE_UNUSED_LIBRARIES=SAME ; TEMPLATE_TYPE=SAME
+preference-panel/IntlOptions	DIFF	1	GATE_SHAPE=DIFF
+preference-panel/WindowOptions	DIFF	14	CANVAS_BG_COLOR=SAME ; COMPONENT_COLOR=SAME ; COMPONENT_ICON_COLOR=SAME ; DARK_EDITOR_THEME=SAME ; FollowSystemTheme=DIFF ; GRID_BG_COLOR=SAME ; GRID_DOT_COLOR=SAME ; GRID_ZOOMED_DOT_COLOR=SAME ; LIGHT_EDITOR_THEME=SAME ; SEARCH_DOUBLE_SHIFT=SAME ; SHOW_TICK_RATE=SAME ; TEXT_TOOL_COLOR=SAME ; TOOLBAR_PLACEMENT=DIFF ; USE_HEADER_BAR=SAME
+preference-panel/LayoutOptions	DIFF	11	ADD_AFTER=SAME ; ADD_SHOW_GHOSTS=SAME ; ATTRIBUTE_HALO=SAME ; COMPONENT_TIPS=SAME ; DefaultAppearance=SAME ; MOVE_KEEP_CONNECT=SAME ; NAMED_CIRCUIT_BOXES_FIXED_SIZE=SAME ; NEW_INPUT_OUTPUT_SHAPES=SAME ; POKE_WIRE_RADIX1=SAME ; POKE_WIRE_RADIX2=DIFF ; PinAppearance=SAME
+preference-panel/SimOptions	SAME	33	BUS_COLOR=SAME ; CLOCK_FREQUENCY_COLOR=SAME ; DONTCARE_CHAR=SAME ; ERROR_CHAR=SAME ; ERROR_COLOR=SAME ; FALSE_CHAR=SAME ; FALSE_COLOR=SAME ; KMAP10_COLOR=SAME ; KMAP11_COLOR=SAME ; KMAP12_COLOR=SAME ; KMAP13_COLOR=SAME ; KMAP14_COLOR=SAME ; KMAP15_COLOR=SAME ; KMAP16_COLOR=SAME ; KMAP1_COLOR=SAME ; KMAP2_COLOR=SAME ; KMAP3_COLOR=SAME ; KMAP4_COLOR=SAME ; KMAP5_COLOR=SAME ; KMAP6_COLOR=SAME ; KMAP7_COLOR=SAME ; KMAP8_COLOR=SAME ; KMAP9_COLOR=SAME ; NIL_COLOR=SAME ; STROKE_COLOR=SAME ; TRUE_CHAR=SAME ; TRUE_COLOR=SAME ; UNKNOWN_CHAR=SAME ; UNKNOWN_COLOR=SAME ; WIDTH_ERROR_BACKGROUND_COLOR=SAME ; WIDTH_ERROR_CAPTION_COLOR=SAME ; WIDTH_ERROR_COLOR=SAME ; WIDTH_ERROR_HIGHLIGHT_COLOR=SAME
+preference-panel/ExperimentalOptions	DIFF	0	
+preference-panel/SoftwaresOptions	DIFF	0	
+preference-panel/FpgaOptions	SAME	12	FPGA_DEFINE_COLOR=SAME ; FPGA_DEFINE_HIGHLIGHT_COLOR=SAME ; FPGA_DEFINE_MOVE_COLOR=SAME ; FPGA_DEFINE_RESIZE_COLOR=SAME ; FPGA_MAPPED_COLOR=SAME ; FPGA_SELECTABLE_MAPPED_COLOR=SAME ; FPGA_SELECTED_MAPPED_COLOR=SAME ; FPGA_SELECT_COLOR=SAME ; HdlType=SAME ; SuppressGatedClockWarnings=SAME ; SuppressOpenPinWarnings=SAME ; VhdlKeywordsUpperCase=SAME
+preference-panel/HotkeyOptions	DIFF	45	HOTKEY_SIM_AUTO_PROPAGATE=SAME ; HOTKEY_SIM_RESET=SAME ; HOTKEY_SIM_STEP=SAME ; HOTKEY_SIM_TICK_HALF=SAME ; HOTKEY_SIM_TICK_FULL=SAME ; HOTKEY_SIM_TICK_ENABLED=SAME ; HOTKEY_EDIT_UNDO=SAME ; HOTKEY_EDIT_REDO=DIFF ; HOTKEY_WINDOW_CLOSE=SAME ; HOTKEY_FILE_EXPORT=SAME ; HOTKEY_FILE_PRINT=SAME ; HOTKEY_SEARCH=SAME ; HOTKEY_TOOL_SELECT_1=SAME ; HOTKEY_TOOL_SELECT_2=SAME ; HOTKEY_TOOL_SELECT_3=SAME ; HOTKEY_TOOL_SELECT_4=SAME ; HOTKEY_TOOL_SELECT_5=SAME ; HOTKEY_TOOL_SELECT_6=SAME ; HOTKEY_TOOL_SELECT_7=SAME ; HOTKEY_TOOL_SELECT_8=SAME ; HOTKEY_TOOL_SELECT_9=SAME ; HOTKEY_TOOL_SELECT_10=SAME ; HOTKEY_TOOL_SELECT_11=SAME ; HOTKEY_TOOL_SELECT_12=SAME ; HOTKEY_TOOL_SELECT_13=SAME ; HOTKEY_TOOL_SELECT_14=SAME ; HOTKEY_DIR_NORTH=SAME ; HOTKEY_DIR_SOUTH=SAME ; HOTKEY_DIR_EAST=SAME ; HOTKEY_DIR_WEST=SAME ; HOTKEY_EDIT_MENU_DUPLICATE=SAME ; HOTKEY_EDIT_TOOL_DUPLICATE=SAME ; HOTKEY_PROJ_MOVE_UP=SAME ; HOTKEY_PROJ_MOVE_DOWN=SAME ; HOTKEY_AUTO_LABEL_OPEN=SAME ; HOTKEY_AUTO_LABEL_TOGGLE=SAME ; HOTKEY_AUTO_LABEL_VIEW=SAME ; HOTKEY_AUTO_LABEL_HIDE=SAME ; HOTKEY_AUTO_LABEL_SELF_NUMBERED_STOP=SAME ; HOTKEY_ADD_TOOL_ROTATE=SAME ; HOTKEY_GATE_MODIFIER_SIZE_SMALL=SAME ; HOTKEY_GATE_MODIFIER_SIZE_MEDIUM=SAME ; HOTKEY_GATE_MODIFIER_SIZE_WIDE=SAME ; HOTKEY_GATE_MODIFIER_INPUT_ADD=SAME ; HOTKEY_GATE_MODIFIER_INPUT_SUB=SAME
+preference-panel/AutosaveOptions	DIFF	0	

@@ -1,0 +1,6 @@
+Desktop JAR: EVOLUTION/logisim-evolution-5.1.0dev-all.jar
+Mobile JAR: MOBILE/core/build/libs/core-jvm.jar
+d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038  EVOLUTION/logisim-evolution-5.1.0dev-all.jar
+6f2ba0cffdf59c73f686ea1970a7e9d53ee437e723f753444e382a931fd2b6b9  MOBILE/core/build/libs/core-jvm.jar
+PASS 71316 BFH/I-O-Extra desktop/mobile comparisons
+exit=0

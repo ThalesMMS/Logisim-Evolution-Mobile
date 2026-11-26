@@ -1,0 +1,571 @@
+ACCEPTED evolution-fpround-without-long: 569 value mismatches
+  FPRound {fpwidth=8} input=[10000000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10110000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[01111100] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8} input=[10010000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10000101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10010111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[11111100] output=0 desktop=00 mobile=11111100
+  FPRound {fpwidth=8} input=[10001111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10010000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10010011] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10001100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[11111111] output=0 desktop=00 mobile=11111111
+  FPRound {fpwidth=8} input=[11111010] output=0 desktop=00 mobile=11111110
+  FPRound {fpwidth=8} input=[11111111] output=0 desktop=00 mobile=11111111
+  FPRound {fpwidth=8} input=[????????] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8} input=[10010001] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[EEEEEEEE] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8} input=[10101111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10001010] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[11111101] output=0 desktop=00 mobile=11111101
+  FPRound {fpwidth=8} input=[10101000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10000001] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10011111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10000110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10000100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10010001] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10110000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10101101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10100111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[11111001] output=0 desktop=00 mobile=11111101
+  FPRound {fpwidth=8} input=[11111101] output=0 desktop=00 mobile=11111101
+  FPRound {fpwidth=8} input=[10000101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[11111110] output=0 desktop=00 mobile=11111110
+  FPRound {fpwidth=8} input=[10100101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10100100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10101010] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[????????] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8} input=[10001101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10100001] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[EEEEEEEE] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8} input=[10110000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10101101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10100100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8} input=[10110000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10000000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10110000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111100] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8, mode=truncate} input=[10011000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10100100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111110] output=0 desktop=00 mobile=01111110
+  FPRound {fpwidth=8, mode=truncate} input=[10011110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10010100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10011110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10100001] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10101000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10101110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111011] output=0 desktop=00 mobile=01111111
+  FPRound {fpwidth=8, mode=truncate} input=[10100011] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111101] output=0 desktop=00 mobile=01111101
+  FPRound {fpwidth=8, mode=truncate} input=[10010100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10010010] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[????????] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8, mode=truncate} input=[10010110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[EEEEEEEE] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8, mode=truncate} input=[10101100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111001] output=0 desktop=00 mobile=01111101
+  FPRound {fpwidth=8, mode=truncate} input=[10000101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10010100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10010011] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[11111110] output=0 desktop=00 mobile=11111110
+  FPRound {fpwidth=8, mode=truncate} input=[10000000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10001000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10110010] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10010000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10100110] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10100111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10001100] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[01111011] output=0 desktop=00 mobile=01111111
+  FPRound {fpwidth=8, mode=truncate} input=[????????] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8, mode=truncate} input=[10001101] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[EEEEEEEE] output=0 desktop=00 mobile=01111100
+  FPRound {fpwidth=8, mode=truncate} input=[10011111] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10001000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=8, mode=truncate} input=[10100000] output=0 desktop=00 mobile=10000000
+  FPRound {fpwidth=16} input=[1000000000000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011100000000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[0111111000000000] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16} input=[1010110000000011] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001000011111000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010101100111001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001110010001100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011001011010110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010100011100110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[0111110001000100] output=0 desktop=0000 mobile=0111111001000100
+  FPRound {fpwidth=16} input=[1000000100010111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001000111101100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011001100000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011011001100000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001100011011110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001011100111010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[0111111001100000] output=0 desktop=0000 mobile=0111111001100000
+  FPRound {fpwidth=16} input=[1001011001110101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011010100011100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[????????????????] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16} input=[1010111011011001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[EEEEEEEEEEEEEEEE] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16} input=[1001011100111000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010000111100101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001111101010011] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1001100100111010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010011111011111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1000011111111100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1111110010100010] output=0 desktop=0000 mobile=1111111010100010
+  FPRound {fpwidth=16} input=[1001100011000110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011010110100011] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010111101100010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010111111000010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011011100001011] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010100110101100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1010001011000101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011000000000001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[????????????????] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16} input=[EEEEEEEEEEEEEEEE] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16} input=[1011010100011110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1000101001001111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16} input=[1011001000010011] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000000000000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011100000000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111111000000000] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001111000100001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000000100010000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000100011011100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010110111110100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010000001000100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000100111101101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111110011001110] output=0 desktop=0000 mobile=0111111011001110
+  FPRound {fpwidth=16, mode=truncate} input=[1000111001000001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1111110010110010] output=0 desktop=0000 mobile=1111111010110010
+  FPRound {fpwidth=16, mode=truncate} input=[1001000011110110] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010101100011111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001000100000101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[????????????????] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111111101011000] output=0 desktop=0000 mobile=0111111101011000
+  FPRound {fpwidth=16, mode=truncate} input=[EEEEEEEEEEEEEEEE] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1111110010101001] output=0 desktop=0000 mobile=1111111010101001
+  FPRound {fpwidth=16, mode=truncate} input=[1001010001111101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001010000111111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010000011100000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111111000010101] output=0 desktop=0000 mobile=0111111000010101
+  FPRound {fpwidth=16, mode=truncate} input=[1000001001101101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010011000011111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001111110100001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000001100110111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001000111100100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001001000000001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1000000011100000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001100110001010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010100001110010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111111001010110] output=0 desktop=0000 mobile=0111111001010110
+  FPRound {fpwidth=16, mode=truncate} input=[1000011101111000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1111111001110110] output=0 desktop=0000 mobile=1111111001110110
+  FPRound {fpwidth=16, mode=truncate} input=[1000000011100101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011100001100111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1010011110111001] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[????????????????] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011011101101101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111110111101011] output=0 desktop=0000 mobile=0111111111101011
+  FPRound {fpwidth=16, mode=truncate} input=[1011011110010100] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[EEEEEEEEEEEEEEEE] output=0 desktop=0000 mobile=0111111000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011010010010101] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1001011001010010] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011011010011111] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[1011000100000000] output=0 desktop=0000 mobile=1000000000000000
+  FPRound {fpwidth=16, mode=truncate} input=[0111110101111100] output=0 desktop=0000 mobile=0111111101111100
+  FPRound {fpwidth=32} input=[10000000000000000000000000000000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10111111000000000000000000000000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[01111111100000000000000000000000] output=0 desktop=5f000000 mobile=01111111100000000000000000000000
+  FPRound {fpwidth=32} input=[01111111110000000000000000000000] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32} input=[01111111100000000000000000000000] output=0 desktop=5f000000 mobile=01111111100000000000000000000000
+  FPRound {fpwidth=32} input=[11111111100000000000000000000000] output=0 desktop=df000000 mobile=11111111100000000000000000000000
+  FPRound {fpwidth=32} input=[10010001100101000010100011100010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10101110100000100000001110101110] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10101111011101100100000101000001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10000001010110000000111001001011] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10101011011000100011011000000100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11111111011100000111000100011100] output=0 desktop=df000000 mobile=11111111011100000111000100011100
+  FPRound {fpwidth=32} input=[01100010010110101011010111000101] output=0 desktop=5f000000 mobile=01100010010110101011010111000101
+  FPRound {fpwidth=32} input=[11111101111100010011100111000111] output=0 desktop=df000000 mobile=11111101111100010011100111000111
+  FPRound {fpwidth=32} input=[11110000010001000011111010001011] output=0 desktop=df000000 mobile=11110000010001000011111010001011
+  FPRound {fpwidth=32} input=[11100100001111000011100000001001] output=0 desktop=df000000 mobile=11100100001111000011100000001001
+  FPRound {fpwidth=32} input=[11111011010101110100100100010001] output=0 desktop=df000000 mobile=11111011010101110100100100010001
+  FPRound {fpwidth=32} input=[10001110001010100101010100011111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11101101111100101101100001000100] output=0 desktop=df000000 mobile=11101101111100101101100001000100
+  FPRound {fpwidth=32} input=[10001011000000110000111100001000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11101000100011010101000000110000] output=0 desktop=df000000 mobile=11101000100011010101000000110000
+  FPRound {fpwidth=32} input=[11110010101111011100001010011011] output=0 desktop=df000000 mobile=11110010101111011100001010011011
+  FPRound {fpwidth=32} input=[11111100111101110111111010010001] output=0 desktop=df000000 mobile=11111100111101110111111010010001
+  FPRound {fpwidth=32} input=[11111101010000101000100110111000] output=0 desktop=df000000 mobile=11111101010000101000100110111000
+  FPRound {fpwidth=32} input=[01100100110111101101100010010000] output=0 desktop=5f000000 mobile=01100100110111101101100010010000
+  FPRound {fpwidth=32} input=[01101010001001010100111110000100] output=0 desktop=5f000000 mobile=01101010001001010100111110000100
+  FPRound {fpwidth=32} input=[11110100101000110111000110101001] output=0 desktop=df000000 mobile=11110100101000110111000110101001
+  FPRound {fpwidth=32} input=[01100001101110111011011110111101] output=0 desktop=5f000000 mobile=01100001101110111011011110111101
+  FPRound {fpwidth=32} input=[01011111111101101101010001011011] output=0 desktop=5f000000 mobile=01011111111101101101010001011011
+  FPRound {fpwidth=32} input=[10111101000101101100111110101001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11110110000010100010111001010111] output=0 desktop=df000000 mobile=11110110000010100010111001010111
+  FPRound {fpwidth=32} input=[11111010110110001111001100110101] output=0 desktop=df000000 mobile=11111010110110001111001100110101
+  FPRound {fpwidth=32} input=[01100111100001010000000000000101] output=0 desktop=5f000000 mobile=01100111100001010000000000000101
+  FPRound {fpwidth=32} input=[11101010101101000010010010011101] output=0 desktop=df000000 mobile=11101010101101000010010010011101
+  FPRound {fpwidth=32} input=[01101110000101111110010011011111] output=0 desktop=5f000000 mobile=01101110000101111110010011011111
+  FPRound {fpwidth=32} input=[10000101011101110111001100110000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11100011100110000101100010011011] output=0 desktop=df000000 mobile=11100011100110000101100010011011
+  FPRound {fpwidth=32} input=[????????????????????????????????] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32} input=[10101001100111111100100101100010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32} input=[01100111100101001010101011011111] output=0 desktop=5f000000 mobile=01100111100101001010101011011111
+  FPRound {fpwidth=32} input=[11101111001011011101110001000010] output=0 desktop=df000000 mobile=11101111001011011101110001000010
+  FPRound {fpwidth=32} input=[11111011011100101100100011110001] output=0 desktop=df000000 mobile=11111011011100101100100011110001
+  FPRound {fpwidth=32} input=[10111000001001110011100110101100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11101111000110111101011001111000] output=0 desktop=df000000 mobile=11101111000110111101011001111000
+  FPRound {fpwidth=32} input=[11111001000100010110000110000100] output=0 desktop=df000000 mobile=11111001000100010110000110000100
+  FPRound {fpwidth=32} input=[01110001010100110001000011100100] output=0 desktop=5f000000 mobile=01110001010100110001000011100100
+  FPRound {fpwidth=32} input=[11111010111001100001001100101111] output=0 desktop=df000000 mobile=11111010111001100001001100101111
+  FPRound {fpwidth=32} input=[10000000100001001011110011010111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10100001101111110101111010111010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11111010011111010111111100101010] output=0 desktop=df000000 mobile=11111010011111010111111100101010
+  FPRound {fpwidth=32} input=[01110010100010011110010010000011] output=0 desktop=5f000000 mobile=01110010100010011110010010000011
+  FPRound {fpwidth=32} input=[01110001000000101100000000110110] output=0 desktop=5f000000 mobile=01110001000000101100000000110110
+  FPRound {fpwidth=32} input=[10110011000000111001001011001010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10111011101011100110010011010111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10110001100011101001011010111000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10011010100110000110110100010010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10000000000101000011010100000011] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10100100111001011101110111011111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10111100001110001001111100010111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[01101000011011101010110001111011] output=0 desktop=5f000000 mobile=01101000011011101010110001111011
+  FPRound {fpwidth=32} input=[11101010110010010110001111010110] output=0 desktop=df000000 mobile=11101010110010010110001111010110
+  FPRound {fpwidth=32} input=[01111101100011100110001110100000] output=0 desktop=5f000000 mobile=01111101100011100110001110100000
+  FPRound {fpwidth=32} input=[11110101100011100010111010111101] output=0 desktop=df000000 mobile=11110101100011100010111010111101
+  FPRound {fpwidth=32} input=[01110101110111010011010011011001] output=0 desktop=5f000000 mobile=01110101110111010011010011011001
+  FPRound {fpwidth=32} input=[10010110011000111010100011100000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11100001100101110110010101101100] output=0 desktop=df000000 mobile=11100001100101110110010101101100
+  FPRound {fpwidth=32} input=[01100011101101000011011001101100] output=0 desktop=5f000000 mobile=01100011101101000011011001101100
+  FPRound {fpwidth=32} input=[10101011011111101101111011010111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10001001100111110000001001000110] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11110011001000101111000111011101] output=0 desktop=df000000 mobile=11110011001000101111000111011101
+  FPRound {fpwidth=32} input=[10011111001101101001101101010101] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[11110111011110001011111010101111] output=0 desktop=df000000 mobile=11110111011110001011111010101111
+  FPRound {fpwidth=32} input=[01110011001001100010010001010011] output=0 desktop=5f000000 mobile=01110011001001100010010001010011
+  FPRound {fpwidth=32} input=[11110001111000010000110010000111] output=0 desktop=df000000 mobile=11110001111000010000110010000111
+  FPRound {fpwidth=32} input=[01101001101010100111111000101111] output=0 desktop=5f000000 mobile=01101001101010100111111000101111
+  FPRound {fpwidth=32} input=[????????????????????????????????] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32} input=[10111001011110111101110011001010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32} input=[10001111100100111101011100111000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10110001010011110100100100001111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[01100011001001100110110110000110] output=0 desktop=5f000000 mobile=01100011001001100110110110000110
+  FPRound {fpwidth=32} input=[01110101111011010110111101000000] output=0 desktop=5f000000 mobile=01110101111011010110111101000000
+  FPRound {fpwidth=32} input=[01100010101111011111101011000111] output=0 desktop=5f000000 mobile=01100010101111011111101011000111
+  FPRound {fpwidth=32} input=[10011111110111000100110010100000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[10101110011011111010011110011000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32} input=[01101001001101010111011110111100] output=0 desktop=5f000000 mobile=01101001001101010111011110111100
+  FPRound {fpwidth=32} input=[11110001101011111010011110101101] output=0 desktop=df000000 mobile=11110001101011111010011110101101
+  FPRound {fpwidth=32} input=[01110100001100101101111100000000] output=0 desktop=5f000000 mobile=01110100001100101101111100000000
+  FPRound {fpwidth=32} input=[11101010101000100101101100110011] output=0 desktop=df000000 mobile=11101010101000100101101100110011
+  FPRound {fpwidth=32, mode=truncate} input=[10000000000000000000000000000000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10111111000000000000000000000000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01111111100000000000000000000000] output=0 desktop=5f000000 mobile=01111111100000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01111111110000000000000000000000] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01111111100000000000000000000000] output=0 desktop=5f000000 mobile=01111111100000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11111111100000000000000000000000] output=0 desktop=df000000 mobile=11111111100000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10100101010000101011011111011001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10101010110101011100111100010000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11101100101010101111010110000110] output=0 desktop=df000000 mobile=11101100101010101111010110000110
+  FPRound {fpwidth=32, mode=truncate} input=[11011111011101001111010100100101] output=0 desktop=df000000 mobile=11011111011101001111010100100101
+  FPRound {fpwidth=32, mode=truncate} input=[11101100010110111100100000011101] output=0 desktop=df000000 mobile=11101100010110111100100000011101
+  FPRound {fpwidth=32, mode=truncate} input=[10000100101100001101000110011000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10001100111011100000100011001100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10010010110110000110000111000110] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11101101110101100101111111000011] output=0 desktop=df000000 mobile=11101101110101100101111111000011
+  FPRound {fpwidth=32, mode=truncate} input=[10011111110110000100101101001001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01100010000000111101001111101000] output=0 desktop=5f000000 mobile=01100010000000111101001111101000
+  FPRound {fpwidth=32, mode=truncate} input=[10010000001100000100101010001100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10000010010100010010101001100010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10011100010010010101101011001010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01100000000110001010111111100000] output=0 desktop=5f000000 mobile=01100000000110001010111111100000
+  FPRound {fpwidth=32, mode=truncate} input=[11111011110101110000100001101010] output=0 desktop=df000000 mobile=11111011110101110000100001101010
+  FPRound {fpwidth=32, mode=truncate} input=[01100000101011111011111111010111] output=0 desktop=5f000000 mobile=01100000101011111011111111010111
+  FPRound {fpwidth=32, mode=truncate} input=[01101011101011100001010111110110] output=0 desktop=5f000000 mobile=01101011101011100001010111110110
+  FPRound {fpwidth=32, mode=truncate} input=[10111011101001110011111011001010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01100101010001001001111001010110] output=0 desktop=5f000000 mobile=01100101010001001001111001010110
+  FPRound {fpwidth=32, mode=truncate} input=[10011010010100010011100111100001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10111011010110010111001111111111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10111000100010110010111011110011] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01110111111001101001101010001111] output=0 desktop=5f000000 mobile=01110111111001101001101010001111
+  FPRound {fpwidth=32, mode=truncate} input=[10010111111101000101100101100000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[????????????????????????????????] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11110111111111011011101000111110] output=0 desktop=df000000 mobile=11110111111111011011101000111110
+  FPRound {fpwidth=32, mode=truncate} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11110110111011011100110100011110] output=0 desktop=df000000 mobile=11110110111011011100110100011110
+  FPRound {fpwidth=32, mode=truncate} input=[10110000101010110000001101101000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01101010100001010111100101010101] output=0 desktop=5f000000 mobile=01101010100001010111100101010101
+  FPRound {fpwidth=32, mode=truncate} input=[11111110001010000101010010110100] output=0 desktop=df000000 mobile=11111110001010000101010010110100
+  FPRound {fpwidth=32, mode=truncate} input=[10001100010111000001110110010001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01101010010111111111010011111110] output=0 desktop=5f000000 mobile=01101010010111111111010011111110
+  FPRound {fpwidth=32, mode=truncate} input=[11110111111110101101100010001101] output=0 desktop=df000000 mobile=11110111111110101101100010001101
+  FPRound {fpwidth=32, mode=truncate} input=[11110101111010011100000110100101] output=0 desktop=df000000 mobile=11110101111010011100000110100101
+  FPRound {fpwidth=32, mode=truncate} input=[10010111000110100000111100011001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[01100001010010001111110111100111] output=0 desktop=5f000000 mobile=01100001010010001111110111100111
+  FPRound {fpwidth=32, mode=truncate} input=[10011001010101010000100010001011] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10101110111111011100011110101111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10011101001100001111001011111000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10010011101010010101000110011000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10111100100001010001000110100000] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11101101111000001010101001000110] output=0 desktop=df000000 mobile=11101101111000001010101001000110
+  FPRound {fpwidth=32, mode=truncate} input=[11111011001101001001011100111001] output=0 desktop=df000000 mobile=11111011001101001001011100111001
+  FPRound {fpwidth=32, mode=truncate} input=[01101110011000001001010011010111] output=0 desktop=5f000000 mobile=01101110011000001001010011010111
+  FPRound {fpwidth=32, mode=truncate} input=[11100100011110011000011000110010] output=0 desktop=df000000 mobile=11100100011110011000011000110010
+  FPRound {fpwidth=32, mode=truncate} input=[11101101010101010000101110011101] output=0 desktop=df000000 mobile=11101101010101010000101110011101
+  FPRound {fpwidth=32, mode=truncate} input=[11100001010001110110011101110011] output=0 desktop=df000000 mobile=11100001010001110110011101110011
+  FPRound {fpwidth=32, mode=truncate} input=[10001111110010101010010000101001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10000001100111001001010000011100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10001101111010111001100111110001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11101001100001001111001010110111] output=0 desktop=df000000 mobile=11101001100001001111001010110111
+  FPRound {fpwidth=32, mode=truncate} input=[11110110001001110000000101010111] output=0 desktop=df000000 mobile=11110110001001110000000101010111
+  FPRound {fpwidth=32, mode=truncate} input=[10111010110000001110101010011010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11100111010100110111011111100110] output=0 desktop=df000000 mobile=11100111010100110111011111100110
+  FPRound {fpwidth=32, mode=truncate} input=[10101100000010011111100001000001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10101001101101101111000001001011] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[????????????????????????????????] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10110011100100111001011011101001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=00000000 mobile=01111111110000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11110110100000011100001001100001] output=0 desktop=df000000 mobile=11110110100000011100001001100001
+  FPRound {fpwidth=32, mode=truncate} input=[10011100000110100001101110100100] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[11100001101101010110011101111011] output=0 desktop=df000000 mobile=11100001101101010110011101111011
+  FPRound {fpwidth=32, mode=truncate} input=[10010111100010101011011001110001] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10101111011000100010001001110010] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=32, mode=truncate} input=[10010100010001101001101110011111] output=0 desktop=00000000 mobile=10000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1000000000000000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1011111111100000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0111111111101111111111111111111111111111111111111111111111111111] output=0 desktop=43e0000000000000 mobile=0111111111101111111111111111111111111111111111111111111111111111
+  FPRound {fpwidth=64} input=[0111111111111000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0111111111110000000000000000000000000000000000000000000000000000] output=0 desktop=43e0000000000000 mobile=0111111111110000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1111111111110000000000000000000000000000000000000000000000000000] output=0 desktop=c3e0000000000000 mobile=1111111111110000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1010101010100001111100101100111001101110000101111100111110011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100100110111001110010000101010100001000000000100110010011110111] output=0 desktop=43e0000000000000 mobile=0100100110111001110010000101010100001000000000100110010011110111
+  FPRound {fpwidth=64} input=[0110101111100101001111001010011111001010111111000111010011100111] output=0 desktop=43e0000000000000 mobile=0110101111100101001111001010011111001010111111000111010011100111
+  FPRound {fpwidth=64} input=[0111010011010001110000111110101111001001000001100001100101011100] output=0 desktop=43e0000000000000 mobile=0111010011010001110000111110101111001001000001100001100101011100
+  FPRound {fpwidth=64} input=[1011000100110100010111100101111100111101110000011011110101100001] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1010011101111110000000010101111011011100101010000111010010100101] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100110110001010111010111000011111001010000100100111010100111001] output=0 desktop=43e0000000000000 mobile=0100110110001010111010111000011111001010000100100111010100111001
+  FPRound {fpwidth=64} input=[1010001000001011011101101111000101111100111111101101111111100110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0111100000011011000110101100101110101101001100110110010010011001] output=0 desktop=43e0000000000000 mobile=0111100000011011000110101100101110101101001100110110010010011001
+  FPRound {fpwidth=64} input=[1010001111000011000000001101010000001011111011111011010110110110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1101011010010011010111100000101011001111100000111101101111001111] output=0 desktop=c3e0000000000000 mobile=1101011010010011010111100000101011001111100000111101101111001111
+  FPRound {fpwidth=64} input=[1001111000101100001000010110110101010111110011001110100011111010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0110101011110100000100000100010011010110111001100011111011000010] output=0 desktop=43e0000000000000 mobile=0110101011110100000100000100010011010110111001100011111011000010
+  FPRound {fpwidth=64} input=[1001011111001010110101011101011100110001000001000001010100111000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1100110101011100011011010011010110011100001001000011111111010001] output=0 desktop=c3e0000000000000 mobile=1100110101011100011011010011010110011100001001000011111111010001
+  FPRound {fpwidth=64} input=[1111000100110001100111101110011110000011011101000100101100011111] output=0 desktop=c3e0000000000000 mobile=1111000100110001100111101110011110000011011101000100101100011111
+  FPRound {fpwidth=64} input=[1101011000010101001001110010100110100110101001101111110001001101] output=0 desktop=c3e0000000000000 mobile=1101011000010101001001110010100110100110101001101111110001001101
+  FPRound {fpwidth=64} input=[1110000010011101000000001111000010101101011000000110100000011001] output=0 desktop=c3e0000000000000 mobile=1110000010011101000000001111000010101101011000000110100000011001
+  FPRound {fpwidth=64} input=[0110101010010111011111000111111000010000100100110010001001111111] output=0 desktop=43e0000000000000 mobile=0110101010010111011111000111111000010000100100110010001001111111
+  FPRound {fpwidth=64} input=[1101011100110100100100101110110000110011001010110101000010001111] output=0 desktop=c3e0000000000000 mobile=1101011100110100100100101110110000110011001010110101000010001111
+  FPRound {fpwidth=64} input=[1110000010001000010100000010010000110011010011000000110110100000] output=0 desktop=c3e0000000000000 mobile=1110000010001000010100000010010000110011010011000000110110100000
+  FPRound {fpwidth=64} input=[1011100001001101011011101000000011010010101010001111110010101111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1100010011001110010010001111000010011111001100010111010000100101] output=0 desktop=c3e0000000000000 mobile=1100010011001110010010001111000010011111001100010111010000100101
+  FPRound {fpwidth=64} input=[0100011101100100000111010010000011110000110000100000010010011001] output=0 desktop=43e0000000000000 mobile=0100011101100100000111010010000011110000110000100000010010011001
+  FPRound {fpwidth=64} input=[1111000101100111101010001100001000110110010110011101100100000010] output=0 desktop=c3e0000000000000 mobile=1111000101100111101010001100001000110110010110011101100100000010
+  FPRound {fpwidth=64} input=[1100111001001000000010000110100001010101111000101101101101101011] output=0 desktop=c3e0000000000000 mobile=1100111001001000000010000110100001010101111000101101101101101011
+  FPRound {fpwidth=64} input=[1010101011100010010011010011010011011101011110110100000100011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100111000100011101100101110100111010100000100101111100100101001] output=0 desktop=43e0000000000000 mobile=0100111000100011101100101110100111010100000100101111100100101001
+  FPRound {fpwidth=64} input=[1001000110001110101111100001010110001000001011000011011010101011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1001111111011110010100000011100000110011111001110110110000110011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0101001011101110010110010000100011110101010010101101010000100001] output=0 desktop=43e0000000000000 mobile=0101001011101110010110010000100011110101010010101101010000100001
+  FPRound {fpwidth=64} input=[1111011111011000000101011010111011100101101100011001100100001000] output=0 desktop=c3e0000000000000 mobile=1111011111011000000101011010111011100101101100011001100100001000
+  FPRound {fpwidth=64} input=[1110100010111001000000110000011100101100100001001010010110001000] output=0 desktop=c3e0000000000000 mobile=1110100010111001000000110000011100101100100001001010010110001000
+  FPRound {fpwidth=64} input=[0110010001011110101111010001111101101000101010110001011111111101] output=0 desktop=43e0000000000000 mobile=0110010001011110101111010001111101101000101010110001011111111101
+  FPRound {fpwidth=64} input=[1010001100011001111001001101011011011111011000010010101111010111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[????????????????????????????????????????????????????????????????] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1010000110001111000010111110000001010111101100101111100111001111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1110011010000100001011011010011110111101101100101010110100101001] output=0 desktop=c3e0000000000000 mobile=1110011010000100001011011010011110111101101100101010110100101001
+  FPRound {fpwidth=64} input=[1001110111010110001101111111011010100001110010000110111000100000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1100011001011111100000000110100000000000011101001110100100000100] output=0 desktop=c3e0000000000000 mobile=1100011001011111100000000110100000000000011101001110100100000100
+  FPRound {fpwidth=64} input=[1001110000101000000010110100000110101010111110001110000101011110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1001010100101000000111111001110101001010100000011100111110001111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1000111100011101000010101010011010010001001100110101011100111010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1011110110000100101101000001011010010000100100001011101110000010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1010101011111011001011110001000011001111101110000001000111010101] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0101100000000000001111111101011001001100101100100001000011100001] output=0 desktop=43e0000000000000 mobile=0101100000000000001111111101011001001100101100100001000011100001
+  FPRound {fpwidth=64} input=[1111010101001111110011101001000011101100001011111011000000000111] output=0 desktop=c3e0000000000000 mobile=1111010101001111110011101001000011101100001011111011000000000111
+  FPRound {fpwidth=64} input=[1110111000100001001110011111110011101110010101101101100011000011] output=0 desktop=c3e0000000000000 mobile=1110111000100001001110011111110011101110010101101101100011000011
+  FPRound {fpwidth=64} input=[1001111100110110101000001100001110110000010100010101101011011101] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1010100000111011100101101011011000001110000001001111010101101000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100101001001101111000110101011100000000010101001110100111010001] output=0 desktop=43e0000000000000 mobile=0100101001001101111000110101011100000000010101001110100111010001
+  FPRound {fpwidth=64} input=[1010000010000000111010010101001011111011000100100000001110010000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1101100100101001110000101100110011011000111001101001011000111011] output=0 desktop=c3e0000000000000 mobile=1101100100101001110000101100110011011000111001101001011000111011
+  FPRound {fpwidth=64} input=[1111110111101110000001001011010101000101000110100111110100001010] output=0 desktop=c3e0000000000000 mobile=1111110111101110000001001011010101000101000110100111110100001010
+  FPRound {fpwidth=64} input=[1111100111000111101111011111000011010000001011111111000010001010] output=0 desktop=c3e0000000000000 mobile=1111100111000111101111011111000011010000001011111111000010001010
+  FPRound {fpwidth=64} input=[1100110010111001011001101110001111111000111000010001010110101000] output=0 desktop=c3e0000000000000 mobile=1100110010111001011001101110001111111000111000010001010110101000
+  FPRound {fpwidth=64} input=[1110011101110001101010010001000110000100001110000011100101001100] output=0 desktop=c3e0000000000000 mobile=1110011101110001101010010001000110000100001110000011100101001100
+  FPRound {fpwidth=64} input=[1111110101101100010010001101011000010111011101100010110010100101] output=0 desktop=c3e0000000000000 mobile=1111110101101100010010001101011000010111011101100010110010100101
+  FPRound {fpwidth=64} input=[1001010011111100111100101000001110010001101001010010110101010001] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1101111100110101101010100001110101010110010101010110010111110111] output=0 desktop=c3e0000000000000 mobile=1101111100110101101010100001110101010110010101010110010111110111
+  FPRound {fpwidth=64} input=[1000110001011111101100001010001100010101011111010101001110100111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0101101110101011100100110110110010000011001111001000111001010110] output=0 desktop=43e0000000000000 mobile=0101101110101011100100110110110010000011001111001000111001010110
+  FPRound {fpwidth=64} input=[1111001110111000100001010011000111001011100100001101011010010001] output=0 desktop=c3e0000000000000 mobile=1111001110111000100001010011000111001011100100001101011010010001
+  FPRound {fpwidth=64} input=[1011010000000101010000100001111111101010111011001001011010101110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1001100001001011100001000001111110010001000000010111000101001011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100011100000100010001011110010000000111110100101111010001011001] output=0 desktop=43e0000000000000 mobile=0100011100000100010001011110010000000111110100101111010001011001
+  FPRound {fpwidth=64} input=[1111011101010101011000000110011001101111100101001001000010111001] output=0 desktop=c3e0000000000000 mobile=1111011101010101011000000110011001101111100101001001000010111001
+  FPRound {fpwidth=64} input=[1001010101000000110011000100100010100100100101001100000110011011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1100010100000011101010010100111000100000110111000101010111000011] output=0 desktop=c3e0000000000000 mobile=1100010100000011101010010100111000100000110111000101010111000011
+  FPRound {fpwidth=64} input=[1111011011111001001001101111010001111100101000000111011011010111] output=0 desktop=c3e0000000000000 mobile=1111011011111001001001101111010001111100101000000111011011010111
+  FPRound {fpwidth=64} input=[1100110110111101100010011100101000001100101001111111001110011110] output=0 desktop=c3e0000000000000 mobile=1100110110111101100010011100101000001100101001111111001110011110
+  FPRound {fpwidth=64} input=[1000110111000011000000111011110101111011100111001111110100010010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1001000111101101010010101000110101110001111000101011000011110100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0101100110010101100111000001100110001000011010001000011111101001] output=0 desktop=43e0000000000000 mobile=0101100110010101100111000001100110001000011010001000011111101001
+  FPRound {fpwidth=64} input=[1100010100110111110111110100000101101001111010011001111001001000] output=0 desktop=c3e0000000000000 mobile=1100010100110111110111110100000101101001111010011001111001001000
+  FPRound {fpwidth=64} input=[0110101001100001001110110101000111101101010110001010011110001111] output=0 desktop=43e0000000000000 mobile=0110101001100001001110110101000111101101010110001010011110001111
+  FPRound {fpwidth=64} input=[1011010010110111111100011110100111000111100100001000110011111111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1111011001011100110011100100011011010110011101111101000000111010] output=0 desktop=c3e0000000000000 mobile=1111011001011100110011100100011011010110011101111101000000111010
+  FPRound {fpwidth=64} input=[0111001100101001100001000001000011100010100000010010101011001101] output=0 desktop=43e0000000000000 mobile=0111001100101001100001000001000011100010100000010010101011001101
+  FPRound {fpwidth=64} input=[0111100000101100101101101100001001011001000111001110100011000010] output=0 desktop=43e0000000000000 mobile=0111100000101100101101101100001001011001000111001110100011000010
+  FPRound {fpwidth=64} input=[0100101010101111001110010000111110011100011011001100111000111001] output=0 desktop=43e0000000000000 mobile=0100101010101111001110010000111110011100011011001100111000111001
+  FPRound {fpwidth=64} input=[1110110000010000111110110110111111001010100100010011010000001011] output=0 desktop=c3e0000000000000 mobile=1110110000010000111110110110111111001010100100010011010000001011
+  FPRound {fpwidth=64} input=[0111011101010100000110010010010001010111110101000011101011000101] output=0 desktop=43e0000000000000 mobile=0111011101010100000110010010010001010111110101000011101011000101
+  FPRound {fpwidth=64} input=[1101011101001100000101110010100101000100010111101010110101100011] output=0 desktop=c3e0000000000000 mobile=1101011101001100000101110010100101000100010111101010110101100011
+  FPRound {fpwidth=64} input=[0110011100001001111001011110011000010001100000001010001110111010] output=0 desktop=43e0000000000000 mobile=0110011100001001111001011110011000010001100000001010001110111010
+  FPRound {fpwidth=64} input=[1010101010010000101011101010011111001110001100001011110000101000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1000101111011011110011010011110000111010010000101001001100111000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0110111110011010110111100001001101011110101001001111110100111111] output=0 desktop=43e0000000000000 mobile=0110111110011010110111100001001101011110101001001111110100111111
+  FPRound {fpwidth=64} input=[0111001110111001000111011110110111011110110001100111111010011110] output=0 desktop=43e0000000000000 mobile=0111001110111001000111011110110111011110110001100111111010011110
+  FPRound {fpwidth=64} input=[1101101100101011010100000111000010010000011101011010110000000000] output=0 desktop=c3e0000000000000 mobile=1101101100101011010100000111000010010000011101011010110000000000
+  FPRound {fpwidth=64} input=[????????????????????????????????????????????????????????????????] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0100011100110110000001101100101110010110000000101101101010001010] output=0 desktop=43e0000000000000 mobile=0100011100110110000001101100101110010110000000101101101010001010
+  FPRound {fpwidth=64} input=[1000111111011100011101100010101011000001101100100011110111010000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1011010110100110100010100101100110111010001111101010101001111100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1000010011010100101111110111000000101101110010100110010000001110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1111011010011110100000001110101100111100110000010001011101001010] output=0 desktop=c3e0000000000000 mobile=1111011010011110100000001110101100111100110000010001011101001010
+  FPRound {fpwidth=64} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[0111101100011011111101011010100001111110001101100101010011101001] output=0 desktop=43e0000000000000 mobile=0111101100011011111101011010100001111110001101100101010011101001
+  FPRound {fpwidth=64} input=[0100111111100000011111110010000000000011101000101001001100111111] output=0 desktop=43e0000000000000 mobile=0100111111100000011111110010000000000011101000101001001100111111
+  FPRound {fpwidth=64} input=[0101010001110010010101101111111010110001101110101011100001000000] output=0 desktop=43e0000000000000 mobile=0101010001110010010101101111111010110001101110101011100001000000
+  FPRound {fpwidth=64} input=[1101001010000001101001111111111101011001001100010000010011110110] output=0 desktop=c3e0000000000000 mobile=1101001010000001101001111111111101011001001100010000010011110110
+  FPRound {fpwidth=64} input=[1001011010010011101001100010101101011100001101000010000111101111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1000001100111001000100101101111001111001000000111111110010111010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1100101000001110001010001100100011001100011100110011101010010100] output=0 desktop=c3e0000000000000 mobile=1100101000001110001010001100100011001100011100110011101010010100
+  FPRound {fpwidth=64} input=[1111110011000110111000001111110011011101001001100100001100100101] output=0 desktop=c3e0000000000000 mobile=1111110011000110111000001111110011011101001001100100001100100101
+  FPRound {fpwidth=64} input=[1010100000100101011100000000101100101010011001011101011101000011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64} input=[1110011010010011000100101011100100011110110011101001101100001110] output=0 desktop=c3e0000000000000 mobile=1110011010010011000100101011100100011110110011101001101100001110
+  FPRound {fpwidth=64} input=[1100101110100111111111000100100100100110111001010000011010110011] output=0 desktop=c3e0000000000000 mobile=1100101110100111111111000100100100100110111001010000011010110011
+  FPRound {fpwidth=64} input=[1011111000011111110100001111110110101110110011010100001111010001] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1000000000000000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1011111111100000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111111111101111111111111111111111111111111111111111111111111111] output=0 desktop=43e0000000000000 mobile=0111111111101111111111111111111111111111111111111111111111111111
+  FPRound {fpwidth=64, mode=truncate} input=[0111111111111000000000000000000000000000000000000000000000000000] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111111111110000000000000000000000000000000000000000000000000000] output=0 desktop=43e0000000000000 mobile=0111111111110000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1111111111110000000000000000000000000000000000000000000000000000] output=0 desktop=c3e0000000000000 mobile=1111111111110000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1011101111100100001000000110001011010100001011111101101010000011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010000101110110101011001101000110101011010010111000010011000110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1000000110010011101010000111001001100010010011000000111111100011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111011001001001000111111000100010010111101100100011101010101011] output=0 desktop=43e0000000000000 mobile=0111011001001001000111111000100010010111101100100011101010101011
+  FPRound {fpwidth=64, mode=truncate} input=[0101111011100000010011000010011001010111001010100111111000000001] output=0 desktop=43e0000000000000 mobile=0101111011100000010011000010011001010111001010100111111000000001
+  FPRound {fpwidth=64, mode=truncate} input=[0100011001110110010000001010110111110100110110110100011111111111] output=0 desktop=43e0000000000000 mobile=0100011001110110010000001010110111110100110110110100011111111111
+  FPRound {fpwidth=64, mode=truncate} input=[1100110101101101010010001111110001001000001011000010100101000101] output=0 desktop=c3e0000000000000 mobile=1100110101101101010010001111110001001000001011000010100101000101
+  FPRound {fpwidth=64, mode=truncate} input=[1110000001110100100101101000000111011110000010110011010011110010] output=0 desktop=c3e0000000000000 mobile=1110000001110100100101101000000111011110000010110011010011110010
+  FPRound {fpwidth=64, mode=truncate} input=[1000111110010111111010010101111001100011111000100011110011110010] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010111001111100011001000111010111011001000011011100001000100011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111001000100010000000111010111110110100000111000110011111000101] output=0 desktop=43e0000000000000 mobile=0111001000100010000000111010111110110100000111000110011111000101
+  FPRound {fpwidth=64, mode=truncate} input=[1000001100110000000000001000101010110100010101001010001110100110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010000000101100011100011011011011110010111101100110001011101000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111010000111001010100110110101001000001001110011010101101001001] output=0 desktop=43e0000000000000 mobile=0111010000111001010100110110101001000001001110011010101101001001
+  FPRound {fpwidth=64, mode=truncate} input=[1010011100011110110000011100101000100010001010101000001111100011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111010000111101000111111111010010101011001111001001110101110001] output=0 desktop=43e0000000000000 mobile=0111010000111101000111111111010010101011001111001001110101110001
+  FPRound {fpwidth=64, mode=truncate} input=[1110100100011000001100110000001110011100111111110101100101110010] output=0 desktop=c3e0000000000000 mobile=1110100100011000001100110000001110011100111111110101100101110010
+  FPRound {fpwidth=64, mode=truncate} input=[0110110000110100001110101101101110010011110000010100110111010100] output=0 desktop=43e0000000000000 mobile=0110110000110100001110101101101110010011110000010100110111010100
+  FPRound {fpwidth=64, mode=truncate} input=[0111100010101001010001101011010111001011111100011000001011100110] output=0 desktop=43e0000000000000 mobile=0111100010101001010001101011010111001011111100011000001011100110
+  FPRound {fpwidth=64, mode=truncate} input=[1101001000110111100011111101001011101111101000000110010000101010] output=0 desktop=c3e0000000000000 mobile=1101001000110111100011111101001011101111101000000110010000101010
+  FPRound {fpwidth=64, mode=truncate} input=[0100011110000111011011100011011111010110001111101001000101111110] output=0 desktop=43e0000000000000 mobile=0100011110000111011011100011011111010110001111101001000101111110
+  FPRound {fpwidth=64, mode=truncate} input=[1011110100000011011011010001110111111010101110001010100010011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1110001101010000100100011010100000010111100011001111101101010100] output=0 desktop=c3e0000000000000 mobile=1110001101010000100100011010100000010111100011001111101101010100
+  FPRound {fpwidth=64, mode=truncate} input=[0100101101000111111010011101001100111100011110111100011110110001] output=0 desktop=43e0000000000000 mobile=0100101101000111111010011101001100111100011110111100011110110001
+  FPRound {fpwidth=64, mode=truncate} input=[1100101001110000000100011001011000001000100001011000111001110100] output=0 desktop=c3e0000000000000 mobile=1100101001110000000100011001011000001000100001011000111001110100
+  FPRound {fpwidth=64, mode=truncate} input=[0101001111010111111101110010100000100110101111000010010111111111] output=0 desktop=43e0000000000000 mobile=0101001111010111111101110010100000100110101111000010010111111111
+  FPRound {fpwidth=64, mode=truncate} input=[0101111000110110010100101010011110111001000011010110011110101111] output=0 desktop=43e0000000000000 mobile=0101111000110110010100101010011110111001000011010110011110101111
+  FPRound {fpwidth=64, mode=truncate} input=[1000100010110000101000111111010110110101010000011001100110111101] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0100100100101000010010010110110110011111001100110101000011001010] output=0 desktop=43e0000000000000 mobile=0100100100101000010010010110110110011111001100110101000011001010
+  FPRound {fpwidth=64, mode=truncate} input=[1110100100000000100000100111101011110101111001010000001001101110] output=0 desktop=c3e0000000000000 mobile=1110100100000000100000100111101011110101111001010000001001101110
+  FPRound {fpwidth=64, mode=truncate} input=[0101110100100000111111100001101010001101111101010011011000101001] output=0 desktop=43e0000000000000 mobile=0101110100100000111111100001101010001101111101010011011000101001
+  FPRound {fpwidth=64, mode=truncate} input=[0110111000111110000111010001100100001101011000101100000011010000] output=0 desktop=43e0000000000000 mobile=0110111000111110000111010001100100001101011000101100000011010000
+  FPRound {fpwidth=64, mode=truncate} input=[1000110011010100011100101111001101111100110000100111001010011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0100011000011011101111111101011010000000010001011011110010100101] output=0 desktop=43e0000000000000 mobile=0100011000011011101111111101011010000000010001011011110010100101
+  FPRound {fpwidth=64, mode=truncate} input=[1111001011101101000110100110000110111111111100110011101011001010] output=0 desktop=c3e0000000000000 mobile=1111001011101101000110100110000110111111111100110011101011001010
+  FPRound {fpwidth=64, mode=truncate} input=[0100011001100011110111000101111110100011001101000001000110001111] output=0 desktop=43e0000000000000 mobile=0100011001100011110111000101111110100011001101000001000110001111
+  FPRound {fpwidth=64, mode=truncate} input=[0100111111011010010001000000110111010011100001010000110011000111] output=0 desktop=43e0000000000000 mobile=0100111111011010010001000000110111010011100001010000110011000111
+  FPRound {fpwidth=64, mode=truncate} input=[1100011011110000001010000100010011001111001110110010000101110111] output=0 desktop=c3e0000000000000 mobile=1100011011110000001010000100010011001111001110110010000101110111
+  FPRound {fpwidth=64, mode=truncate} input=[1001111111101111100101100111110111010101100010110011000010011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[????????????????????????????????????????????????????????????????] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0101111010111011100011110011110001011011000010010001001100011111] output=0 desktop=43e0000000000000 mobile=0101111010111011100011110011110001011011000010010001001100011111
+  FPRound {fpwidth=64, mode=truncate} input=[0110011011010001001101100101101001010000001110010000111011000110] output=0 desktop=43e0000000000000 mobile=0110011011010001001101100101101001010000001110010000111011000110
+  FPRound {fpwidth=64, mode=truncate} input=[1010001001110000010010101011001010111001101101011010101010100100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010001100110111001100101101000001100010111000110000111101101111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0100110010101110100100110000000111000110100010001111110101101000] output=0 desktop=43e0000000000000 mobile=0100110010101110100100110000000111000110100010001111110101101000
+  FPRound {fpwidth=64, mode=truncate} input=[1011111110111011100000100110010001000011001100011101110101110110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010100011111111111010010010111100001110010011101110001110011111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1101000110001101110011000010000010110001100111101001000000010001] output=0 desktop=c3e0000000000000 mobile=1101000110001101110011000010000010110001100111101001000000010001
+  FPRound {fpwidth=64, mode=truncate} input=[1101011000101111101110111011100011001110111110111111010001100000] output=0 desktop=c3e0000000000000 mobile=1101011000101111101110111011100011001110111110111111010001100000
+  FPRound {fpwidth=64, mode=truncate} input=[0101101101001111011110100001001100010000010000111100110100010100] output=0 desktop=43e0000000000000 mobile=0101101101001111011110100001001100010000010000111100110100010100
+  FPRound {fpwidth=64, mode=truncate} input=[1111011100110111100110011110010110010101001001101101111001011100] output=0 desktop=c3e0000000000000 mobile=1111011100110111100110011110010110010101001001101101111001011100
+  FPRound {fpwidth=64, mode=truncate} input=[1011100101101111111001011010110101110001100111010010110011010111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0110111001000111001001100101010011101111110010111111100110101010] output=0 desktop=43e0000000000000 mobile=0110111001000111001001100101010011101111110010111111100110101010
+  FPRound {fpwidth=64, mode=truncate} input=[1111111000010100011100110001101101111011011111110010111001111101] output=0 desktop=c3e0000000000000 mobile=1111111000010100011100110001101101111011011111110010111001111101
+  FPRound {fpwidth=64, mode=truncate} input=[1011010011011110101101101110101010110001100100001000000110110100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0110011010011111001001000101110110010110101110101000100010110111] output=0 desktop=43e0000000000000 mobile=0110011010011111001001000101110110010110101110101000100010110111
+  FPRound {fpwidth=64, mode=truncate} input=[0111101101011111101110011111001100010011110010011100010000001001] output=0 desktop=43e0000000000000 mobile=0111101101011111101110011111001100010011110010011100010000001001
+  FPRound {fpwidth=64, mode=truncate} input=[1010011101000100111100100100101011100100100101010111110001000111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0110010001000000001100101110001000101100111101010010000000011111] output=0 desktop=43e0000000000000 mobile=0110010001000000001100101110001000101100111101010010000000011111
+  FPRound {fpwidth=64, mode=truncate} input=[1011001111001010100001000100110100011010111011010010111101001100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0110000001101110101111101101011111001110011100110001010011001011] output=0 desktop=43e0000000000000 mobile=0110000001101110101111101101011111001110011100110001010011001011
+  FPRound {fpwidth=64, mode=truncate} input=[1100011000110000011110100100110100001110001111001100101111100011] output=0 desktop=c3e0000000000000 mobile=1100011000110000011110100100110100001110001111001100101111100011
+  FPRound {fpwidth=64, mode=truncate} input=[0110111010011110010100100101000010111110001010011100110011100100] output=0 desktop=43e0000000000000 mobile=0110111010011110010100100101000010111110001010011100110011100100
+  FPRound {fpwidth=64, mode=truncate} input=[1101100111010111100001000011101010000101001101111100100001110011] output=0 desktop=c3e0000000000000 mobile=1101100111010111100001000011101010000101001101111100100001110011
+  FPRound {fpwidth=64, mode=truncate} input=[1101101000111111111110011000001101011111110000000100100101011010] output=0 desktop=c3e0000000000000 mobile=1101101000111111111110011000001101011111110000000100100101011010
+  FPRound {fpwidth=64, mode=truncate} input=[1101101001011101001010100100011010001101011111100110100000111010] output=0 desktop=c3e0000000000000 mobile=1101101001011101001010100100011010001101011111100110100000111010
+  FPRound {fpwidth=64, mode=truncate} input=[0100010111101101000001111000001101001011110001100111010011010100] output=0 desktop=43e0000000000000 mobile=0100010111101101000001111000001101001011110001100111010011010100
+  FPRound {fpwidth=64, mode=truncate} input=[1000000000000000010000111001100001100001010110100101000010110011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1001010000000010100011101100110110110100000011111110000101101001] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1101011001010100010111000100110111011001110001001001010001101001] output=0 desktop=c3e0000000000000 mobile=1101011001010100010111000100110111011001110001001001010001101001
+  FPRound {fpwidth=64, mode=truncate} input=[1111001101001101011000001110010000101111110000101100011100101100] output=0 desktop=c3e0000000000000 mobile=1111001101001101011000001110010000101111110000101100011100101100
+  FPRound {fpwidth=64, mode=truncate} input=[1101100000001101101111100000000100000010100110001001001100111101] output=0 desktop=c3e0000000000000 mobile=1101100000001101101111100000000100000010100110001001001100111101
+  FPRound {fpwidth=64, mode=truncate} input=[1101110101001000001100001100011011001101111000011000100100101000] output=0 desktop=c3e0000000000000 mobile=1101110101001000001100001100011011001101111000011000100100101000
+  FPRound {fpwidth=64, mode=truncate} input=[1101110111101101110111101111010101101010111100001001101101010011] output=0 desktop=c3e0000000000000 mobile=1101110111101101110111101111010101101010111100001001101101010011
+  FPRound {fpwidth=64, mode=truncate} input=[1000111100100011011000111101011010010011001011011010000010011000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0110101110110110111101011111001011011000111101111110010011110110] output=0 desktop=43e0000000000000 mobile=0110101110110110111101011111001011011000111101111110010011110110
+  FPRound {fpwidth=64, mode=truncate} input=[0111011101001001010100010000000101000111000101010111000110011100] output=0 desktop=43e0000000000000 mobile=0111011101001001010100010000000101000111000101010111000110011100
+  FPRound {fpwidth=64, mode=truncate} input=[1000000010011001110100000001000011011100000111110011100110001000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1001001010011000110000011001111010111001100001000001011001001100] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0111110000110101110100101001101111011001011111100101000001110000] output=0 desktop=43e0000000000000 mobile=0111110000110101110100101001101111011001011111100101000001110000
+  FPRound {fpwidth=64, mode=truncate} input=[1100101000100110110010100001010001100010001110000101001001001001] output=0 desktop=c3e0000000000000 mobile=1100101000100110110010100001010001100010001110000101001001001001
+  FPRound {fpwidth=64, mode=truncate} input=[1011110101011100011001010111000010011000101000101110101100000110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1101100000001001011010101001000111110101100101110010001000011100] output=0 desktop=c3e0000000000000 mobile=1101100000001001011010101001000111110101100101110010001000011100
+  FPRound {fpwidth=64, mode=truncate} input=[0101000000111100001111100101001100110110101100110100001000110101] output=0 desktop=43e0000000000000 mobile=0101000000111100001111100101001100110110101100110100001000110101
+  FPRound {fpwidth=64, mode=truncate} input=[1010010111011010101011111111000010010000010111011100000101010111] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1010100001010111111011010100000101010001001010000101011011100011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0101110011000110101010110001111011010011100010101000001000000101] output=0 desktop=43e0000000000000 mobile=0101110011000110101010110001111011010011100010101000001000000101
+  FPRound {fpwidth=64, mode=truncate} input=[1110111010000101000101011101011001110110101001001001110001010111] output=0 desktop=c3e0000000000000 mobile=1110111010000101000101011101011001110110101001001001110001010111
+  FPRound {fpwidth=64, mode=truncate} input=[1001011101111000100111111101110101001011000011011111110100110000] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[????????????????????????????????????????????????????????????????] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0101101001010101111100100111000110011111110010100101001010101101] output=0 desktop=43e0000000000000 mobile=0101101001010101111100100111000110011111110010100101001010101101
+  FPRound {fpwidth=64, mode=truncate} input=[0110000100101100010110010110010011101011110110101110111000000110] output=0 desktop=43e0000000000000 mobile=0110000100101100010110010110010011101011110110101110111000000110
+  FPRound {fpwidth=64, mode=truncate} input=[0110101011100110011101011110110000010000011001100111001010010001] output=0 desktop=43e0000000000000 mobile=0110101011100110011101011110110000010000011001100111001010010001
+  FPRound {fpwidth=64, mode=truncate} input=[1000011011101111101111011001000010000010110110011111100000010011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1110100100100101001000100100100110010110001101010110001010001111] output=0 desktop=c3e0000000000000 mobile=1110100100100101001000100100100110010110001101010110001010001111
+  FPRound {fpwidth=64, mode=truncate} input=[EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE] output=0 desktop=0000000000000000 mobile=0111111111111000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1111011101111010100000011000110101000100000000100110110110101011] output=0 desktop=c3e0000000000000 mobile=1111011101111010100000011000110101000100000000100110110110101011
+  FPRound {fpwidth=64, mode=truncate} input=[1010011010000111100111000000011110100101010001000000110110101110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[0100101101000000110001100011101000000100011110111011001110111000] output=0 desktop=43e0000000000000 mobile=0100101101000000110001100011101000000100011110111011001110111000
+  FPRound {fpwidth=64, mode=truncate} input=[1110101101110100001011011110001011011001000100110111110011100110] output=0 desktop=c3e0000000000000 mobile=1110101101110100001011011110001011011001000100110111110011100110
+  FPRound {fpwidth=64, mode=truncate} input=[1100010000100000010011111000001010001001011001000000100100101101] output=0 desktop=c3e0000000000000 mobile=1100010000100000010011111000001010001001011001000000100100101101
+  FPRound {fpwidth=64, mode=truncate} input=[1011100000000100001101111000010011101110011101011100100101010011] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1011110011110010100101111011011011101110000010110000111000001110] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1111101010000010111111001111101000110000001010000110011010101011] output=0 desktop=c3e0000000000000 mobile=1111101010000010111111001111101000110000001010000110011010101011
+  FPRound {fpwidth=64, mode=truncate} input=[0101110100001000010101010111000010100111001111001100111111101001] output=0 desktop=43e0000000000000 mobile=0101110100001000010101010111000010100111001111001100111111101001
+  FPRound {fpwidth=64, mode=truncate} input=[1001011111110101000010100100110101110000101000101010111010111101] output=0 desktop=0000000000000000 mobile=1000000000000000000000000000000000000000000000000000000000000000
+  FPRound {fpwidth=64, mode=truncate} input=[1101011100100010010000010110111111100001000100000100111100111111] output=0 desktop=c3e0000000000000 mobile=1101011100100010010000010110111111100001000100000100111100111111
+  FPRound {fpwidth=64, mode=truncate} input=[1100110011101011010111101100000100000100011100011001110001000011] output=0 desktop=c3e0000000000000 mobile=1100110011101011010111101100000100000100011100011001110001000011
+  FPRound {fpwidth=64, mode=truncate} input=[1100111000110001010111110111000010001111111101010111101100010010] output=0 desktop=c3e0000000000000 mobile=1100111000110001010111110111000010001111111101010111101100010010
+PASS 94116 floating point outputs/delays and 1160 layout comparisons against 18 desktop factories; 569 value mismatches covered by accepted differences, 0 unexplained; seed=33042026

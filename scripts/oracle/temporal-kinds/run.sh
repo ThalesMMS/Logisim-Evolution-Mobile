@@ -2,6 +2,9 @@
 # Compares Evolution and Mobile event times for one generated circuit per catalog component.
 set -euo pipefail
 cd "$(dirname "$0")/../../.."
+# Git Bash on Windows: Java needs ';' between classpath entries and native paths.
+case "$(uname -s)" in MINGW*|MSYS*|CYGWIN*) sep=';' ;; *) sep=':' ;; esac
+native() { if command -v cygpath >/dev/null 2>&1; then cygpath -m "$1"; else printf '%s\n' "$1"; fi; }
 variants=0
 extra=()
 while [ "$#" -gt 0 ]; do
@@ -31,13 +34,16 @@ print(next(p for p in (cache / 'caches/modules-2/files-2.1/org.jetbrains.kotlin/
            if not p.name.endswith(('-sources.jar', '-javadoc.jar'))))
 PY
 )}
-mobile_cp="$core_jar:$kotlin_stdlib"
+desktop_jar=$(native "$desktop_jar")
+core_jar=$(native "$core_jar")
+kotlin_stdlib=$(native "$kotlin_stdlib")
+mobile_cp="$core_jar$sep$kotlin_stdlib"
 mkdir -p "$output/fixtures" "$output/desktop" "$output/mobile" "$output/classes"
 javac -cp "$desktop_jar" -d "$output/classes" scripts/oracle/TemporalDesktopOracle.java \
     scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java
 options=()
 if [ "$variants" = 1 ]; then
-    java -Djava.awt.headless=true -cp "$output/classes:$desktop_jar" com.cburch.logisim.data.AttributeOptionsDesktop \
+    java -Djava.awt.headless=true -cp "$output/classes$sep$desktop_jar" com.cburch.logisim.data.AttributeOptionsDesktop \
         > "$output/attribute-options.tsv"
     options=("$output/attribute-options.tsv")
 fi
@@ -47,13 +53,13 @@ if [ -n "${FIXTURES:-}" ]; then
     grep -E "^(${FIXTURES})\$" "$output/fixtures/index.txt" > "$output/fixtures/index.filtered" || true
     mv "$output/fixtures/index.filtered" "$output/fixtures/index.txt"
 fi
-export desktop_jar mobile_cp output
+export desktop_jar mobile_cp output sep
 compare() {
     set -o pipefail
     id=$1
     fixture="$output/fixtures/$id"
     desktop="$output/desktop/$id.tsv"
-    if java -Djava.awt.headless=true -cp "$output/classes:$desktop_jar" com.cburch.logisim.circuit.TemporalDesktopOracle \
+    if java -Djava.awt.headless=true -cp "$output/classes$sep$desktop_jar" com.cburch.logisim.circuit.TemporalDesktopOracle \
         "$fixture.circ" "$fixture.ops.tsv" 2> "$output/desktop/$id.err" | grep -v '^M' > "$desktop"; then
         desktop_ok=1
     else
@@ -65,7 +71,8 @@ compare() {
         if [ "$desktop_ok" = 0 ]; then status=DESKTOP_ERROR
         elif ! java -cp "$mobile_cp" dev.logisim.mobile.core.TemporalCorpusCli "$fixture.circ" "$fixture.ops.tsv" \
             $([ "$mode" = step ] && echo step) > "$mobile" 2> "$output/mobile/$id.$mode.err"; then status=MOBILE_ERROR
-        elif cmp -s "$desktop" "$mobile"; then status=SAME
+        # Java on Windows ends lines with CRLF; compare the records, not the line endings.
+        elif sed -i 's/\r$//' "$desktop" "$mobile"; cmp -s "$desktop" "$mobile"; then status=SAME
         elif [ "$(cut -f2,4,5 "$desktop")" = "$(cut -f2,4,5 "$mobile")" ]; then status=TIME
         else status=VALUE; fi
         result="$result	$status"

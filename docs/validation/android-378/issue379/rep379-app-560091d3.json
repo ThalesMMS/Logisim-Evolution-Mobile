@@ -1,0 +1,13 @@
+{
+ "apkSha256": "8105016fa6eb7ec1a96e3d7d5425922a2ba13d402b33eeb9790a079a42e14617",
+ "ctrl2": "Two fingers pan and zoom. Tap to select; drag from a terminal to draw a wire.",
+ "prefsOpened": true,
+ "focusedAfterBack": [
+  [
+   "editor-search-query",
+   ""
+  ]
+ ],
+ "ctrl6AfterBack": "Tap the grid to insert Input.",
+ "pass": true
+}

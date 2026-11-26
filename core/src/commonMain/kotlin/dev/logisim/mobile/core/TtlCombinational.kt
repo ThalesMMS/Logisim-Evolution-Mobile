@@ -2,6 +2,8 @@ package dev.logisim.mobile.core
 
 internal object TtlCombinational {
     val quadGatePins = mapOf(3 to listOf(1, 2), 6 to listOf(4, 5), 8 to listOf(9, 10), 11 to listOf(12, 13))
+    /** SN74HC266 pinout, which Evolution follows since c2a06deb (PR 3209): outputs on pins 3, 4, 10 and 11. */
+    val xnor74266Pins = mapOf(3 to listOf(1, 2), 4 to listOf(5, 6), 10 to listOf(8, 9), 11 to listOf(12, 13))
     val norGatePins = mapOf(1 to listOf(2, 3), 4 to listOf(5, 6), 10 to listOf(8, 9), 13 to listOf(11, 12))
     val hexGatePins = mapOf(2 to listOf(1), 4 to listOf(3), 6 to listOf(5), 8 to listOf(9), 10 to listOf(11), 12 to listOf(13))
 
@@ -24,7 +26,7 @@ internal object TtlCombinational {
         fun or(vararg index: Int) = index.map(::p).reduce { a, b -> a ttlOr b }
         fun bits(vararg indices: Int) = indices.withIndex().sumOf { (bit, index) -> if (p(index) == LogicValue.HIGH) 1 shl bit else 0 }
         when (model) {
-            "7400", "7408", "7424", "7432", "7436", "7438", "7486", "74132", "74266", "747266" -> for ((out, inputs) in quadGatePins) {
+            "7400", "7408", "7424", "7432", "7436", "7438", "7486", "74132", "74266", "747266" -> for ((out, inputs) in if (model == "74266") xnor74266Pins else quadGatePins) {
                 val (first, second) = inputs
                 val a = pins.pin(first)
                 val b = pins.pin(second)

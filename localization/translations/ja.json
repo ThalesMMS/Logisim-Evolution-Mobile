@@ -75,6 +75,7 @@
   "a11y_input_toggle_bit": "{name} のビットを切り替え…",
   "a11y_input_toggle_low_bit": "{name} のビット 0 を切り替え",
   "a11y_insert_below_selected": "選択した部品の下",
+  "a11y_insert_circuit": "{name} を {target} に挿入",
   "a11y_insert_component": "{name} を挿入",
   "a11y_insert_custom": "座標を指定",
   "a11y_insert_next_free": "次の空いている位置",
@@ -1058,6 +1059,10 @@
   "byte_size_mib_fraction": "{whole}.{fraction} MiB",
   "canvas_component_tip": "{component}: {port}",
   "canvas_width_error": "互換性のない幅",
+  "circuit_insert": "挿入",
+  "circuit_insert_into": "{target} に挿入",
+  "circuit_insert_recursive": "{name} は {target} を含んでいます。挿入すると再帰的な回路になります。",
+  "circuit_insert_self": "{name} は表示中の回路です。回路は自分自身を含められません。",
   "circuit_properties_title": "回路のプロパティ",
   "circuit_remove_error_title": "回路を削除できません",
   "circuit_remove_last_error": "プロジェクトには回路が 1 つ以上必要です。",
@@ -3959,6 +3964,7 @@
   "status_operation_cancelled": "操作をキャンセルしました。",
   "status_paste_subcircuit_mismatch": "貼り付けできません。貼り付け先のプロジェクトには、サブ回路 {name} と同じ定義が必要です。",
   "status_place": "グリッドをタップして {name} を挿入します。",
+  "status_place_circuit": "グリッドをタップして {name} を {target} に挿入します。",
   "status_project_imported": {
     "other": "{count} 個の回路を含むプロジェクトをインポートしました。"
   },

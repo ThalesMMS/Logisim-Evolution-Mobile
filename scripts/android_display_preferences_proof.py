@@ -154,6 +154,16 @@ class Device:
     def open_menu(self, menu, item):
         self.tap(rid="editor-project-toolbar-overflow")
         self.tap(text=menu)
+        # The File menu lists the examples before Preferences…, so on a phone the item can sit below the fold.
+        title = self.one(text=menu)
+        x = str(self.center(title)[0])
+        for _ in range(8):
+            found = self.find(text=item)
+            if found and self.center(found[0])[1] < 2000:
+                self.tap(found[0])
+                return
+            self.sh("shell", "input", "swipe", x, "1800", x, "1000", "400")
+            time.sleep(0.6)
         self.tap(text=item)
 
     def open_preferences(self):
@@ -344,9 +354,12 @@ def colors_311(device):
     device.open_preferences()
     device.tap(device.scroll_to(text="Canvas colors"))
     row = device.scroll_to(rid="preferences-color-widthError")
-    assert row.get("content-desc", "").startswith("Width error color: #"), row.get("content-desc")
+    # The clickable row can expose its merged description on a child node at the same bounds.
+    described = next((n.get("content-desc") for n in row.iter("node") if n.get("content-desc")), "")
+    assert described.startswith("Width error color: #"), described
     device.tap(row)
-    device.one(rid="color-picker-hex")
+    # The advanced hex field sits below the swatches and sliders, outside the visible tree until scrolled.
+    device.one(text="Width error color")
     field = device.scroll_to(rid="color-picker-hex")
     device.tap(field)
     device.sh("shell", "input", "keyevent", "KEYCODE_MOVE_END")
@@ -355,6 +368,9 @@ def colors_311(device):
     device.sh("shell", "input", "text", shlex.quote(WIDTH_ERROR_RGB))
     time.sleep(0.6)
     device.capture("311-color-dialog-width-error")
+    # The soft keyboard covers the dialog's buttons on a phone; Back hides it without closing the dialog.
+    if "mInputShown=true" in device.sh("shell", "dumpsys", "input_method"):
+        device.back()
     device.tap(rid="color-picker-apply")
     saved = device.preferences()
     assert saved.get("color.widthError") == WIDTH_ERROR_RGB, saved

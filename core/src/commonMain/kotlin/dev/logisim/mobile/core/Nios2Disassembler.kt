@@ -101,7 +101,7 @@ object Nios2Disassembler {
     }
 
     private val registerOperations = mapOf(0x0E to "and", 0x16 to "or", 0x1E to "xor", 0x06 to "nor", 0x31 to "add",
-        0x39 to "sub", 0x27 to "mul", 0x18 to "div", 0x24 to "divu", 0x1F to "mulxss", 0x07 to "mulxuu", 0x17 to "mulxsu",
+        0x39 to "sub", 0x27 to "mul", 0x25 to "div", 0x24 to "divu", 0x1F to "mulxss", 0x07 to "mulxuu", 0x17 to "mulxsu",
         0x20 to "cmpeq", 0x08 to "cmpge", 0x28 to "cmpgeu", 0x10 to "cmplt", 0x30 to "cmpltu", 0x03 to "rol",
         0x0B to "ror", 0x13 to "sll", 0x3B to "sra", 0x1B to "srl")
 

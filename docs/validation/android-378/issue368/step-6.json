@@ -1,0 +1,65 @@
+[
+ [
+  "Add circuit Chip",
+  {
+   "status": "Circuit Chip created.",
+   "insertHierarchyDesc": "Insert Hierarchy into Chip"
+  }
+ ],
+ [
+  "Place Input in Chip",
+  "Input tool armed, tap placed it"
+ ],
+ [
+  "Insert on Chip (circuit-insert-circuit-1)",
+  {
+   "status": "Tap the grid to insert Chip into Hierarchy.",
+   "header": "Hierarchy"
+  }
+ ],
+ [
+  "tap canvas",
+  {
+   "status": "Subcircuit inserted. Edit mode.",
+   "header": "Hierarchy",
+   "components": [
+    [
+     "canvas-component:c3",
+     "Subcircuit (340, -100)"
+    ],
+    [
+     "canvas-component:c2",
+     "Subcircuit (250, -60)"
+    ],
+    [
+     "canvas-component:import-1",
+     "A"
+    ],
+    [
+     "canvas-component:import-2",
+     "Subcircuit (300, 140)"
+    ],
+    [
+     "canvas-component:import-3",
+     "Y"
+    ],
+    [
+     "canvas-component:c1",
+     "Subcircuit (250, 240)"
+    ]
+   ]
+  }
+ ],
+ [
+  "Chip contents",
+  {
+   "header": "Chip",
+   "components": [
+    [
+     "canvas-component:c1",
+     "Input (200, 10)"
+    ]
+   ]
+  }
+ ]
+]

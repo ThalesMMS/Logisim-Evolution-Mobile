@@ -76,6 +76,7 @@
   "a11y_input_toggle_bit": "Εναλλαγή ενός bit του {name}…",
   "a11y_input_toggle_low_bit": "Εναλλαγή του bit 0 του {name}",
   "a11y_insert_below_selected": "Κάτω από το επιλεγμένο εξάρτημα",
+  "a11y_insert_circuit": "Εισαγωγή του {name} στο {target}",
   "a11y_insert_component": "Εισαγωγή: {name}",
   "a11y_insert_custom": "Προσαρμοσμένες συντεταγμένες",
   "a11y_insert_next_free": "Επόμενη ελεύθερη θέση",
@@ -1075,6 +1076,10 @@
   "byte_size_mib_fraction": "{whole},{fraction} MiB",
   "canvas_component_tip": "{component}: {port}",
   "canvas_width_error": "Ασύμβατα πλάτη",
+  "circuit_insert": "Εισαγωγή",
+  "circuit_insert_into": "Εισαγωγή στο {target}",
+  "circuit_insert_recursive": "Το {name} περιέχει το {target}. Η εισαγωγή του θα δημιουργούσε αναδρομικό κύκλωμα.",
+  "circuit_insert_self": "Το {name} είναι το κύκλωμα που εμφανίζεται. Ένα κύκλωμα δεν μπορεί να περιέχει τον εαυτό του.",
   "circuit_properties_title": "Ιδιότητες κυκλώματος",
   "circuit_remove_error_title": "Δεν είναι δυνατή η κατάργηση του κυκλώματος",
   "circuit_remove_last_error": "Ένα έργο πρέπει να περιέχει τουλάχιστον ένα κύκλωμα.",
@@ -4039,6 +4044,7 @@
   "status_operation_cancelled": "Η ενέργεια ακυρώθηκε.",
   "status_paste_subcircuit_mismatch": "Δεν είναι δυνατή η επικόλληση. Το έργο προορισμού πρέπει να έχει τον ίδιο ορισμό για το υποκύκλωμα {name}.",
   "status_place": "Πατήστε στο πλέγμα για εισαγωγή: {name}.",
+  "status_place_circuit": "Πατήστε το πλέγμα για να εισαγάγετε το {name} στο {target}.",
   "status_project_imported": {
     "one": "Το έργο εισήχθη με {count} κύκλωμα.",
     "other": "Το έργο εισήχθη με {count} κυκλώματα."

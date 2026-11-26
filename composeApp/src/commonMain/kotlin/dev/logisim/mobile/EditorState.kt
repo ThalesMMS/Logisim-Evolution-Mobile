@@ -2019,6 +2019,38 @@ internal class EditorState(
         place(ProjectCircuitLibraries.placement(circuit))
     }
 
+    /**
+     * Why project circuit [circuitId] cannot be inserted into the circuit in view, or null when it can (#368): a
+     * read-only document, the circuit itself, or a circuit that already contains it, directly or through others.
+     */
+    fun projectCircuitInsertProblem(circuitId: String): LocalizedText? {
+        val circuit = project.circuits.firstOrNull { it.id == circuitId } ?: return message(Messages.ErrorProjectEdit)
+        return when {
+            !documentWritable -> message("document_read_only_preserved")
+            circuit.id == document.id -> message("circuit_insert_self", "name" to circuit.name)
+            !ProjectCircuitLibraries.canPlace(project, circuit, document) ->
+                message("circuit_insert_recursive", "name" to circuit.name, "target" to document.name)
+            else -> null
+        }
+    }
+
+    /**
+     * Picks the add tool for project circuit [circuitId] in the circuit in view, as a click on a circuit in Evolution's
+     * project tree does (#368); a tap on the canvas then places the instance. The tool is the one a project-toolbar
+     * entry for the circuit gives, without changing the toolbar, and the view stays where it is.
+     */
+    fun placeProjectCircuit(circuitId: String): Boolean {
+        val circuit = project.circuits.firstOrNull { it.id == circuitId } ?: return false
+        return manageProject {
+            projectCircuitInsertProblem(circuitId)?.let { throw LocalizedArgumentException(it) }
+            val tool = (ProjectToolbar.binding(ProjectToolbarItem.Tool(null, circuit.name), project, componentRegistry)
+                as? ProjectToolbarBinding.Place)?.component
+                ?.takeIf { it.kind == ComponentKind.SUBCIRCUIT && it.circuitName == circuit.name }
+            place(tool ?: ProjectCircuitLibraries.placement(circuit))
+            statusText = message("status_place_circuit", "name" to circuit.name, "target" to document.name)
+        }
+    }
+
     private inline fun manageProject(action: () -> Unit): Boolean = if (!ensureDocumentWritable()) false else try {
         action()
         true

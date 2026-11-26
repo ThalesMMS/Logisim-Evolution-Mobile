@@ -80,6 +80,7 @@
     <string name="a11y_input_toggle_bit">Przełącz bit {name}…</string>
     <string name="a11y_input_toggle_low_bit">Przełącz bit 0 {name}</string>
     <string name="a11y_insert_below_selected">Pod zaznaczonym komponentem</string>
+    <string name="a11y_insert_circuit">Wstaw {name} do {target}</string>
     <string name="a11y_insert_component">Wstaw {name}</string>
     <string name="a11y_insert_custom">Własne współrzędne</string>
     <string name="a11y_insert_next_free">Następne wolne miejsce</string>
@@ -1111,6 +1112,10 @@
     <string name="byte_size_mib_fraction">{whole},{fraction} MiB</string>
     <string name="canvas_component_tip">{component}: {port}</string>
     <string name="canvas_width_error">Niekompatybilne szerokości</string>
+    <string name="circuit_insert">Wstaw</string>
+    <string name="circuit_insert_into">Wstaw do {target}</string>
+    <string name="circuit_insert_recursive">{name} zawiera {target}. Wstawienie go utworzyłoby układ rekurencyjny.</string>
+    <string name="circuit_insert_self">{name} to wyświetlany układ. Układ nie może zawierać samego siebie.</string>
     <string name="circuit_properties_title">Właściwości obwodu</string>
     <string name="circuit_remove_error_title">Nie można usunąć obwodu</string>
     <string name="circuit_remove_last_error">Projekt musi zawierać co najmniej jeden obwód.</string>
@@ -4204,6 +4209,7 @@ SHA-256: {sha256}</string>
     <string name="status_operation_cancelled">Anulowano operację.</string>
     <string name="status_paste_subcircuit_mismatch">Nie można wkleić. Projekt docelowy musi zawierać taką samą definicję podobwodu {name}.</string>
     <string name="status_place">Dotknij siatki, aby wstawić {name}.</string>
+    <string name="status_place_circuit">Dotknij siatki, aby wstawić {name} do {target}.</string>
     <plurals name="status_project_imported">
         <item quantity="one">Zaimportowano projekt, który zawiera {count} obwód.</item>
         <item quantity="few">Zaimportowano projekt, który zawiera {count} obwody.</item>

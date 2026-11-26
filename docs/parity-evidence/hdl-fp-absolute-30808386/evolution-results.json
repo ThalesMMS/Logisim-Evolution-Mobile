@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "evolution_revision": "21f1e15829e550c491d75953f40484be2ed31c66",
+  "evolution_jar_sha256": "806c030e4000809acf1ec4db043d51c027e2f297643e26413808d863898f36d7",
+  "tools": {
+    "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0)",
+    "ghdl": "GHDL 6.0.0 (tarball) [Dunoon edition]"
+  },
+  "designs": [
+    {
+      "language": "verilog",
+      "width": 8,
+      "module": "FPABSOLUTE_8",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "vhdl",
+      "width": 8,
+      "module": "FPABSOLUTE_8",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "verilog",
+      "width": 16,
+      "module": "FPABSOLUTE_16",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "vhdl",
+      "width": 16,
+      "module": "FPABSOLUTE_16",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "verilog",
+      "width": 32,
+      "module": "FPABSOLUTE_32",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "vhdl",
+      "width": 32,
+      "module": "FPABSOLUTE_32",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "verilog",
+      "width": 64,
+      "module": "FPABSOLUTE_64",
+      "vectors": 16,
+      "passed": true
+    },
+    {
+      "language": "vhdl",
+      "width": 64,
+      "module": "FPABSOLUTE_64",
+      "vectors": 16,
+      "passed": true
+    }
+  ],
+  "comparisons": 256
+}

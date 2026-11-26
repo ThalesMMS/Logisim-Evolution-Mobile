@@ -1,0 +1,85 @@
+lock acquired Mon Nov 23 09:08:59 -03 2026
+openjdk version "21.0.13.0.3" 2026-10-24
+Mon Nov 23 09:08:59 -03 2026
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=160 rejected=0
+   3 DESKTOP_ERROR	DESKTOP_ERROR
+ 156 SAME	SAME
+   1 VALUE	VALUE
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=984 rejected=7
+  12 DESKTOP_ERROR	DESKTOP_ERROR
+ 963 SAME	SAME
+   9 VALUE	VALUE
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=984 rejected=7
+  10 DESKTOP_ERROR	DESKTOP_ERROR
+ 967 SAME	SAME
+   7 VALUE	VALUE
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=556 rejected=4
+  10 DESKTOP_ERROR	DESKTOP_ERROR
+ 537 SAME	SAME
+   9 VALUE	VALUE
+Receipt updated; work files in WORK/sweep/temporal. Regenerate with python3 scripts/parity_matrix.py
+
+real	13m56.604s
+user	53m5.902s
+sys	4m43.425s
+temporal exit=0
+Mon Nov 23 09:22:55 -03 2026
+blif_circuit__gates	SAME	SAME
+blif_circuit__buffers	SAME	SAME
+blif_circuit__mux	SAME	SAME
+blif_circuit__tristate	SAME	SAME
+blif_circuit__multidriver	SAME	SAME
+blif_circuit__pulls	SAME	SAME
+blif_circuit__counter	SAME	SAME
+blif_circuit__latch	SAME	SAME
+blif_circuit__dffsr	SAME	SAME
+blif_circuit__ports	SAME	SAME
+blif_circuit__srlatch	SAME	SAME
+blif_circuit__wide	SAME	SAME
+blif_circuit__template	SAME	SAME
+blif_circuit__invalid	SAME	SAME
+blif_circuit__gates	SAME
+blif_circuit__buffers	SAME
+blif_circuit__mux	SAME
+blif_circuit__tristate	SAME
+blif_circuit__multidriver	SAME
+blif_circuit__pulls	SAME
+blif_circuit__counter	SAME
+blif_circuit__latch	SAME
+blif_circuit__dffsr	SAME
+blif_circuit__ports	SAME
+blif_circuit__srlatch	SAME
+blif_circuit__wide	SAME
+blif_circuit__template	SAME
+blif_circuit__invalid	DESKTOP_ERROR
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=160 rejected=0
+   1 SAME	SAME
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=984 rejected=7
+   1 SAME	SAME
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=984 rejected=7
+   1 SAME	SAME
+Note: scripts/oracle/temporal-kinds/AttributeOptionsDesktop.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+fixtures=556 rejected=4
+   1 SAME	SAME
+Receipt updated; work files in WORK/sweep/blif. Regenerate with python3 scripts/parity_matrix.py
+
+real	0m28.352s
+user	0m30.603s
+sys	0m2.827s
+blif exit=0
+done Mon Nov 23 09:23:24 -03 2026

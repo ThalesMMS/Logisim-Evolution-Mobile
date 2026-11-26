@@ -1,0 +1,13 @@
+= 7447 class=Ttl7447 paintInternal=Ttl7447 gates=0 ops=119 stateOps=0
+= 7485 class=Ttl7485 paintInternal=Ttl7485 gates=0 ops=76 stateOps=0
+= 7487 class=Ttl7487 paintInternal=Ttl7487 gates=0 ops=108 stateOps=0
+= 7493 class=Ttl7493 paintInternal=Ttl7493 gates=0 ops=86 stateOps=0
+= 74123 class=Ttl74123 paintInternal=Ttl74123 gates=0 ops=74 stateOps=0
+= 7476 class=Ttl7476 paintInternal=Ttl7476 gates=0 ops=72 stateOps=0
+= 74283 class=Ttl74283 paintInternal=Ttl74283 gates=0 ops=76 stateOps=0
+= 74390 class=Ttl74390 paintInternal=Ttl74390 gates=0 ops=76 stateOps=0
+= 74365 class=Ttl74365 paintInternal=Ttl74365 gates=0 ops=73 stateOps=0
+= 74138 class=Ttl74138 paintInternal=Ttl74138 gates=0 ops=131 stateOps=0
+= 74266 class=Ttl74266 paintInternal=Ttl74266 gates=0 ops=78 stateOps=0
+= 74194 class=Ttl74194 paintInternal=Ttl74194 gates=0 ops=52 stateOps=0
+= 744017 class=Ttl744017 paintInternal=Ttl744017 gates=0 ops=48 stateOps=0

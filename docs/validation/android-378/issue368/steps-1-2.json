@@ -1,0 +1,58 @@
+[
+ [
+  "tap Inversor row name",
+  {
+   "header": "Inversor",
+   "status": "Circuit Inversor."
+  }
+ ],
+ [
+  "back to Hierarchy",
+  "Hierarchy"
+ ],
+ [
+  "components before",
+  [
+   "canvas-component:import-1",
+   "canvas-component:import-2",
+   "canvas-component:import-3"
+  ]
+ ],
+ [
+  "Insert on Inversor",
+  {
+   "sheetClosed": true,
+   "status": "Tap the grid to insert Inversor into Hierarchy.",
+   "header": "Hierarchy"
+  }
+ ],
+ [
+  "tap canvas",
+  {
+   "status": "Subcircuit inserted. Edit mode.",
+   "header": "Hierarchy",
+   "components": [
+    [
+     "canvas-component:import-1",
+     "A",
+     "[61,1163][187,1289]"
+    ],
+    [
+     "canvas-component:import-2",
+     "Subcircuit (300, 140)",
+     "[568,1163][694,1289]"
+    ],
+    [
+     "canvas-component:import-3",
+     "Y",
+     "[914,1163][1040,1289]"
+    ],
+    [
+     "canvas-component:c1",
+     "Subcircuit (250, 240)",
+     "[434,1430][560,1556]"
+    ]
+   ]
+  }
+ ]
+]

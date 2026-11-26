@@ -1,0 +1,8 @@
+{
+  "gitHead": "ae3d5422838dc9ccbc30fcdb08bc1402fac47964",
+  "appSha256": "54792ef49faefdb505cb4b5172eb61013ec35c6b537334b7c14af123383bfc86",
+  "testSha256": "d32b2f3212e815a071582e517ddd26fad282178af987853f291614986f9da93a",
+  "snapshotSha256": "cf6c640ffe14ceffc0cab7db7f5c0d8807fc0a3aced00a0ee3e3b1af6b2667fc",
+  "command": "./gradlew -PandroidTestBuildType=e2e :androidApp:assembleE2e :androidApp:assembleE2eAndroidTest :androidSnapshot:assembleDebug",
+  "scope": "Clean LF checkout at ae3d5422838dc9ccbc30fcdb08bc1402fac47964 on Windows 11 x64, JDK 21.0.12, Gradle 9.6.1, built for #378."
+}

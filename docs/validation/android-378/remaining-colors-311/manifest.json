@@ -1,0 +1,12 @@
+{
+  "serial": "emulator-5560",
+  "gitHead": "ae3d5422838dc9ccbc30fcdb08bc1402fac47964",
+  "sourceChanges": [
+    " M scripts/android_display_preferences_proof.py"
+  ],
+  "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "appVersion": [
+    "versionName=1.0.0-e2e",
+    "lastUpdateTime=2026-11-23 11:48:24"
+  ]
+}
